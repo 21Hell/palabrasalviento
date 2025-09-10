@@ -1,6 +1,7 @@
+---
 title: "I"
 date: 2025-09-09
-
+---
 Ventanas opacas tapan el alma del agua del desierto.
 ¿Ora pues por los que no oran?
 Llora pues por los que no lloran
