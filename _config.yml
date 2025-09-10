@@ -76,4 +76,4 @@ defaults:
     values:
       layout: "pelicula"
 
-<a href="{{ site.baseurl }}/poemas/I/">...</a>
+
