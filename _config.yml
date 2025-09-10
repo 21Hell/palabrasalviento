@@ -59,3 +59,21 @@ collections:
     output: true
   peliculas:
     output: true
+
+permalink: /:categories/:title/
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "poemas"
+    values:
+      layout: "poema"
+  - scope:
+      path: "peliculas"
+    values:
+      layout: "pelicula"
+
+<a href="{{ site.baseurl }}/poemas/I/">...</a>
