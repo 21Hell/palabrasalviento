@@ -3,7 +3,8 @@ a:hover {
 
 
 body {
-    background: repeating-linear-gradient(135deg, #f0f0f0, #e8e8e8 10px, #f0f0f0 20px);
+    background: repeating-linear-gradient(135deg, #f0f0f0, #e8e8e8 10px, #f0f0f0 20px),
+                url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
     font-family: 'Arial', 'Times New Roman', serif;
     color: #333;
     margin: 0;
