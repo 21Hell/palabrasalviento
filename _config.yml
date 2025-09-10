@@ -22,8 +22,11 @@ title: Palabras al Viento
 email: cwolfterminal@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Un monton de palabras tiradas al viento 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+url: "https://21Hell.github.io"
+baseurl: "/palabrasalviento"   # <- pon esto si NO es tu página raíz
+
 twitter_username: jekyllrb
 github_username:  jekyll
 
