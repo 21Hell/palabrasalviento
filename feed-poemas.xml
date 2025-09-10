@@ -1,0 +1,20 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.title }} - Poemas</title>
+    <link>{{ site.url }}{{ site.baseurl }}/poemas</link>
+    <description>{{ site.description }}</description>
+    {% for poema in site.poemas %}
+    <item>
+      <title>{{ poema.title }}</title>
+      <link>{{ site.url }}{{ poema.url }}</link>
+      <description>{{ poema.content | xml_escape | strip_html | truncatewords: 40, '...' }}</description>
+      <pubDate>{{ poema.date | date_to_rfc822 }}</pubDate>
+      <category>{{ poema.categoria }}</category>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
