@@ -3,7 +3,7 @@ title: "XIV"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XIV.html
+permalink: /poemas/XIV/
 categoria: panoramas
 ---
 Pedante, petulante, obtuso;

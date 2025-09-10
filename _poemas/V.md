@@ -3,7 +3,7 @@ title: "V"
 layout: poema
 date: 2019-09-01
 show_full_date: false
-permalink: /poemas/V.html
+permalink: /poemas/V/
 categoria: nostalgia
 ---
 Querida el destino ha puesto frente a mí un muro

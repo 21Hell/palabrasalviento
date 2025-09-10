@@ -3,7 +3,7 @@ title: "XI"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XI.html
+permalink: /poemas/XI/
 categoria: panoramas
 ---
 Me siento ahogado a mi mismo, en este fúnebre pensamiento

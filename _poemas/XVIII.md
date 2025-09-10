@@ -3,7 +3,7 @@ title: "XVIII"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XVIII.html
+permalink: /poemas/XVIII/
 categoria: panoramas
 ---
 Angustia, dolor, espera

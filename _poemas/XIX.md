@@ -3,7 +3,7 @@ title: "XIX"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XIX.html
+permalink: /poemas/XIX/
 categoria: panoramas
 ---
 let it come hell or high water,

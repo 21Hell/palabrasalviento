@@ -3,7 +3,7 @@ title: "XXI"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XXI.html
+permalink: /poemas/XXI/
 categoria: panoramas
 ---
 controla tu mente

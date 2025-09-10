@@ -3,7 +3,7 @@ title: "VII"
 layout: poema
 date: 2019-09-01
 show_full_date: false
-permalink: /poemas/VII.html
+permalink: /poemas/VII/
 categoria: nostalgia
 ---
 Me gustaría no vivir en un sentimiento austero

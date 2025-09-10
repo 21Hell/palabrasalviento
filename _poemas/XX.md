@@ -3,7 +3,7 @@ title: "XX"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XX.html
+permalink: /poemas/XX/
 categoria: panoramas
 ---
 Un chocolate

@@ -3,7 +3,7 @@ title: "I"
 layout: poema
 date: 2015-09-09
 show_full_date: false
-permalink: /poemas/I.html
+permalink: /poemas/I/
 categoria: nostalgia
 ---
 Ventanas opacas tapan el alma del agua del desierto.  

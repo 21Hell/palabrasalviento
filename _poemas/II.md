@@ -3,7 +3,7 @@ title: "II"
 layout: poema
 date: 2015-09-10
 show_full_date: false
-permalink: /poemas/II.html
+permalink: /poemas/II/
 categoria: nostalgia
 ---
 Una ola de nada golpeo mi ser  

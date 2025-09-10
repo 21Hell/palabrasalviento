@@ -1,9 +1,10 @@
+
 ---
 title: "VIII"
 layout: poema
 date: 2019-09-01
 show_full_date: false
-permalink: /poemas/VIII.html
+permalink: /poemas/VIII/
 categoria: nostalgia
 ---
 Busco tenerte entre perfumes de rosa, oler tu aroma ya no me trae anhelos de tenerte pero si me gusta y no me gusta que sea tan disfrutable tu ser, no es odio ni desprecio simplemente que he perdido el gusto de ese aroma que emanan

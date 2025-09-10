@@ -3,7 +3,7 @@ title: "XVII"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XVII.html
+permalink: /poemas/XVII/
 categoria: panoramas
 ---
 Horchata fresca y dulce

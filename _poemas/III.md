@@ -3,7 +3,7 @@ title: "III"
 layout: poema
 date: 2015-09-10
 show_full_date: false
-permalink: /poemas/III.html
+permalink: /poemas/III/
 categoria: nostalgia
 ---
 El cielo es bello porque es bello  

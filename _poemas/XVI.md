@@ -3,7 +3,7 @@ title: "XVI"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XVI.html
+permalink: /poemas/XVI/
 categoria: panoramas
 ---
 La carretera corta tajantemente con mis pensamientos

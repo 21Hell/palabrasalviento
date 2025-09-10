@@ -3,7 +3,7 @@ title: "XXIV"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XXIV.html
+permalink: /poemas/XXIV/
 categoria: panoramas
 ---
 Miedo a los jóvenes

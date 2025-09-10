@@ -3,7 +3,7 @@ title: "XII"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XII.html
+permalink: /poemas/XII/
 categoria: panoramas
 ---
 Corazón artiga y espinoso

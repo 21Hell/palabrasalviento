@@ -3,7 +3,7 @@ title: "XV"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XV.html
+permalink: /poemas/XV/
 categoria: panoramas
 ---
 Que seria de mi, febrero, marzo

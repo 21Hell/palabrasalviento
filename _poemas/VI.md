@@ -3,7 +3,7 @@ title: "VI"
 layout: poema
 date: 2019-09-01
 show_full_date: false
-permalink: /poemas/VI.html
+permalink: /poemas/VI/
 categoria: nostalgia
 ---
 De el ayer se ha formado

@@ -3,7 +3,7 @@ title: "IX"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/IX.html
+permalink: /poemas/IX/
 categoria: panoramas
 ---
 En pocas ocasiones me he notado tan

@@ -3,7 +3,7 @@ title: "XXII"
 layout: poema
 date: 2021-01-01
 show_full_date: false
-permalink: /poemas/XXII.html
+permalink: /poemas/XXII/
 categoria: panoramas
 ---
 My sweet heart
