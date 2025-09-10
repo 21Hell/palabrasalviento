@@ -1,0 +1,11 @@
+---
+layout: default
+title: Poemas
+---
+
+<h1>Poemas</h1>
+layout: default
+      <a href="{{ poema.url }}">{{ poema.title }}</a> <small>{{ poema.date | date: "%d-%m-%Y" }}</small>
+    </li>
+  {% endfor %}
+</ul>
