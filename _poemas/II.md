@@ -1,7 +1,7 @@
 ---
 title: "II"
 layout: poema
-date: 2025-09-10
+date: 2015-09-10
 show_full_date: false
 permalink: /poemas/II.html
 categoria: nostalgia
