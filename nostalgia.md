@@ -9,7 +9,7 @@ title: Nostalgia
     {% assign nostalgia_poems = site.poemas | where: "categoria", "nostalgia" %}
     {% for poema in nostalgia_poems %}
       <li style="margin-bottom:2em;">
-  <a href="{{ poema.url }}"><strong>{{ poema.title }}</strong></a><br>
+  <a href="{{ site.baseurl }}{{ poema.url }}"><strong>{{ poema.title }}</strong></a><br>
         <span style="display:block; color:#555; font-style:italic; white-space:pre-line;">
           {{ poema.content | strip_html | truncatewords: 12, '...' }}
         </span>
