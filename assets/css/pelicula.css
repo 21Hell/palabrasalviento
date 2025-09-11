@@ -1,0 +1,62 @@
+/* Pelicula Layout Styles */
+.container.pelicula-individual {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 2.5em 2em;
+  text-align: center;
+}
+.pelicula-title {
+  font-family: 'Times New Roman', serif;
+  color: #0056b3;
+  font-size: 2em;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0.5em;
+}
+.pelicula-year {
+  font-size: 0.7em;
+  color: #888;
+}
+.pelicula-poster img {
+  max-width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.pelicula-poster img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+.pelicula-meta {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 1em;
+}
+.pelicula-rating {
+  font-weight: bold;
+  color: #0056b3;
+}
+.pelicula-watched {
+  margin-left: 1em;
+  color: #888;
+}
+.pelicula-review {
+  background: #f7f7f7;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 1.5em 2em;
+  color: #222;
+  font-size: 1.08em;
+  white-space: pre-line;
+  text-align: left;
+}
+@media (max-width: 700px) {
+  .container.pelicula-individual {
+    padding: 1em 0.5em;
+  }
+  .pelicula-review {
+    padding: 1em 1em;
+  }
+}

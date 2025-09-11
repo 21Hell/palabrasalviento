@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="container pelicula-individual">
+  <h1 class="pelicula-title">{{ page.title }} <span class="pelicula-year">({{ page.year }})</span></h1>
+  {% if page.poster %}
+    <div class="pelicula-poster">
+      <img src="{{ page.poster }}" alt="{{ page.title }} Poster">
+    </div>
+  {% endif %}
+  <div class="pelicula-meta" style="display:flex; flex-direction:column; align-items:center; margin-bottom:1em;">
+    {% if page.rating %}
+      <span class="pelicula-rating" style="font-size:1.7em; color:#ffb400; text-align:center;">
+        {{ page.rating }}<span style="font-size:0.7em; color:#888; margin-left:0.5em;">/5</span>
+      </span>
+    {% endif %}
+    {% if page.watched %}
+      <span class="pelicula-watched" style="margin-top:0.5em; color:#888;">Watched {{ page.watched }}</span>
+    {% endif %}
+  </div>
+  <div class="pelicula-review">
+    {{ content }}
+  </div>
+</div>
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/pelicula.css">

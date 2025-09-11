@@ -1,20 +1,51 @@
 
-<nav>
-  <ul>
-    <li><a href="/index.html">Inicio</a></li>
-    <li><a href="/poemas.html">Poemas</a></li>
-    <li><a href="/peliculas.html">Películas</a></li>
-    <li><a href="/about.html">Acerca de</a></li>
-    <li>
-      <a href="/feed.xml" title="RSS" class="rss-link">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
-          <circle cx="6.18" cy="17.82" r="2.18" fill="#ff6600"/>
-          <path d="M4 11c5 0 9 4 9 9" stroke="#ff6600" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M4 4c9.4 0 17 7.6 17 17" stroke="#ff6600" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-      </a>
-    </li>
-  </ul>
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="{{ site.baseurl }}/" class="navbar-brand">Palabras al Viento</a>
+    <button class="navbar-toggle" aria-label="Menú" onclick="document.querySelector('.navbar-menu').classList.toggle('active')">
+      <span style="font-size:1.7em;">☰</span>
+    </button>
+    <ul class="navbar-menu">
+      <li><a href="{{ site.baseurl }}/">Inicio</a></li>
+      <li><a href="{{ site.baseurl }}/poemas">Poemas</a></li>
+      <li><a href="{{ site.baseurl }}/peliculas">Películas</a></li>
+      <li><a href="{{ site.baseurl }}/about">Acerca de</a></li>
+      <li>
+        <a href="{{ '/feed.xml' | relative_url }}" title="RSS general" class="rss-link">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+            <circle cx="6.18" cy="17.82" r="2.18" fill="#ff6600"/>
+            <path d="M4 11c5 0 9 4 9 9" stroke="#ff6600" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M4 4c9.4 0 17 7.6 17 17" stroke="#ff6600" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="{{ '/feed-poemas.xml' | relative_url }}" title="RSS Poemas" class="rss-link">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+            <circle cx="6.18" cy="17.82" r="2.18" fill="#0056b3"/>
+            <path d="M4 11c5 0 9 4 9 9" stroke="#0056b3" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M4 4c9.4 0 17 7.6 17 17" stroke="#0056b3" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
-<link rel="stylesheet" href="/assets/css/custom.css">
+<style>
+.navbar { background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.07); padding:0.5em 0; }
+.navbar-container { display:flex; align-items:center; justify-content:space-between; max-width:900px; margin:auto; padding:0 1em; }
+.navbar-brand { font-size:1.3em; color:#0056b3; font-weight:bold; text-decoration:none; margin-right:1em; }
+.navbar-toggle { background:none; border:none; cursor:pointer; display:none; }
+.navbar-menu { display:flex; gap:1.2em; list-style:none; margin:0; padding:0; }
+.navbar-menu li a { color:#444; text-decoration:none; font-size:1em; padding:0.3em 0.7em; border-radius:6px; transition:background 0.2s; }
+.navbar-menu li a:hover { background:#e6f0fa; color:#0056b3; }
+.rss-link svg { vertical-align:middle; }
+@media (max-width: 700px) {
+  .navbar-container { flex-direction:column; align-items:flex-start; }
+  .navbar-toggle { display:block; margin-bottom:0.5em; }
+  .navbar-menu { flex-direction:column; gap:0.5em; width:100%; display:none; }
+  .navbar-menu.active { display:flex; }
+}
+</style>

@@ -7,7 +7,7 @@ layout: default
   <ul>
     {% for pelicula in site.peliculas %}
       <li>
-        <a href="{{ pelicula.url }}">{{ pelicula.title }}</a>
+  <a href="{{ site.baseurl }}{{ pelicula.url }}">{{ pelicula.title }}</a>
         <small>{{ pelicula.date | date: "%d-%m-%Y" }}</small>
       </li>
     {% endfor %}
