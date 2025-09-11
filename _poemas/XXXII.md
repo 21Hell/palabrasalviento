@@ -4,6 +4,7 @@ layout: poema_custom
 date: 2024-09-10
 show_full_date: false
 categoria: sin titulo 2024
+permalink: /poemas/XXXII/
 parrafos:
   - texto: "Tanto concreto, tantas flores,\ntanto tanto, del tan-poco al tan mucho, estoy un tanto tan\nmás que poco"
     alineamiento: izquierda
