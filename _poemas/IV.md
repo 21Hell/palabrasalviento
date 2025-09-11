@@ -6,12 +6,12 @@ show_full_date: false
 permalink: /poemas/IV/
 categoria: nostalgia
 ---
-Paz agua fría y armonía  
-nadando en un mar de agonía  
+Paz agua fría y armonía
+nadando en un mar de agonía
 
-anclas que se posan en palabras  
-osos cuyos cuellos se rompen  
-qué significan estas letras  
-que tratara de  
+anclas que se posan en palabras
+osos cuyos cuellos se rompen
+qué significan estas letras
+que tratara de
 
-la temperatura deforma mi vista  
+la temperatura deforma mi vista
