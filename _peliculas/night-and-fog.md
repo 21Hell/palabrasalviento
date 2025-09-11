@@ -13,5 +13,3 @@ no existe descripcion ni imagen que pueda detallar o acercarte a aquello que suc
 las imagenes mas asquerosas e impactantes que pude haber visto, una de las peliculas que muestran la sombra mas obscura de la humanidad, es una pelicula desoconsoladora.
 
 las imagenes que vi esta noche me seguiran el resto de mi vida.
-
-2 likes
