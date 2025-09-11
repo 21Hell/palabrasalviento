@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="container poema-individual" style="max-width:700px; margin:40px auto; background:#fff; border-radius:16px; box-shadow:0 2px 16px rgba(0,0,0,0.07); padding:2.5em 2em;">
+  <h1 style="font-family:'Times New Roman',serif; border-bottom:1px solid #ccc; margin-bottom:0.5em;">{{ page.title }}</h1>
+  {% if page.show_full_date %}
+    <p class="fecha" style="color:#888; margin-top:0; margin-bottom:1.5em; font-size:1.1em;">{{ page.date | date: "%d-%m-%Y" }}</p>
+  {% else %}
+    <p class="fecha" style="color:#888; margin-top:0; margin-bottom:1.5em; font-size:1.1em;">{{ page.date | date: "%Y" }}</p>
+  {% endif %}
+  <div class="poema-text" style="margin-top:2em; color:#222; font-size:1.25em; white-space:pre-line; font-family:'Georgia',serif; line-height:1.7;">
+    {% if page.parrafos %}
+      {% for p in page.parrafos %}
+        {% if p.alineamiento == "izquierda" %}
+          <div style="text-align:left; margin-bottom:1.5em;">{{ p.texto }}</div>
+        {% elsif p.alineamiento == "derecha" %}
+          <div style="text-align:right; margin-bottom:1.5em;">{{ p.texto }}</div>
+        {% elsif p.alineamiento == "justificado" %}
+          <div style="text-align:justify; margin-bottom:1.5em;">{{ p.texto }}</div>
+        {% elsif p.alineamiento == "centrado" %}
+          <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:1.5em;">
+            {% assign lines = p.texto | split: '\n' %}
+            {% for line in lines %}
+              <div style="text-align:left;">{{ line }}</div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div style="margin-bottom:1.5em;">{{ p.texto }}</div>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {{ page.content }}
+    {% endif %}
+  </div>
+</div>
