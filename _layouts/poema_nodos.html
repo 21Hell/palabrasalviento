@@ -1,0 +1,158 @@
+---
+layout: default
+---
+
+<style>
+.poema-nodos-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  position: relative;
+  min-height: 80vh;
+  padding: 2em;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.nodo {
+  position: absolute;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 1.1rem 1.3rem;
+  border-radius: 8px;
+  max-width: 320px;
+  line-height: 1.45;
+  font-family: 'Georgia', serif;
+  font-size: 1.05rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  cursor: grab;
+}
+
+/* simple positions for nodes - distributed but flexible */
+.nodo.pos-1 { top: 3%; left: 4%; }
+.nodo.pos-2 { top: 8%; right: 6%; }
+.nodo.pos-3 { top: 18%; left: 30%; }
+.nodo.pos-4 { top: 30%; left: 6%; }
+.nodo.pos-5 { top: 40%; right: 8%; }
+.nodo.pos-6 { top: 52%; left: 18%; }
+.nodo.pos-7 { top: 60%; right: 22%; }
+.nodo.pos-8 { top: 72%; left: 6%; }
+.nodo.pos-9 { top: 78%; right: 6%; }
+.nodo.pos-10{ top: 20%; left: 60%; }
+
+/* responsive: stack on small screens */
+@media (max-width: 700px) {
+  .nodo { position: static; width: auto; margin: 0.6rem 0; }
+  .poema-nodos-container { padding: 1rem; }
+  /* hide connections and disable dragging on small screens */
+  .nodo { cursor: default; }
+  svg.poema-connections { display: none; }
+}
+</style>
+
+<div class="poema-nodos-container">
+  <h1 style="font-family:'Times New Roman', serif;">{{ page.title }}</h1>
+  <p style="color:#666;">{{ page.date | date: "%Y" }}</p>
+
+  <!-- SVG overlay for connection lines -->
+  <svg class="poema-connections" xmlns="http://www.w3.org/2000/svg" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible; z-index:1;">
+  </svg>
+
+  {% assign i = 0 %}
+  {% for p in page.parrafos %}
+    {% assign i = i | plus: 1 %}
+    <div class="nodo pos-{{ i }}" data-idx="{{ i }}" style="z-index:2;">
+      {{ p.texto }}
+    </div>
+  {% endfor %}
+
+  <div class="poema-author" style="position:absolute; right:18px; bottom:18px; color:#888; z-index:3;">Autor: <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">Carlos Wolf</a></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const container = document.querySelector('.poema-nodos-container');
+  const svg = container.querySelector('svg.poema-connections');
+  const nodes = Array.from(container.querySelectorAll('.nodo'));
+
+  function getCenter(el){
+    const rect = el.getBoundingClientRect();
+    const crect = container.getBoundingClientRect();
+    return { x: rect.left - crect.left + rect.width/2, y: rect.top - crect.top + rect.height/2 };
+  }
+
+  function drawLines(){
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    for(let i=0;i<nodes.length-1;i++){
+      const a = getCenter(nodes[i]);
+      const b = getCenter(nodes[i+1]);
+      const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+      line.setAttribute('x1', a.x);
+      line.setAttribute('y1', a.y);
+      line.setAttribute('x2', b.x);
+      line.setAttribute('y2', b.y);
+      line.setAttribute('stroke', 'rgba(0,0,0,0.25)');
+      line.setAttribute('stroke-width', '2');
+      line.setAttribute('stroke-linecap', 'round');
+      svg.appendChild(line);
+    }
+  }
+
+  // Make nodes draggable
+  nodes.forEach(node => {
+    node.addEventListener('pointerdown', startDrag);
+    node.style.touchAction = 'none';
+  });
+
+  let dragEl = null, startX=0, startY=0, origX=0, origY=0;
+  function startDrag(e){
+    // don't drag on small screens where nodes are static
+    if(window.matchMedia('(max-width:700px)').matches) return;
+    dragEl = e.currentTarget;
+    dragEl.setPointerCapture(e.pointerId);
+    const rect = dragEl.getBoundingClientRect();
+    const crect = container.getBoundingClientRect();
+    startX = e.clientX; startY = e.clientY;
+    // compute current left/top in px relative to container
+    origX = rect.left - crect.left;
+    origY = rect.top - crect.top;
+    dragEl.style.cursor = 'grabbing';
+    dragEl.style.transition = 'none';
+    dragEl.addEventListener('pointermove', onDrag);
+    dragEl.addEventListener('pointerup', endDrag);
+    dragEl.addEventListener('pointercancel', endDrag);
+  }
+
+  function onDrag(e){
+    if(!dragEl) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    let nx = origX + dx;
+    let ny = origY + dy;
+    // clamp inside container
+    const crect = container.getBoundingClientRect();
+    const nrect = dragEl.getBoundingClientRect();
+    nx = Math.max(0, Math.min(nx, crect.width - nrect.width));
+    ny = Math.max(0, Math.min(ny, crect.height - nrect.height));
+    dragEl.style.left = nx + 'px';
+    dragEl.style.top = ny + 'px';
+    drawLines();
+  }
+
+  function endDrag(e){
+    if(!dragEl) return;
+    dragEl.releasePointerCapture(e.pointerId);
+    dragEl.style.cursor = 'grab';
+    dragEl.style.transition = '';
+    dragEl.removeEventListener('pointermove', onDrag);
+    dragEl.removeEventListener('pointerup', endDrag);
+    dragEl.removeEventListener('pointercancel', endDrag);
+    dragEl = null;
+  }
+
+  // initial draw after fonts/layout settled
+  setTimeout(drawLines, 200);
+  // redraw on resize
+  window.addEventListener('resize', drawLines);
+});
+</script>
