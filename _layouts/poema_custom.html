@@ -32,6 +32,14 @@ layout: default
     {% else %}
       {{ page.content }}
     {% endif %}
-  <div class="poema-autor" style="margin-top:2em; color:#888; font-size:0.98em; text-align:right;">Autor: <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">Carlos Wolf</a></div>
+    <div class="poema-autor" style="margin-top:2em; color:#888; font-size:0.98em; text-align:right;">Autor: <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">Carlos Wolf</a></div>
+    {% if page.referencia_img %}
+      <div style="text-align:center; margin-top:2em;">
+        <img src="{{ site.baseurl }}{{ page.referencia_img }}" alt="Referencia visual poema {{ page.title }}" style="max-width:320px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.12);">
+        {% if page.referencia_link %}
+          <div style="color:#888; font-size:0.95em; margin-top:0.5em;">Inspirado en <a href="{{ page.referencia_link }}" target="_blank" rel="noopener" style="color:#0056b3;">Instagram</a></div>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
 </div>
