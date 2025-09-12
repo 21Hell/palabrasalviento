@@ -18,17 +18,20 @@ layout: default
   position: absolute;
   background: rgba(0,0,0,0.85);
   color: #fff;
-  padding: 1.1rem 1.3rem;
+  padding: 0.9rem 1rem;
   border-radius: 8px;
   max-width: 320px;
+  width: fit-content;
+  min-width: 0;
+  box-sizing: border-box;
   line-height: 1.45;
   font-family: 'Georgia', serif;
   font-size: 1.05rem;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   cursor: grab;
+  user-select: none;
 }
 
-/* simple positions for nodes - distributed but flexible */
 .nodo.pos-1 { top: 3%; left: 4%; }
 .nodo.pos-2 { top: 8%; right: 6%; }
 .nodo.pos-3 { top: 18%; left: 30%; }
@@ -81,21 +84,65 @@ document.addEventListener('DOMContentLoaded', function(){
     return { x: rect.left - crect.left + rect.width/2, y: rect.top - crect.top + rect.height/2 };
   }
 
-  function drawLines(){
+  function drawLines(edges){
     while(svg.firstChild) svg.removeChild(svg.firstChild);
-    for(let i=0;i<nodes.length-1;i++){
-      const a = getCenter(nodes[i]);
-      const b = getCenter(nodes[i+1]);
+    edges.forEach(pair => {
+      const a = getCenter(nodes[pair[0]]);
+      const b = getCenter(nodes[pair[1]]);
       const line = document.createElementNS('http://www.w3.org/2000/svg','line');
       line.setAttribute('x1', a.x);
       line.setAttribute('y1', a.y);
       line.setAttribute('x2', b.x);
       line.setAttribute('y2', b.y);
-      line.setAttribute('stroke', 'rgba(0,0,0,0.25)');
+      line.setAttribute('stroke', 'rgba(0,0,0,0.18)');
       line.setAttribute('stroke-width', '2');
       line.setAttribute('stroke-linecap', 'round');
       svg.appendChild(line);
+    });
+  }
+
+  function randomizePositions(){
+    const crect = container.getBoundingClientRect();
+    const placed = [];
+    nodes.forEach(n => {
+      const width = Math.max(n.offsetWidth, 160);
+      const height = n.offsetHeight;
+      const maxW = Math.max(20, crect.width - width - 20);
+      const maxH = Math.max(20, crect.height - height - 20);
+      let left, top, tries = 0;
+      do {
+        left = Math.random() * maxW + 20;
+        top = Math.random() * maxH + 20;
+        const rect = { left, top, right: left + width, bottom: top + height };
+        const overlapping = placed.some(p => !(rect.right < p.left || rect.left > p.right || rect.bottom < p.top || rect.top > p.bottom));
+        if(!overlapping) break;
+        tries++;
+      } while(tries < 30);
+      // fallback: allow overlap after many tries
+      n.style.left = left + 'px';
+      n.style.top = top + 'px';
+      n.style.position = 'absolute';
+      placed.push({ left: left, top: top, right: left + width, bottom: top + height });
+    });
+  }
+
+  function randomEdges(){
+    const edges = [];
+    const N = nodes.length;
+    for(let i=0;i<N;i++){
+      let j = i;
+      while(j===i) j = Math.floor(Math.random()*N);
+      edges.push([i,j]);
     }
+    // add a few extra random edges
+    const extra = Math.max(1, Math.floor(N/2));
+    for(let k=0;k<extra;k++){
+      let a = Math.floor(Math.random()*N);
+      let b = a;
+      while(b===a) b = Math.floor(Math.random()*N);
+      edges.push([a,b]);
+    }
+    return edges;
   }
 
   // Make nodes draggable
@@ -106,14 +153,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
   let dragEl = null, startX=0, startY=0, origX=0, origY=0;
   function startDrag(e){
-    // don't drag on small screens where nodes are static
     if(window.matchMedia('(max-width:700px)').matches) return;
     dragEl = e.currentTarget;
+    nodes.forEach(nd => nd.style.zIndex = 2);
+    dragEl.style.zIndex = 9999;
     dragEl.setPointerCapture(e.pointerId);
     const rect = dragEl.getBoundingClientRect();
     const crect = container.getBoundingClientRect();
     startX = e.clientX; startY = e.clientY;
-    // compute current left/top in px relative to container
     origX = rect.left - crect.left;
     origY = rect.top - crect.top;
     dragEl.style.cursor = 'grabbing';
@@ -129,30 +176,44 @@ document.addEventListener('DOMContentLoaded', function(){
     const dy = e.clientY - startY;
     let nx = origX + dx;
     let ny = origY + dy;
-    // clamp inside container
     const crect = container.getBoundingClientRect();
     const nrect = dragEl.getBoundingClientRect();
     nx = Math.max(0, Math.min(nx, crect.width - nrect.width));
     ny = Math.max(0, Math.min(ny, crect.height - nrect.height));
     dragEl.style.left = nx + 'px';
     dragEl.style.top = ny + 'px';
-    drawLines();
+    drawLines(currentEdges);
   }
 
   function endDrag(e){
     if(!dragEl) return;
-    dragEl.releasePointerCapture(e.pointerId);
+    try{ dragEl.releasePointerCapture(e.pointerId); }catch(_){}
     dragEl.style.cursor = 'grab';
     dragEl.style.transition = '';
     dragEl.removeEventListener('pointermove', onDrag);
     dragEl.removeEventListener('pointerup', endDrag);
     dragEl.removeEventListener('pointercancel', endDrag);
+    dragEl.style.zIndex = 2;
     dragEl = null;
   }
 
-  // initial draw after fonts/layout settled
-  setTimeout(drawLines, 200);
-  // redraw on resize
-  window.addEventListener('resize', drawLines);
+  let currentEdges = randomEdges();
+  setTimeout(function(){
+    randomizePositions();
+    drawLines(currentEdges);
+  }, 120);
+
+  window.addEventListener('resize', function(){
+    randomizePositions();
+    drawLines(currentEdges);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'r' || e.key === 'R'){
+      currentEdges = randomEdges();
+      randomizePositions();
+      drawLines(currentEdges);
+    }
+  });
 });
 </script>
