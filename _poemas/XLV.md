@@ -1,6 +1,11 @@
 ---
-layout: poema_custom
 title: "XLV"
+layout: poema_custom
+date: 2024-01-12
+categoria: sin titulo 2024
+permalink: /poemas/XLV/
+autor: Carlos Wolf
+show_full_date: false
 referencia_img: /assets/imagenes/portrait-of-lump-artists-dog-pablo-picasso-c-1969-v0-qu810sdbmd9c1.jpeg
 ---
 Guardarte, compartirte
