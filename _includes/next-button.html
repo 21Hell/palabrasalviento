@@ -1,0 +1,257 @@
+{% comment %} Compute separate next/previous items for poemas and peliculas, and a previous item for the current page's collection. {% endcomment %}
+{% assign next_item = nil %}
+{% assign next_poema = nil %}
+{% assign prev_poema = nil %}
+{% assign next_pelicula = nil %}
+{% assign prev_pelicula = nil %}
+{% assign prev_item = nil %}
+
+{%- comment -%}
+  Don't show on the homepage (root). Handle cases where site.baseurl is set.
+{%- endcomment -%}
+{%- assign home_urls = '/' | split: ',' -%}
+{%- assign base = site.baseurl | default: '' -%}
+{%- if base != '' -%}
+  {%- assign home_urls = home_urls | push: base -%}
+  {%- assign home_urls = home_urls | push: base | append: '/' -%}
+{%- endif -%}
+{%- for h in home_urls -%}
+  {%- if page.url == h -%}
+    {%- assign next_item = nil -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- comment -%} Next & prev for poemas (always show poema buttons if collection exists) {%- endcomment -%}
+{% if site.poemas and site.poemas.size > 0 %}
+  {% assign found = false %}
+  {% for item in site.poemas %}
+    {% if found and next_poema == nil %}
+      {% assign next_poema = item %}
+    {% endif %}
+    {% if item.url == page.url %}
+      {% assign found = true %}
+    {% endif %}
+  {% endfor %}
+  {% if next_poema == nil %}
+    {% assign next_poema = site.poemas | first %}
+  {% endif %}
+
+  {%- comment -%} previous poema: track last seen and when current found, previous is last or last of collection {%- endcomment -%}
+  {% assign last_seen = nil %}
+  {% for item in site.poemas %}
+    {% if item.url == page.url %}
+      {% if last_seen %}
+        {% assign prev_poema = last_seen %}
+      {% else %}
+        {% assign prev_poema = site.poemas | last %}
+      {% endif %}
+      {% break %}
+    {% endif %}
+    {% assign last_seen = item %}
+  {% endfor %}
+  {% if prev_poema == nil %}
+    {% assign prev_poema = site.poemas | last %}
+  {% endif %}
+{% endif %}
+
+{%- comment -%} keep searching for a generic next_item if not defined, using posts as fallback {%- endcomment -%}
+{% if next_item == nil and site.posts and site.posts.size > 0 %}
+  {% assign found = false %}
+  {% for item in site.posts %}
+    {% if found and next_item == nil %}
+      {% assign next_item = item %}
+    {% endif %}
+    {% if item.url == page.url %}
+      {% assign found = true %}
+    {% endif %}
+  {% endfor %}
+  {% if next_item == nil %}
+    {% assign next_item = site.posts | first %}
+  {% endif %}
+{% endif %}
+
+{%- comment -%} Next & prev for peliculas {%- endcomment -%}
+{% if site.peliculas and site.peliculas.size > 0 %}
+  {% assign found = false %}
+  {% for item in site.peliculas %}
+    {% if found and next_pelicula == nil %}
+      {% assign next_pelicula = item %}
+    {% endif %}
+    {% if item.url == page.url %}
+      {% assign found = true %}
+    {% endif %}
+  {% endfor %}
+  {% if next_pelicula == nil %}
+    {% assign next_pelicula = site.peliculas | first %}
+  {% endif %}
+
+  {% assign last_seen = nil %}
+  {% for item in site.peliculas %}
+    {% if item.url == page.url %}
+      {% if last_seen %}
+        {% assign prev_pelicula = last_seen %}
+      {% else %}
+        {% assign prev_pelicula = site.peliculas | last %}
+      {% endif %}
+      {% break %}
+    {% endif %}
+    {% assign last_seen = item %}
+  {% endfor %}
+  {% if prev_pelicula == nil %}
+    {% assign prev_pelicula = site.peliculas | last %}
+  {% endif %}
+{% endif %}
+
+{%- comment -%} Render buttons: Previous (for current collection), Next Poema, Next Pelicula {%- endcomment -%}
+{%- comment -%} Compute prev_item for the current page by checking each collection in order: poemas, posts, peliculas {%- endcomment -%}
+{% if site.poemas and site.poemas.size > 0 %}
+  {% assign last_seen = nil %}
+  {% for item in site.poemas %}
+    {% if item.url == page.url %}
+      {% if last_seen %}
+        {% assign prev_item = last_seen %}
+      {% else %}
+        {% assign prev_item = site.poemas | last %}
+      {% endif %}
+      {% break %}
+    {% endif %}
+    {% assign last_seen = item %}
+  {% endfor %}
+{% endif %}
+{% if prev_item == nil and site.posts and site.posts.size > 0 %}
+  {% assign last_seen = nil %}
+  {% for item in site.posts %}
+    {% if item.url == page.url %}
+      {% if last_seen %}
+        {% assign prev_item = last_seen %}
+      {% else %}
+        {% assign prev_item = site.posts | last %}
+      {% endif %}
+      {% break %}
+    {% endif %}
+    {% assign last_seen = item %}
+  {% endfor %}
+{% endif %}
+{% if prev_item == nil and site.peliculas and site.peliculas.size > 0 %}
+  {% assign last_seen = nil %}
+  {% for item in site.peliculas %}
+    {% if item.url == page.url %}
+      {% if last_seen %}
+        {% assign prev_item = last_seen %}
+      {% else %}
+        {% assign prev_item = site.peliculas | last %}
+      {% endif %}
+      {% break %}
+    {% endif %}
+    {% assign last_seen = item %}
+  {% endfor %}
+{% endif %}
+
+{%- comment -%} Render navigation only when viewing an individual poema or pelicula page. Place the nav inside the card (not fixed). {%- endcomment -%}
+
+{%- if page.collection == 'poemas' -%}
+  {%- comment -%} compute next and prev for poemas specifically (reuse earlier calculations if present) {%- endcomment -%}
+  {% if next_poema == nil %}
+    {% assign found = false %}
+    {% for item in site.poemas %}
+      {% if found and next_poema == nil %}
+        {% assign next_poema = item %}
+      {% endif %}
+      {% if item.url == page.url %}
+        {% assign found = true %}
+      {% endif %}
+    {% endfor %}
+    {% if next_poema == nil %}
+      {% assign next_poema = site.poemas | first %}
+    {% endif %}
+  {% endif %}
+
+  {% if prev_poema == nil %}
+    {% assign last_seen = nil %}
+    {% for item in site.poemas %}
+      {% if item.url == page.url %}
+        {% if last_seen %}
+          {% assign prev_poema = last_seen %}
+        {% else %}
+          {% assign prev_poema = site.poemas | last %}
+        {% endif %}
+        {% break %}
+      {% endif %}
+      {% assign last_seen = item %}
+    {% endfor %}
+    {% if prev_poema == nil %}
+      {% assign prev_poema = site.poemas | last %}
+    {% endif %}
+  {% endif %}
+
+  <style>
+    .in-card-nav{ display:flex; gap:0.6rem; justify-content:flex-end; margin-top:1.5rem; }
+    .in-card-nav .next-button{ display:inline-block; background:#111; color:#fff; padding:0.45rem 0.7rem; border-radius:8px; text-decoration:none; font-weight:600; box-shadow:0 6px 18px rgba(0,0,0,0.12); font-family:inherit; }
+    .in-card-nav .next-button small{ display:block; font-size:0.7rem; color:#ddd; }
+    .in-card-nav .next-button--prev{ background:#fff; color:#111; border:1px solid #ddd; }
+  </style>
+
+  <div class="in-card-nav">
+    {% if prev_poema %}
+      <a class="next-button next-button--prev" href="{{ prev_poema.url | relative_url }}" aria-label="Anterior poema: {{ prev_poema.title }}">← Anterior</a>
+    {% endif %}
+    {% if next_poema %}
+      <a class="next-button" href="{{ next_poema.url | relative_url }}" aria-label="Siguiente poema: {{ next_poema.title }}">Siguiente poema: <strong>{{ next_poema.title }}</strong></a>
+    {% endif %}
+  </div>
+
+{%- elsif page.collection == 'peliculas' -%}
+  {%- comment -%} compute next and prev for peliculas specifically {%- endcomment -%}
+  {% if next_pelicula == nil %}
+    {% assign found = false %}
+    {% for item in site.peliculas %}
+      {% if found and next_pelicula == nil %}
+        {% assign next_pelicula = item %}
+      {% endif %}
+      {% if item.url == page.url %}
+        {% assign found = true %}
+      {% endif %}
+    {% endfor %}
+    {% if next_pelicula == nil %}
+      {% assign next_pelicula = site.peliculas | first %}
+    {% endif %}
+  {% endif %}
+
+  {% if prev_pelicula == nil %}
+    {% assign last_seen = nil %}
+    {% for item in site.peliculas %}
+      {% if item.url == page.url %}
+        {% if last_seen %}
+          {% assign prev_pelicula = last_seen %}
+        {% else %}
+          {% assign prev_pelicula = site.peliculas | last %}
+        {% endif %}
+        {% break %}
+      {% endif %}
+      {% assign last_seen = item %}
+    {% endfor %}
+    {% if prev_pelicula == nil %}
+      {% assign prev_pelicula = site.peliculas | last %}
+    {% endif %}
+  {% endif %}
+
+  <style>
+    .in-card-nav{ display:flex; gap:0.6rem; justify-content:flex-end; margin-top:1.5rem; }
+    .in-card-nav .next-button{ display:inline-block; background:#111; color:#fff; padding:0.45rem 0.7rem; border-radius:8px; text-decoration:none; font-weight:600; box-shadow:0 6px 18px rgba(0,0,0,0.12); font-family:inherit; }
+    .in-card-nav .next-button small{ display:block; font-size:0.7rem; color:#ddd; }
+    .in-card-nav .next-button--prev{ background:#fff; color:#111; border:1px solid #ddd; }
+  </style>
+
+  <div class="in-card-nav">
+    {% if prev_pelicula %}
+      <a class="next-button next-button--prev" href="{{ prev_pelicula.url | relative_url }}" aria-label="Anterior película: {{ prev_pelicula.title }}">← Anterior</a>
+    {% endif %}
+    {% if next_pelicula %}
+      <a class="next-button" href="{{ next_pelicula.url | relative_url }}" aria-label="Siguiente película: {{ next_pelicula.title }}">Siguiente película: <strong>{{ next_pelicula.title }}</strong></a>
+    {% endif %}
+  </div>
+
+{%- else -%}
+  {%- comment -%} Not a single-item poema or pelicula page; render nothing. {%- endcomment -%}
+{%- endif -%}

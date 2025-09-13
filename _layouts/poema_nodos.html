@@ -69,7 +69,12 @@ layout: default
     </div>
   {% endfor %}
 
-  <div class="poema-author" style="position:absolute; right:18px; bottom:18px; color:#888; z-index:3;">Autor: <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">Carlos Wolf</a></div>
+  <div class="poema-author" style="position:absolute; right:18px; bottom:56px; color:#888; z-index:3;">Autor: <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">Carlos Wolf</a></div>
+
+  <!-- in-card navigation positioned beneath the author -->
+  <div style="position:absolute; right:18px; bottom:10px; z-index:3;">
+    {% include next-button.html %}
+  </div>
 </div>
 
 <script>
