@@ -194,7 +194,9 @@
 
   <div class="in-card-nav">
     {% if prev_poema %}
-      <a class="next-button next-button--prev" href="{{ prev_poema.url | relative_url }}" aria-label="Anterior poema: {{ prev_poema.title }}">← Anterior</a>
+      <a class="next-button next-button--prev" href="{{ prev_poema.url | relative_url }}" aria-label="Anterior poema: {{ prev_poema.title }}">Anterior Poema: <strong>{{ prev_poema.title }}</strong>
+        <small>{% if prev_poema.date %}{% endif %}</small>
+      </a>
     {% endif %}
     {% if next_poema %}
       <a class="next-button" href="{{ next_poema.url | relative_url }}" aria-label="Siguiente poema: {{ next_poema.title }}">Siguiente poema: <strong>{{ next_poema.title }}</strong></a>
@@ -245,7 +247,9 @@
 
   <div class="in-card-nav">
     {% if prev_pelicula %}
-      <a class="next-button next-button--prev" href="{{ prev_pelicula.url | relative_url }}" aria-label="Anterior película: {{ prev_pelicula.title }}">← Anterior</a>
+      <a class="next-button next-button--prev" href="{{ prev_pelicula.url | relative_url }}" aria-label="Anterior película: {{ prev_pelicula.title }}">← Anterior: <strong>{{ prev_pelicula.title }}</strong>
+        <small>{% if prev_pelicula.date %}{{ prev_pelicula.date | date: "%Y" }}{% endif %}</small>
+      </a>
     {% endif %}
     {% if next_pelicula %}
       <a class="next-button" href="{{ next_pelicula.url | relative_url }}" aria-label="Siguiente película: {{ next_pelicula.title }}">Siguiente película: <strong>{{ next_pelicula.title }}</strong></a>

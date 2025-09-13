@@ -1,4 +1,3 @@
-
 ---
 title: "VIII"
 layout: poema
