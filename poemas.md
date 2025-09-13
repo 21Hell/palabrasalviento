@@ -5,7 +5,22 @@ layout: default
 <div class="container" style="max-width:900px; margin:auto; padding:2em 1em;">
   <h1 style="color:#0056b3; font-size:2em; text-align:center; margin-bottom:1em;">Poemas</h1>
   {% assign categorias = site.poemas | map: 'categoria' | uniq %}
-  {% for cat in categorias %}
+  {%- assign cat_keys = "" | split: "" -%}
+  {%- for c in categorias -%}
+    {%- assign poemas_cat = site.poemas | where: "categoria", c | sort: "date" -%}
+    {%- assign first_poema = poemas_cat | first -%}
+    {%- if first_poema -%}
+      {%- assign min_date = first_poema.date | date: "%Y-%m-%d" -%}
+    {%- else -%}
+      {%- assign min_date = "9999-12-31" -%}
+    {%- endif -%}
+    {%- assign key = min_date | append: "|" | append: c -%}
+    {%- assign cat_keys = cat_keys | push: key -%}
+  {%- endfor -%}
+  {%- assign ordered_keys = cat_keys | sort -%}
+  {% for key in ordered_keys %}
+    {% assign parts = key | split: "|" %}
+    {% assign cat = parts[1] %}
     <h2 style="margin-top:2em; color:#0056b3; border-bottom:1px solid #eee;">{{ cat | capitalize }}</h2>
     {% if cat == "panoramas" %}
       <div style="background:#f7f7f7; padding:1em 1.5em; margin-bottom:1em; font-style:italic; color:#444; border-radius:8px;">
@@ -14,7 +29,7 @@ layout: default
       </div>
     {% endif %}
     <div class="poemas-list" style="display:flex; flex-wrap:wrap; gap:2em; justify-content:center; margin-bottom:2em;">
-      {% assign poemas_categoria = site.poemas | where: "categoria", cat | sort: "date" %}
+  {% assign poemas_categoria = site.poemas | where: "categoria", cat | sort: "date" %}
       {% for poema in poemas_categoria %}
         <div class="poema-card" style="background:#f7f7f7; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.08); padding:1.5em 2em; max-width:320px; min-width:220px; margin-bottom:1em; display:flex; flex-direction:column; align-items:flex-start;">
           <a href="{{ site.baseurl }}{{ poema.url }}" style="font-size:1.2em; font-weight:bold; color:#0056b3; text-decoration:none; margin-bottom:0.5em;">{{ poema.title }}</a>
