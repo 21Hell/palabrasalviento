@@ -11,7 +11,28 @@ layout: default
     <p class="fecha" style="color:#888; margin-top:0; margin-bottom:1.5em; font-size:1.1em;">{{ page.date | date: "%Y" }}</p>
   {% endif %}
   <div class="poema-text" style="margin-top:2em; color:#222; font-size:1.25em; white-space:pre-line; font-family:'Georgia',serif; line-height:1.7;">
-  {{ page.content }}
+  {% if page.parrafos %}
+    {% for p in page.parrafos %}
+      {% if p.alineamiento == "izquierda" %}
+        <div style="text-align:left; margin-bottom:1.5em;">{{ p.texto }}</div>
+      {% elsif p.alineamiento == "derecha" %}
+        <div style="text-align:right; margin-bottom:1.5em;">{{ p.texto }}</div>
+      {% elsif p.alineamiento == "justificado" %}
+        <div style="text-align:justify; margin-bottom:1.5em;">{{ p.texto }}</div>
+      {% elsif p.alineamiento == "centrado" %}
+        <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:1.5em;">
+          {% assign lines = p.texto | split: '\n' %}
+          {% for line in lines %}
+            <div style="text-align:left;">{{ line }}</div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div style="margin-bottom:1.5em;">{{ p.texto }}</div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {{ page.content }}
+  {% endif %}
   <div class="poema-autor" style="margin-top:2em; color:#888; font-size:0.98em; text-align:right;">Autor: <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">Carlos Wolf</a></div>
   </div>
 </div>
