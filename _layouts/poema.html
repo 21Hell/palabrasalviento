@@ -33,6 +33,19 @@ layout: default
   {% else %}
     {{ page.content }}
   {% endif %}
+    <style>
+      .poema-text .news {
+        background:#f0f0f0;
+        color:#111;
+        padding:0.8rem 1rem;
+        border-radius:6px;
+        display:inline-block;
+        max-width:100%;
+      }
+      @media (max-width:700px){
+        .poema-text .news{ display:block; }
+      }
+    </style>
   <div class="poema-autor" style="margin-top:2em; color:#888; font-size:0.98em; text-align:right;">Autor: <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">Carlos Wolf</a></div>
   </div>
 </div>

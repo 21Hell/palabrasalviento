@@ -7,7 +7,7 @@ permalink: /poemas/XV/
 categoria: panoramas
 ---
 Que seria de mi, febrero, marzo
-otño de mis pensamientos
+otoño de mis pensamientos
 primavera con tus besos
 sin pena y de manera casi pecaminosa
 pienso siempre en tu bello rostro
