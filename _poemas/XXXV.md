@@ -1,7 +1,7 @@
 ---
 title: "XXXV"
 layout: poema_custom
-date: 2024-01-01
+date: 2023-09-12
 show_full_date: false
 permalink: /poemas/XXXV/
 categoria: sin titulo 2023/2

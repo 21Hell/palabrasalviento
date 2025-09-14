@@ -1,7 +1,7 @@
 ---
 title: "XXXIII"
 layout: poema
-date: 2023-09-13
+date: 2023-09-12
 show_full_date: false
 permalink: /poemas/XXXIII/
 categoria: sin titulo 2023/2

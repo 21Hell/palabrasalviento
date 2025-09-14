@@ -1,7 +1,7 @@
 ---
 title: "XXXIX"
 layout: poema_custom
-date: 2024-01-01
+date: 2023-09-15
 show_full_date: false
 permalink: /poemas/XXXIX/
 categoria: sin titulo 2023/2
