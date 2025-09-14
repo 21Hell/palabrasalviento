@@ -32,6 +32,6 @@ parrafos:
       la cera al caer en tus párpados me quema.
     alineamiento: izquierda
   - texto: |
-      QUEMA: candela del tiempo.
+      QUEMAla: candela del tiempo.
     alineamiento: centrado
 ---
