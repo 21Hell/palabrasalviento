@@ -9,28 +9,37 @@ layout: default
   {% else %}
     <p class="fecha" style="color:#888; margin-top:0; margin-bottom:1.5em; font-size:1.1em;">{{ page.date | date: "%Y" }}</p>
   {% endif %}
-  <div class="poema-text" style="margin-top:2em; color:#222; font-size:1.25em; white-space:pre-line; font-family:'Georgia',serif; line-height:1.7;">
+  <!-- Ajuste: line-height reducido para mejor apariencia en navegadores (Chrome) -->
+  <div class="poema-text" style="margin-top:2em; color:#222; font-size:1.25em; white-space:pre-line; font-family:'Georgia',serif; line-height:1.35;">
     {% if page.parrafos %}
       {% for p in page.parrafos %}
         {% if p.alineamiento == "izquierda" %}
-          <div style="text-align:left; margin-bottom:1.5em;">{{ p.texto }}</div>
+          <div style="text-align:left; margin-bottom:0.35em;">{{ p.texto }}</div>
         {% elsif p.alineamiento == "derecha" %}
-          <div style="text-align:right; margin-bottom:1.5em;">{{ p.texto }}</div>
+          <div style="text-align:right; margin-bottom:0.35em;">{{ p.texto }}</div>
         {% elsif p.alineamiento == "justificado" %}
-          <div style="text-align:justify; margin-bottom:1.5em;">{{ p.texto }}</div>
+          <div style="text-align:justify; margin-bottom:0.35em;">{{ p.texto }}</div>
         {% elsif p.alineamiento == "centrado" %}
-          <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:1.5em;">
+          <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:0.35em;">
             {% assign lines = p.texto | split: '\n' %}
             {% for line in lines %}
               <div style="text-align:left;">{{ line }}</div>
             {% endfor %}
           </div>
         {% else %}
-          <div style="margin-bottom:1.5em;">{{ p.texto }}</div>
+          <div style="margin-bottom:0.35em;">{{ p.texto }}</div>
         {% endif %}
       {% endfor %}
     {% else %}
       {{ page.content }}
+    {% endif %}
+    {% if page.referencia_video %}
+      <div class="poema-video" style="margin:2em 0; text-align:center;">
+        <video controls width="480" style="max-width:100%;">
+          <source src="{{ page.referencia_video | prepend: site.baseurl }}" type="video/mp4">
+          Tu navegador no soporta el video.
+        </video>
+      </div>
     {% endif %}
     <div class="poema-autor" style="margin-top:2em; color:#888; font-size:0.98em; text-align:right;">Autor: <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">Carlos Wolf</a></div>
     {% if page.referencia_img %}
