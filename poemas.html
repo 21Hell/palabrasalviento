@@ -6,7 +6,8 @@ title: Poemas
 <h1 style="text-align:center; margin-bottom:2em;">Poemas</h1>
 <div style="display:flex; flex-wrap:wrap; gap:2em; justify-content:center; margin-top:2em;">
 
-  {% for poema in site.poemas %}
+  {% assign poemas_ordenados = site.poemas | sort: 'date'%}
+  {% for poema in poemas_ordenados %}
     <div style="
       background: #ffe9f7; 
       border-radius: 50px; 

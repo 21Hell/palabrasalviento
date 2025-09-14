@@ -17,7 +17,7 @@ layout: default
     {%- assign key = min_date | append: "|" | append: c -%}
     {%- assign cat_keys = cat_keys | push: key -%}
   {%- endfor -%}
-  {%- assign ordered_keys = cat_keys | sort -%}
+  {%- assign ordered_keys = cat_keys | sort | reverse -%}
   {% for key in ordered_keys %}
     {% assign parts = key | split: "|" %}
     {% assign cat = parts[1] %}
@@ -29,7 +29,7 @@ layout: default
       </div>
     {% endif %}
     <div class="poemas-list" style="display:flex; flex-wrap:wrap; gap:2em; justify-content:center; margin-bottom:2em;">
-  {% assign poemas_categoria = site.poemas | where: "categoria", cat | sort: "date" %}
+  {% assign poemas_categoria = site.poemas | where: "categoria", cat | sort: "date" | reverse %}
       {% for poema in poemas_categoria %}
         <div class="poema-card" style="background:#f7f7f7; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.08); padding:1.5em 2em; max-width:320px; min-width:220px; margin-bottom:1em; display:flex; flex-direction:column; align-items:flex-start;">
           <a href="{{ site.baseurl }}{{ poema.url }}" style="font-size:1.2em; font-weight:bold; color:#0056b3; text-decoration:none; margin-bottom:0.5em;">{{ poema.title }}</a>
