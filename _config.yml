@@ -61,6 +61,8 @@ collections:
     output: true
   peliculas:
     output: true
+  experimentos:
+    output: true
 
 permalink: /:categories/:title/
 defaults:
@@ -77,5 +79,7 @@ defaults:
       path: "peliculas"
     values:
       layout: "pelicula"
-
-
+  - scope:
+      path: "experimentos"
+    values:
+      layout: "experimento"
