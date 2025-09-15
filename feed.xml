@@ -11,7 +11,7 @@ layout: none
   {% for item in all_items %}
     <item>
       <title>{{ item.title }}</title>
-      <link>{{ site.url }}{{ item.url }}</link>
+      <link>{{ site.url }}{{ site.baseurl}}{{ item.url }}</link>
       <description>{{ item.content | xml_escape | strip_html | truncatewords: 40, '...' }}</description>
       <pubDate>{{ item.date | date_to_rfc822 }}</pubDate>
       <category>{{ item.categoria | default: item.categories }}</category>

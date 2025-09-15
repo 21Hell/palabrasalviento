@@ -10,7 +10,7 @@ layout: none
     {% for poema in site.poemas %}
     <item>
       <title>{{ poema.title }}</title>
-      <link>{{ site.url }}{{ poema.url }}</link>
+      <link>{{ site.url }}{{ site.baseurl }}{{ poema.url }}</link>
       <description>{{ poema.content | xml_escape | strip_html | truncatewords: 40, '...' }}</description>
       <pubDate>{{ poema.date | date_to_rfc822 }}</pubDate>
       <category>{{ poema.categoria }}</category>
