@@ -1,9 +1,9 @@
 ---
-title: "LXXVI"
+title: "LXVI"
 layout: poema_custom
-date: 2024-01-12
+date: 2024-01-16
 categoria: sin titulo 2024
-permalink: /poemas/LXXVI/
+permalink: /poemas/LXVI/
 autor: Carlos Wolf
 show_full_date: false
 ---

@@ -1,11 +1,12 @@
 ---
 title: "LVII"
-layout: poema
+layout: poema_custom
 date: 2024-01-06
 categoria: sin titulo 2024
 permalink: /poemas/LVII/
 autor: Carlos Wolf
 show_full_date: false
+referencia_img: /assets/imagenes/F5lVmfNXEAAG3_y.png
 ---
 Si el mundo estuviera de cabeza
 caminaríamos hacia atrás y lloraríamos adentro
