@@ -1,9 +1,9 @@
 ---
-title: "LXXV"
+title: "LXV"
 layout: poema_custom
-date: 2024-01-12
+date: 2024-01-13
 categoria: sin titulo 2024
-permalink: /poemas/LXXV/
+permalink: /poemas/LXV/
 autor: Carlos Wolf
 show_full_date: false
 referencia_img: /assets/imagenes/portrait-of-lump-artists-dog-pablo-picasso-c-1969-v0-qu810sdbmd9c1.jpeg

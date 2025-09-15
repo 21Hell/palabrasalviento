@@ -1,9 +1,9 @@
 ---
-title: "LXVIII"
+title: "LVII"
 layout: poema
 date: 2024-01-06
 categoria: sin titulo 2024
-permalink: /poemas/LXVIII/
+permalink: /poemas/LVII/
 autor: Carlos Wolf
 show_full_date: false
 ---

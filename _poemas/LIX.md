@@ -1,9 +1,9 @@
 ---
-title: "LXX"
+title: "LIX"
 layout: poema_custom
 date: 2024-01-08
 categoria: sin titulo 2024
-permalink: /poemas/LXX/
+permalink: /poemas/LIX/
 autor: Carlos Wolf
 parrafos:
   - texto: "Soy ese muro inefable, infranqueable, inquebrantable"

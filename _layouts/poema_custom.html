@@ -14,20 +14,20 @@ layout: default
     {% if page.parrafos %}
       {% for p in page.parrafos %}
         {% if p.alineamiento == "izquierda" %}
-          <div style="text-align:left; margin-bottom:0.35em;">{{ p.texto }}</div>
+          <div style="text-align:left; margin-bottom:2em;">{{ p.texto }}</div>
         {% elsif p.alineamiento == "derecha" %}
-          <div style="text-align:right; margin-bottom:0.35em;">{{ p.texto }}</div>
+          <div style="text-align:right; margin-bottom:2em;">{{ p.texto }}</div>
         {% elsif p.alineamiento == "justificado" %}
-          <div style="text-align:justify; margin-bottom:0.35em;">{{ p.texto }}</div>
+          <div style="text-align:justify; margin-bottom:2em;">{{ p.texto }}</div>
         {% elsif p.alineamiento == "centrado" %}
-          <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:0.35em;">
+          <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:2em;">
             {% assign lines = p.texto | split: '\n' %}
             {% for line in lines %}
               <div style="text-align:left;">{{ line }}</div>
             {% endfor %}
           </div>
         {% else %}
-          <div style="margin-bottom:0.35em;">{{ p.texto }}</div>
+          <div style="margin-bottom:2em;">{{ p.texto }}</div>
         {% endif %}
       {% endfor %}
     {% else %}

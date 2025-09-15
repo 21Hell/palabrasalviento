@@ -1,10 +1,10 @@
 ---
-title: "LXXVII"
+title: "LI"
 layout: poema_custom
 date: 2024-01-01
 show_full_date: false
 categoria: sin titulo 2024
-permalink: /poemas/LXXVII/
+permalink: /poemas/LI/
 parrafos:
   - texto: "Tanto concreto, tantas flores,\ntanto tanto, del tan-poco al tan mucho, estoy un tanto tan\nmás que poco"
     alineamiento: izquierda

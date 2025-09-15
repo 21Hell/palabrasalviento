@@ -1,9 +1,9 @@
 ---
-title: "LXXI"
+title: "LX"
 layout: poema
 date: 2024-01-09
 categoria: sin titulo 2024
-permalink: /poemas/LXXI/
+permalink: /poemas/LX/
 autor: Carlos Wolf
 show_full_date: false
 ---

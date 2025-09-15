@@ -1,9 +1,9 @@
 ---
-title: "LXXVIII"
+title: "LII"
 layout: poema_custom
 date: 2024-01-01
 categoria: sin titulo 2024
-permalink: /poemas/LXXVIII/
+permalink: /poemas/LII/
 autor: Carlos Wolf
 parrafos:
   - texto: "Un lugar donde no existas\nO existas completa / a medias\no seas en la mirada propia / agena"

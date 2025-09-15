@@ -4,6 +4,31 @@ layout: default
 
 <div class="container" style="max-width:900px; margin:auto; padding:2em 1em;">
   <h1 style="color:#0056b3; font-size:2em; text-align:center; margin-bottom:1em;">Poemas</h1>
+  <div id="poemas-disclaimer-bar" style="background:#fffbe6; border:1px solid #ffe58f; color:#8c6d1f; padding:1.2em 2em; border-radius:18px; max-width:600px; margin:0 auto 2em auto; font-size:1.15em; text-align:justify; box-shadow:0 4px 24px rgba(0,0,0,0.12); position:relative; display:none;">
+    <button id="poemas-disclaimer-close" style="position:absolute; top:10px; right:16px; background:none; border:none; font-size:1.3em; color:#8c6d1f; cursor:pointer;">&times;</button>
+    <strong>Disclaimer</strong><br><br>
+  Los poemas aquí presentados son obras originales de Carlos Wolf y forman parte de un archivo histórico personal. Este espacio tiene como objetivo la expresión libre y no está destinado a la venta de ningún producto. Se trata de un blog de poemas, es decir, un sitio a razon de diario o libreta informal. Si deseas contactar al autor para cualquier consulta o propuesta, puedes hacerlo a través de su cuenta de Instagram:<br>
+      <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">@cwolf_imc</a>.<br><br>
+       <span style="font-size:0.95em; color:#6c5d2f;">Nota: Este disclaimer fue hecho a petición de Gabriel Kryger. para no herir suceptibilidades de poetas y poetisas</span><br>
+
+    <button id="poemas-disclaimer-hide-btn" style="margin-top:1em; padding:0.6em 2em; background:#ffe58f; color:#8c6d1f; border:none; border-radius:8px; font-size:1em; cursor:pointer;">No mostrar de nuevo</button>
+  </div>
+  <script>
+    function showDisclaimerBar() {
+      var bar = document.getElementById('poemas-disclaimer-bar');
+      if (!localStorage.getItem('poemasDisclaimerHidden')) {
+        bar.style.display = 'block';
+      }
+      document.getElementById('poemas-disclaimer-close').onclick = function() {
+        bar.style.display = 'none';
+      };
+      document.getElementById('poemas-disclaimer-hide-btn').onclick = function() {
+        bar.style.display = 'none';
+        localStorage.setItem('poemasDisclaimerHidden', 'true');
+      };
+    }
+    document.addEventListener('DOMContentLoaded', showDisclaimerBar);
+  </script>
   {% assign categorias = site.poemas | map: 'categoria' | uniq %}
   {%- assign cat_keys = "" | split: "" -%}
   {%- for c in categorias -%}

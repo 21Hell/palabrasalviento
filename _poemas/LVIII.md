@@ -1,9 +1,9 @@
 ---
-title: "LXIX"
+title: "LVIII"
 layout: poema
 date: 2024-01-07
 categoria: sin titulo 2024
-permalink: /poemas/LXIX/
+permalink: /poemas/LVIII/
 autor: Carlos Wolf
 show_full_date: false
 ---

@@ -1,9 +1,9 @@
 ---
-title: "LXXIX"
+title: "LIII"
 layout: poema_custom
 date: 2024-01-02
 categoria: sin titulo 2024
-permalink: /poemas/LXXIX/
+permalink: /poemas/LIII/
 autor: Carlos Wolf
 parrafos:
   - texto: "Micro ensayo sobre caminar en la noche, la luna y los burritos\n(Juro que no se trata de vos)"

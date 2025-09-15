@@ -1,9 +1,9 @@
 ---
-title: "LXVII"
+title: "LVI"
 layout: poema_nodos
 date: 2024-01-05
 categoria: sin titulo 2024
-permalink: /poemas/LXVII/
+permalink: /poemas/LVI/
 autor: Carlos Wolf
 parrafos:
   - texto: "Colach digital"

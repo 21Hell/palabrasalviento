@@ -1,9 +1,9 @@
 ---
-title: "LXXIII"
+title: "LXII"
 layout: poema
 date: 2024-01-11
 categoria: sin titulo 2024
-permalink: /poemas/LXXIII/
+permalink: /poemas/LXII/
 autor: Carlos Wolf
 show_full_date: false
 parrafos:
