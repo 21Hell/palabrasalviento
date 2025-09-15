@@ -1,7 +1,7 @@
 ---
 title: "XXX"
 layout: poema
-date: 2022-06-01
+date: 2022-06-06
 show_full_date: false
 permalink: /poemas/XXX/
 categoria: verano

@@ -1,7 +1,6 @@
----
 title: "XLVIII"
 layout: poema_custom
-date: 2023-09-25
+date: 2023-09-26
 show_full_date: false
 permalink: /poemas/XLVIII/
 categoria: sin titulo 2023/2
@@ -26,4 +25,3 @@ parrafos:
 
       Take care, that's all
     alineamiento: izquierda
----

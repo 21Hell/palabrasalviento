@@ -1,7 +1,7 @@
 ---
 title: "L"
 layout: poema_custom
-date: 2023-09-27
+date: 2023-09-28
 show_full_date: false
 permalink: /poemas/L/
 categoria: sin titulo 2023/2

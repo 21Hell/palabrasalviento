@@ -1,7 +1,7 @@
 ---
 title: "XVII"
 layout: poema
-date: 2021-01-01
+date: 2021-01-08
 show_full_date: false
 permalink: /poemas/XVII/
 categoria: panoramas

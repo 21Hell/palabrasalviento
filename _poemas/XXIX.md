@@ -1,7 +1,7 @@
 ---
 title: "XXIX"
 layout: poema
-date: 2022-06-01
+date: 2022-06-05
 show_full_date: false
 permalink: /poemas/XXIX/
 categoria: verano

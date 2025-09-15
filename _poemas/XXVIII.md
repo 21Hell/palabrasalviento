@@ -1,7 +1,7 @@
 ---
 title: "XXVIII"
 layout: poema
-date: 2022-06-01
+date: 2022-06-04
 show_full_date: false
 permalink: /poemas/XXVIII/
 categoria: verano

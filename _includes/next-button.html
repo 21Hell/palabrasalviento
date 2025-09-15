@@ -25,7 +25,8 @@
 {%- comment -%} Next & prev for poemas (always show poema buttons if collection exists) {%- endcomment -%}
 {% if site.poemas and site.poemas.size > 0 %}
   {% assign found = false %}
-  {% for item in site.poemas %}
+  {% assign poemas_ordenados = site.poemas | sort: "date" %}
+  {% for item in poemas_ordenados %}
     {% if found and next_poema == nil %}
       {% assign next_poema = item %}
     {% endif %}
@@ -202,6 +203,19 @@
       <a class="next-button" href="{{ next_poema.url | relative_url }}" aria-label="Siguiente poema: {{ next_poema.title }}">Siguiente poema: <strong>{{ next_poema.title }}</strong></a>
     {% endif %}
   </div>
+
+  <script>
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') {
+      var prev = document.querySelector('.next-button--prev');
+      if (prev) window.location.href = prev.href;
+    }
+    if (e.key === 'ArrowRight') {
+      var next = document.querySelector('.next-button:not(.next-button--prev)');
+      if (next) window.location.href = next.href;
+    }
+  });
+  </script>
 
 {%- elsif page.collection == 'peliculas' -%}
   {%- comment -%} compute next and prev for peliculas specifically {%- endcomment -%}
