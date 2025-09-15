@@ -1,0 +1,21 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.title }} - Todo</title>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <description>{{ site.description }}</description>
+  {% assign all_items = site.posts | concat: site.poemas | sort: 'date' | reverse | slice: 0, 10 %}
+  {% for item in all_items %}
+    <item>
+      <title>{{ item.title }}</title>
+      <link>{{ site.url }}{{ item.url }}</link>
+      <description>{{ item.content | xml_escape | strip_html | truncatewords: 40, '...' }}</description>
+      <pubDate>{{ item.date | date_to_rfc822 }}</pubDate>
+      <category>{{ item.categoria | default: item.categories }}</category>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
