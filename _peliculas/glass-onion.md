@@ -3,6 +3,7 @@ title: "Glass Onion"
 year: 2022
 rating: "★★★½"
 watched: "25 Dec 2022"
+date: 2022-12-25
 layout: pelicula
 permalink: /peliculas/glass-onion/
 poster: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vDGr1YdrlfbU9wxTOdpf3zChmv9.jpg"

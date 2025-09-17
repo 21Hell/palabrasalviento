@@ -4,10 +4,14 @@ title: Películas
 ---
 
 <h1>Películas</h1>
+{% assign peliculas_con_date = site.peliculas | where_exp: "p", "p.date" %}
+{% assign peliculas_ordenadas = peliculas_con_date | sort: "date" | reverse %}
+
 <ul>
-  {% for pelicula in site.peliculas %}
+  {% for pelicula in peliculas_ordenadas %}
     <li>
-  <a href="{{ site.baseurl }}{{ pelicula.url }}">{{ pelicula.title }}</a> <small>{{ pelicula.date | date: "%d-%m-%Y" }}</small>
+      <a href="{{ pelicula.url }}">{{ pelicula.title }}</a>
+      <small>{{ pelicula.date | date: "%d-%m-%Y" }}</small>
     </li>
   {% endfor %}
 </ul>

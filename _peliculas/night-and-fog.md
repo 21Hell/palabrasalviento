@@ -2,6 +2,7 @@
 title: "Night and Fog"
 year: 1956
 watched: "12 Jan 2023"
+date: 2023-01-12
 layout: pelicula
 permalink: /peliculas/night-and-fog/
 poster: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2iWYQia8enOai7QEO3TvenleD7r.jpg"

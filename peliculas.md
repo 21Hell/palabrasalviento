@@ -6,7 +6,9 @@ title: "Películas"
 <div class="container" style="max-width:900px; margin:auto; padding:2em 1em;">
   <h1 style="color:#0056b3; font-size:2em; text-align:center; margin-bottom:1em;">Películas</h1>
   <div class="peliculas-list">
-    {% for pelicula in site.peliculas %}
+  {% assign peliculas_con_date = site.peliculas | where_exp: "p", "p.date" %}
+  {% assign peliculas_ordenadas = peliculas_con_date | sort: "date" | reverse %}
+  {% for pelicula in peliculas_ordenadas %}
       <div class="pelicula-card">
         {% if pelicula.poster %}
           <a href="{{ site.baseurl }}{{ pelicula.url }}" style="display:block; margin-bottom:1em;">

@@ -3,6 +3,7 @@ title: "The Shining"
 year: 1980
 rating: "★★★★"
 watched: "06 Mar 2023"
+date: 2023-03-06
 layout: pelicula
 permalink: /peliculas/the-shining/
 poster: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xazWoLealQwEgqZ89MLZklLZD3k.jpg"

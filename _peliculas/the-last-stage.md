@@ -2,6 +2,7 @@
 title: "The Last Stage"
 year: 1948
 watched: "11 Jan 2023"
+date: 2023-01-11
 layout: pelicula
 permalink: /peliculas/the-last-stage/
 poster: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/y8qSmyUPvsNzUCJ0ESkuez1n1UK.jpg"
