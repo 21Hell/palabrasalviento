@@ -63,6 +63,8 @@ collections:
     output: true
   experimentos:
     output: true
+  criticas:
+    output: true
 
 permalink: /:categories/:title/
 defaults:

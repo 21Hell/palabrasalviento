@@ -1,10 +1,9 @@
-
 ---
-    title: "El 16: Bandera, Aliento y Dudas"
-    layout: critica
-    fecha: 2025-09-16
-    categoria: critica
-    permalink: /critica/septiembre/
+title: "El 16"
+layout: critica
+date: 2025-09-16
+permalink: /critica/septiembre/
+excerpt: "Reflexión sobre la identidad mexicana, el virreinato y las grietas de la patria."
 ---
 
 En septiembre, algo cambia. Mi padre compra una bandera y la cuelga en la entrada; las calles se visten de verde, blanco y rojo. Pero es curioso: ese mismo hombre critica cuando alguien habla de “colonia mexicana”. “Nunca fuimos colonia”, dice. “Fuimos virreinato”. Esa frase queda flotando, como una pregunta, mientras suena el himno, o en mi caso, la Banda El Recodo.
