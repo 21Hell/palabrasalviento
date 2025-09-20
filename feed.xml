@@ -7,7 +7,7 @@ layout: none
     <title>{{ site.title }} - Todo</title>
     <link>{{ site.url }}{{ site.baseurl }}/</link>
     <description>{{ site.description }}</description>
-  {% assign all_items = site.posts | concat: site.poemas | concat: site.peliculas | concat: site.experimentos | concat: site.criticas | sort: 'date' | reverse | slice: 0, 1 %}
+  {% assign all_items = site.posts | concat: site.poemas | concat: site.peliculas | concat: site.experimentos | concat: site.ensayos | sort: 'date' | reverse | slice: 0, 1 %}
   {% for item in all_items %}
     <item>
       <title>{{ item.title }}</title>

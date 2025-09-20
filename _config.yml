@@ -63,7 +63,7 @@ collections:
     output: true
   experimentos:
     output: true
-  criticas:
+  ensayos:
     output: true
 
 permalink: /:categories/:title/
