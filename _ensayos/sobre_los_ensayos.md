@@ -16,3 +16,5 @@ Algo al respecto escribí hace años, pero no tiene sentido contarlo en ese cont
 Esto, en definitiva, habla sobre la crudeza del estado materia de los poemas expuestos y que guardan polvo en mis libretas. Habla de que, aunque ya son 10 años de poesía viva, aquella que se encuentra en el tacto de mis huellas, aun con todo sigue siendo un cuerpo muy joven.
 
 El ensayo, en su raíz, no busca erigir un cuerpo conciso ni consolidar un poemario que hegemonice la realidad, sino abrir un espacio, una apertura brevísima en el pensamiento. Escribir es pensamiento, y saber que el cuerpo no tiene límites en la definición: saberse inacabado.
+
+En este sentido, escribir —ya sea ensayo o poema— es aceptar la fragilidad de toda certeza, y celebrar la potencia de la imaginación para abrir nuevas formas de comprendernos y de habitar el mundo.
