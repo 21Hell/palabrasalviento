@@ -1,6 +1,7 @@
 ---
 title: "F for Fake"
 year: 1973
+rating: "★★★★"
 watched: "19 Sep 2025"
 date: 2025-09-19
 layout: pelicula
