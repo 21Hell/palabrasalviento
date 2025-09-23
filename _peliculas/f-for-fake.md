@@ -1,7 +1,10 @@
 ---
 title: "F for Fake"
-date: 2025-09-20
+year: 1973
+watched: "19 Sep 2025"
+date: 2025-09-19
 layout: pelicula
+poster: https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fVeIDxS73CrosoeVOaefQuCUGZg.jpg
 ---
 
 Ninguna voz, ni siquiera la del propio Welles, puede reclamar una autoridad definitiva sobre lo que es auténtico o valioso. Esta es la clave principal del filme.
