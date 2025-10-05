@@ -15,7 +15,7 @@ parrafos:
       Existo
     alineamiento: centrado
   - texto: |
-      Pienso\n
+      Pienso
       Existes
     alineamiento: derecha
 ---

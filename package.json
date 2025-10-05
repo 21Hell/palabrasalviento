@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@csstools/normalize.css": "^12.1.1"
+  }
+}
