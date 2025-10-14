@@ -9,21 +9,23 @@ categoria: sin titulo 2025
 Me encuentro en una sórdida soledad
 con mi conciencia.
 
-Abandono constantemente mis razones.
-Al verte a los ojos,
-creo que pierdo la fe en Dios.
-Creo que, si Dios existiera, no permitiría
-que existieran ojos más bellos que los suyos.
-Aquellos que lloraron sangre en su ultimo momento.
+Abandono, una y otra vez, mis razones.
+al verte, mirarme
 
-Creo que me aprendo, arracionalmente de todo amor
-Me veo sujeto a rebajarme a la naturaleza humana para salvarlos;
+Creo que me aprendo, arracionalmente a todo amor
+"Me veo sujeto a rebajarme a la naturaleza humana para salvaros";
 eso dijo el "Cristos" Jesús.
-Yo me rebajo a poeta para amarte.
-Me soy en los poemas;
-me soy
 
-Me soy realmente en tus ojos.
-Abandono toda pretensión de escribir algo conciso.
-Practico el abandono en cada escrito;
-practico dejar mis palabras al viento.
+Yo me rebajo de humano a poeta
+para escribir:
+me soy escrito,
+me soy. tus ojos
+
+Me soy en la mirada ajena;
+soy ajeno,
+me soy. tus ojos
+
+Abandono toda pretencion de escibir algo consiso.
+
+Practico abandonarme en cada escrito;
+practico dejar cada texto, cada palabra, al viento.
