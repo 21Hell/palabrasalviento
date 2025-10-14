@@ -1,0 +1,318 @@
+#pixelate-app {
+    max-width: 100%;
+    margin: 3em 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* VS Code-style code blocks */
+.experimento-content pre {
+    background: #1e1e1e;
+    border: 1px solid #404040;
+    border-radius: 8px;
+    padding: 0;
+    margin: 1.5em 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.experimento-content pre::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #007acc;
+    color: white;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom-right-radius: 4px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.experimento-content pre[class*="language-javascript"]::before {
+    content: "JavaScript";
+    background: #f7df1e;
+    color: #000;
+}
+
+.experimento-content pre[class*="language-python"]::before {
+    content: "Python";
+    background: #3776ab;
+}
+
+.experimento-content pre[class*="language-bash"]::before {
+    content: "Bash";
+    background: #4ade80;
+    color: #000;
+}
+
+.experimento-content pre code {
+    background: none;
+    border: none;
+    padding: 2em 1.5em 1.5em 1.5em;
+    margin: 0;
+    color: #d4d4d4;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    display: block;
+    overflow-x: auto;
+}
+
+/* VS Code syntax highlighting colors */
+.experimento-content pre[class*="language-javascript"] .token.keyword {
+    color: #569cd6;
+}
+
+.experimento-content pre[class*="language-javascript"] .token.string {
+    color: #ce9178;
+}
+
+.experimento-content pre[class*="language-javascript"] .token.number {
+    color: #b5cea8;
+}
+
+.experimento-content pre[class*="language-javascript"] .token.operator {
+    color: #d4d4d4;
+}
+
+.experimento-content pre[class*="language-python"] .token.keyword {
+    color: #569cd6;
+}
+
+.experimento-content pre[class*="language-python"] .token.string {
+    color: #ce9178;
+}
+
+.experimento-content pre[class*="language-python"] .token.function {
+    color: #dcdcaa;
+}
+
+.experimento-content pre[class*="language-python"] .token.comment {
+    color: #6a9955;
+}
+
+/* Inline code */
+.experimento-content code:not(pre code) {
+    background: rgba(0, 86, 179, 0.1);
+    color: #0056b3;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+}
+
+.upload-area {
+    border: 3px dashed #0056b3;
+    border-radius: 16px;
+    padding: 4em 2em;
+    text-align: center;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    margin: 2em 0;
+    box-shadow: 0 4px 16px rgba(0, 86, 179, 0.08);
+}
+
+.upload-area:hover, .upload-area.dragover {
+    border-color: #ff6b6b;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 107, 0.15);
+}
+
+.upload-icon {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.upload-area:hover .upload-icon {
+    opacity: 1;
+}
+
+.browse-link {
+    color: #0056b3;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 2px solid #0056b3;
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
+}
+
+.browse-link:hover {
+    color: #003d82;
+    border-color: #003d82;
+}
+
+.camera-section {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.camera-controls {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.camera-btn {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+}
+
+.camera-btn:hover {
+    background: linear-gradient(135deg, #218838 0%, #1ba87d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(40, 167, 69, 0.3);
+}
+
+.camera-btn:disabled {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#cameraVideo {
+    border: 2px solid #0056b3;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.controls-section {
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    padding: 2em;
+    border-radius: 16px;
+    margin: 2em 0;
+    border: 1px solid rgba(0, 86, 179, 0.1);
+    box-shadow: 0 2px 12px rgba(0, 86, 179, 0.06);
+}
+
+.controls-section h4 {
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    margin: 1em 0;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+.preview-section {
+    margin: 2em 0;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    margin: 1em 0;
+}
+
+@media (max-width: 768px) {
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.preview-item {
+    text-align: center;
+}
+
+.preview-item h4 {
+    margin-bottom: 1em;
+    color: #0056b3;
+}
+
+.preview-item canvas {
+    max-width: 100%;
+    border: 2px solid rgba(0, 86, 179, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.preview-item canvas:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.download-section {
+    margin-top: 1em;
+}
+
+#downloadBtn {
+    background: linear-gradient(135deg, #0056b3 0%, #0073e6 100%);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 3px 12px rgba(0, 86, 179, 0.25);
+    margin-top: 0.5em;
+}
+
+#downloadBtn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #004494 0%, #0060c9 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.35);
+}
+
+#downloadBtn:disabled {
+    background: linear-gradient(135deg, #ccc 0%, #999 100%);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.6;
+}
+
+#statusMessage {
+    padding: 1em;
+    border-radius: 6px;
+    margin: 1em 0;
+    text-align: center;
+}
+
+#statusMessage.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#statusMessage.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
