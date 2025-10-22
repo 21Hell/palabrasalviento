@@ -23,38 +23,9 @@
 {%- endfor -%}
 
 {%- comment -%} Next & prev for poemas (always show poema buttons if collection exists) {%- endcomment -%}
-{% if site.poemas and site.poemas.size > 0 %}
-  {% assign found = false %}
-  {% assign poemas_ordenados = site.poemas | sort: "date" %}
-  {% for item in poemas_ordenados %}
-    {% if found and next_poema == nil %}
-      {% assign next_poema = item %}
-    {% endif %}
-    {% if item.url == page.url %}
-      {% assign found = true %}
-    {% endif %}
-  {% endfor %}
-  {% if next_poema == nil %}
-    {% assign next_poema = site.poemas | first %}
-  {% endif %}
-
-  {%- comment -%} previous poema: track last seen and when current found, previous is last or last of collection {%- endcomment -%}
-  {% assign last_seen = nil %}
-  {% for item in site.poemas %}
-    {% if item.url == page.url %}
-      {% if last_seen %}
-        {% assign prev_poema = last_seen %}
-      {% else %}
-        {% assign prev_poema = site.poemas | last %}
-      {% endif %}
-      {% break %}
-    {% endif %}
-    {% assign last_seen = item %}
-  {% endfor %}
-  {% if prev_poema == nil %}
-    {% assign prev_poema = site.poemas | last %}
-  {% endif %}
-{% endif %}
+{%- comment -%}
+  Poemas navigation will be computed later (inside the poemas branch) using Roman numeral order.
+{%- endcomment -%}
 
 {%- comment -%} keep searching for a generic next_item if not defined, using posts as fallback {%- endcomment -%}
 {% if next_item == nil and site.posts and site.posts.size > 0 %}
@@ -152,38 +123,53 @@
 {%- comment -%} Render navigation only when viewing an individual poema or pelicula page. Place the nav inside the card (not fixed). {%- endcomment -%}
 
 {%- if page.collection == 'poemas' -%}
-  {%- comment -%} compute next and prev for poemas specifically (reuse earlier calculations if present) {%- endcomment -%}
-  {% if next_poema == nil %}
-    {% assign found = false %}
-    {% for item in site.poemas %}
-      {% if found and next_poema == nil %}
-        {% assign next_poema = item %}
-      {% endif %}
-      {% if item.url == page.url %}
-        {% assign found = true %}
-      {% endif %}
-    {% endfor %}
-    {% if next_poema == nil %}
-      {% assign next_poema = site.poemas | first %}
-    {% endif %}
-  {% endif %}
+  {%- comment -%}
+    Compute next/prev poem using Roman numerals order based on the title.
+    We iterate over a predefined Roman list and, for each numeral, find the poem with that title.
+    This avoids relying on dates or file ordering.
+  {%- endcomment -%}
+  {% assign roman_order_str = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV,XVI,XVII,XVIII,XIX,XX,XXI,XXII,XXIII,XXIV,XXV,XXVI,XXVII,XXVIII,XXIX,XXX,XXXI,XXXII,XXXIII,XXXIV,XXXV,XXXVI,XXXVII,XXXVIII,XXXIX,XL,XLI,XLII,XLIII,XLIV,XLV,XLVI,XLVII,XLVIII,XLIX,L,LI,LII,LIII,LIV,LV,LVI,LVII,LVIII,LIX,LX,LXI,LXII,LXIII,LXIV,LXV,LXVI,LXVII,LXVIII,LXIX,LXX,LXXI,LXXII,LXXIII,LXXIV,LXXV,LXXVI,LXXVII,LXXVIII,LXXIX,LXXX,LXXXI,LXXXII,LXXXIII,LXXXIV,LXXXV,LXXXVI,LXXXVII,LXXXVIII,LXXXIX,XC,XCI,XCII,XCIII,XCIV,XCV,XCVI,XCVII,XCVIII,XCIX,C" %}
+  {% assign roman_order = roman_order_str | split: ',' %}
 
-  {% if prev_poema == nil %}
-    {% assign last_seen = nil %}
-    {% for item in site.poemas %}
-      {% if item.url == page.url %}
-        {% if last_seen %}
-          {% assign prev_poema = last_seen %}
-        {% else %}
-          {% assign prev_poema = site.poemas | last %}
-        {% endif %}
-        {% break %}
+  {% assign first_poema = nil %}
+  {% assign last_poema_in_list = nil %}
+  {% assign prev_poema = nil %}
+  {% assign next_poema = nil %}
+  {% assign prev_found = nil %}
+  {% assign found_current = false %}
+
+  {% for rn in roman_order %}
+    {% assign candidate = nil %}
+    {% for p in site.poemas %}
+      {% if p.title == rn %}
+        {% assign candidate = p %}
       {% endif %}
-      {% assign last_seen = item %}
     {% endfor %}
-    {% if prev_poema == nil %}
-      {% assign prev_poema = site.poemas | last %}
+    {% if candidate %}
+      {% if first_poema == nil %}
+        {% assign first_poema = candidate %}
+      {% endif %}
+      {% assign last_poema_in_list = candidate %}
+
+      {% if found_current and next_poema == nil %}
+        {% assign next_poema = candidate %}
+      {% endif %}
+
+      {% if candidate.url == page.url %}
+        {% assign found_current = true %}
+        {% assign prev_poema = prev_found %}
+      {% endif %}
+
+      {% assign prev_found = candidate %}
     {% endif %}
+  {% endfor %}
+
+  {%- comment -%} Wrap-around if at the ends {%- endcomment -%}
+  {% if found_current and next_poema == nil %}
+    {% assign next_poema = first_poema %}
+  {% endif %}
+  {% if found_current and prev_poema == nil %}
+    {% assign prev_poema = last_poema_in_list %}
   {% endif %}
 
   <style>
