@@ -363,3 +363,53 @@ ul {
 li {
     margin-bottom: 0.5em;
 }
+
+/* Poema: make poem pages responsive and allow them to expand wider than the default container
+   - On wide screens the poem card can grow up to 1200px while keeping comfortable side padding
+   - On narrow screens the poem card uses almost full viewport width
+   - Ensure poem text is single-column and images scale responsively
+*/
+.poema-individual,
+.container.poema-individual {
+  max-width: 1200px;
+  width: calc(100% - 4rem);
+  margin: 24px auto;
+  padding: 2.5em 2rem;
+}
+
+.poema-text {
+  /* force single column reading flow and responsive typography */
+  column-count: 1 !important;
+  column-gap: normal !important;
+  font-size: 1.18em;
+  line-height: 1.7;
+}
+
+.poema-text img,
+.poema-text video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.2em auto;
+}
+
+@media (max-width: 900px) {
+  .poema-individual,
+  .container.poema-individual {
+    width: calc(100% - 1.5rem);
+    margin: 12px auto;
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+  .poema-text {
+    font-size: 1.08em;
+    line-height: 1.65;
+  }
+}
+
+@media (min-width: 1600px) {
+  .poema-individual,
+  .container.poema-individual {
+    width: 1400px;
+  }
+}
