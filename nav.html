@@ -49,3 +49,40 @@
   .navbar-menu.active { display:flex; }
 }
 </style>
+
+<script>
+  // Adjust body padding so a fixed/expanded nav doesn't cover content on small screens.
+  (function () {
+    function adjustBodyPadding() {
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      var style = window.getComputedStyle(nav);
+      var isFixed = style.position === 'fixed' || style.position === 'sticky' || nav.classList.contains('fixed');
+      // If nav is fixed or menu is active and likely overlapping, set padding-top equal to nav height
+      if (isFixed || (document.querySelector('.navbar-menu') && document.querySelector('.navbar-menu').classList.contains('active'))) {
+        var h = Math.ceil(nav.getBoundingClientRect().height);
+        document.body.style.paddingTop = h + 'px';
+      } else {
+        // remove only if we previously set it
+        if (document.body.style.paddingTop) document.body.style.paddingTop = '';
+      }
+    }
+
+    // Run on load and on resize/orientationchange
+    document.addEventListener('DOMContentLoaded', function () {
+      adjustBodyPadding();
+      // ensure toggle clicks also update padding (mobile menu open/close)
+      var toggle = document.querySelector('.navbar-toggle');
+      if (toggle) toggle.addEventListener('click', function () { setTimeout(adjustBodyPadding, 50); });
+    });
+    window.addEventListener('resize', adjustBodyPadding);
+    window.addEventListener('orientationchange', function() { setTimeout(adjustBodyPadding, 120); });
+
+    // Observe changes to navbar-menu classlist (in case other scripts toggle it)
+    var menu = document.querySelector('.navbar-menu');
+    if (menu && window.MutationObserver) {
+      var mo = new MutationObserver(function () { adjustBodyPadding(); });
+      mo.observe(menu, { attributes: true, attributeFilter: ['class'] });
+    }
+  })();
+</script>

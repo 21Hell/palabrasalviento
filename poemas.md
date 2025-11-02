@@ -1,6 +1,31 @@
 ---
 layout: default
 ---
+<style>
+/* Poems index responsive styles */
+.poemas-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.poema-card { background:#fff; border-radius:10px; padding:0.9rem 1rem; box-shadow:0 2px 10px rgba(0,0,0,0.06); display:flex; flex-direction:column; gap:0.5rem; position:relative; }
+.poema-link { color:#0b5ed7; font-weight:700; font-size:1rem; text-decoration:none; }
+.poema-year { color:#6c757d; font-size:0.85rem; }
+.poema-excerpt { color:#333; font-size:0.95rem; line-height:1.35; margin-top:0.4rem; }
+/* Off-screen searchable text: present in DOM but visually hidden */
+.poema-search { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+@media (max-width:800px) {
+  /* Force exactly 2 columns for viewports up to 800px */
+  .poemas-list { grid-template-columns: repeat(2,1fr) !important; gap:0.8rem !important; }
+  .poema-card { padding:0.9rem !important; }
+  .poema-link { font-size:1.04rem !important; }
+  .poema-excerpt { font-size:1.00rem !important; line-height:1.45 !important; }
+}
+@media (max-width:640px) {
+  /* Tighter adjustments for small phones */
+  .poemas-list { grid-template-columns: repeat(2,1fr); gap:0.6rem; }
+  .poema-card { padding:0.8rem; }
+  .poema-link { font-size:1.02rem; }
+  .poema-excerpt { font-size:0.98rem; line-height:1.45; }
+}
+@media (min-width:1600px) { .poemas-list { grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1.5rem; } }
+</style>
 
 <div class="container" style="max-width:900px; margin:auto; padding:2em 1em;">
   <h1 style="color:#0056b3; font-size:2em; text-align:center; margin-bottom:1em;">Poemas</h1>
@@ -54,19 +79,21 @@ layout: default
       </div>
     {% endif %}
     <div class="poemas-list">
-  {% assign poemas_categoria = site.poemas | where: "categoria", cat | sort: "date" | reverse %}
+      {% assign poemas_categoria = site.poemas | where: "categoria", cat | sort: "date" | reverse %}
       {% for poema in poemas_categoria %}
-        <div class="poema-card">
+        <article class="poema-card">
           <a class="poema-link" href="{{ site.baseurl }}{{ poema.url }}">{{ poema.title }}</a>
           <span class="poema-year">{{ poema.date | date: "%Y" }}</span>
-          <span class="poema-excerpt">
+          <p class="poema-excerpt">
             {% if poema.parrafos %}
-              {{ poema.parrafos[0].texto | strip_html | truncatewords: 10, '...' }}
+              {{ poema.parrafos[0].texto | strip_html | truncatewords: 12, '...' }}
             {% else %}
-              {{ poema.content | strip_html | truncatewords: 10, '...' }}
+              {{ poema.content | strip_html | truncatewords: 12, '...' }}
             {% endif %}
-          </span>
-        </div>
+          </p>
+          <!-- Hidden full-text for browser search (Ctrl/Cmd+F) -->
+          <div class="poema-search">{{ poema.content | strip_html | replace: '\n', ' ' }}</div>
+        </article>
       {% endfor %}
     </div>
   {% endfor %}
