@@ -17,6 +17,6 @@ Esto, en definitiva, habla sobre la crudeza del estado materia de los poemas aqu
 
 El ensayo, en su raíz, no busca erigir un cuerpo conciso así como tampoco mis poemas ni consolidar un poemario que hegemonice la realidad, sino abrir un espacio, una finísima apertura en mi pensamiento. Escribir es pensamiento, y saber que el cuerpo no tiene límites en la definición: saberse inacabado.
 
-En este sentido, escribir —ya sea ensayo o un poema— es aceptar la fragilidad de toda certeza, y celebrar la potencia de la imaginación para abrir nuevas formas de comprendernos y de habitar el mundo.
+En este sentido, escribir (ya sea ensayo o un poema) es aceptar la fragilidad de toda certeza, y celebrar la potencia de la imaginación para abrir nuevas formas de comprendernos y de habitar el mundo.
 
 Respecto a esto me remonto a la película de F for Fake, y demarcar que estos actos de ilusión que generamos como lo son los poemas o los ensayos, son eso, ilusiones, ficciones que nos tratan de hablar a través de falsedades de algo concreto.
