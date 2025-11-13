@@ -13,44 +13,41 @@ Autores:
 ●​ Iván M.
 ●​ Alfonso O.
 ●​ Benjamín V.
-Descripción del sonido 
-Onda sonora 
- Una onda sonora es una onda expansiva que puede ser percibida por el oído 
-humano y se puede propagar en distintos medios. Estos medios pueden ser 
-sólidos, líquidos o gaseosos. Las ondas sonoras están sujetas a las leyes físicas 
-de ondas como la reflexión, flexión, refracción y absorción, como las de la luz. La 
-velocidad con la que se propagan las ondas depende del medio. El margen de 
-frecuencia audible del ser humano se encuentra entre unos 20 y 20000 Hz. Todos 
-los sonidos arriba o abajo de estos límites se denominan ultrasonidos o 
-infrasonidos respetivamente. Las ondas de sonido no se pueden propagar en el 
-vacío ya que necesitan de un medio para hacerlo (como el aire). Eso es lo que las 
-diferencias de las ondas electromagnéticas. 
-Velocidad del sonido en el aire: En el aire, su velocidad es de unos 330 
-metros por segundo.
-
-
-Velocidad del sonido en sólidos y gases:  
- 
-Líquidos 
-   
- 
- 
-En la ecuación “E” corresponde al módulo de Young o módulo de elasticidad 
-longitudinal, el cual es un parámetro que caracteriza el comportamiento de un 
-material elástico. “ρ” corresponde a la densidad del material. 
-Gases 
   
-En la ecuación “P” es la presión no perturbada, γ es la razón entre los calores 
-específicos a presión constante “y” a volumen constante (índice de dilatación 
-volumétrica), y “p” es la densidad del gas. 
-Sólidos
 
 
-![sonido_page2_img1.jpeg](../assets/imagenes/sonido_images/sonido_page2_img1.jpeg)
+### Descripción del sonido
 
-![sonido_page2_img2.png](../assets/imagenes/sonido_images/sonido_page2_img2.png)
+#### Onda sonora
 
-![sonido_page2_img3.png](../assets/imagenes/sonido_images/sonido_page2_img3.png)
+Una onda sonora es una perturbación expansiva que puede ser percibida por el oído humano y se propaga en distintos medios: sólidos, líquidos o gaseosos. Las ondas sonoras obedecen leyes físicas de ondas (reflexión, refracción, absorción) y su velocidad depende del medio. El margen de frecuencia audible para el ser humano se sitúa entre aproximadamente 20 Hz y 20 000 Hz; por debajo se habla de infrasonidos y por encima de ultrasonidos. Las ondas de sonido no se propagan en el vacío, a diferencia de las ondas electromagnéticas.
+
+**Velocidad del sonido en el aire:** ~330 m/s (aprox.).
+
+#### Velocidad en líquidos, gases y sólidos
+
+En la ecuación “E” corresponde el módulo de Young (módulo de elasticidad longitudinal), que caracteriza el comportamiento de un material elástico. “ρ” corresponde a la densidad del material.
+
+En la ecuación “P”, P es la presión no perturbada, γ es la razón entre los calores específicos a presión constante y a volumen constante (índice de dilatación volumétrica), y p es la densidad del gas.
+
+En la ecuación “B” corresponde el módulo de compresibilidad, que mide la resistencia de un material a la compresión uniforme; “ρ” corresponde de nuevo a la densidad.
+
+#### Figuras (velocidades y parámetros)
+
+<figure>
+	<img src="{{ '/assets/imagenes/sonido_images/sonido_page2_img1.jpeg' | relative_url }}" alt="Ecuación velocidad sonido">
+	<figcaption>Ecuaciones y parámetros para sólidos y líquidos.</figcaption>
+</figure>
+
+<figure>
+	<img src="{{ '/assets/imagenes/sonido_images/sonido_page2_img2.png' | relative_url }}" alt="Gráfica densidad">
+	<figcaption>Relación entre módulo de Young y densidad.</figcaption>
+</figure>
+
+<figure>
+	<img src="{{ '/assets/imagenes/sonido_images/sonido_page2_img3.png' | relative_url }}" alt="Ilustración adicional">
+	<figcaption>Ilustración complementaria.</figcaption>
+</figure>
 
 En la ecuación “B” corresponde al módulo de compresibilidad, el mide la 
 resistencia de un material a la compresión uniforme y, por tanto, indica el aumento 
@@ -75,10 +72,15 @@ perpendicular a la dirección de propagación.
  
 midiéndose por tanto en W/m2 como se mencionó justo arriba.
 
+<figure>
+	<img src="{{ '/assets/imagenes/sonido_images/sonido_page3_img1.png' | relative_url }}" alt="Nivel de intensidad tabla">
+	<figcaption>Tabla: niveles de intensidad y efectos.</figcaption>
+</figure>
 
-![sonido_page3_img1.png](../assets/imagenes/sonido_images/sonido_page3_img1.png)
-
-![sonido_page3_img2.png](../assets/imagenes/sonido_images/sonido_page3_img2.png)
+<figure>
+	<img src="{{ '/assets/imagenes/sonido_images/sonido_page3_img2.png' | relative_url }}" alt="Escalas decibelios">
+	<figcaption>Gráfica: escalas de decibelios y ejemplos.</figcaption>
+</figure>
 
 Cuando una onda sonora se transmite por un medio homogéneo lo hace en forma 
 de onda esférica, por lo que el área del frente de onda es una superficie esférica 
@@ -89,80 +91,36 @@ NOTA:
 El nivel de intensidad (β) de una onda sonora se mide en decibelios (dB) y se 
 calcula según la expresión: 
  
-donde I0 es la intensidad umbral de audición (10-12 W/m2) 
-Medición del nivel de intensidad en decibeles:  
-Sonido 
-Nivel (dB) 
-Efecto 
-Zona de despegue de cohete 
-(sin protección auditiva) 
-180 
-Pérdida irreversible del oído 
-Operación en pista de Jet​
-Sirena de ataque aéreo 
-140 
-Fuerte dolor 
-Trueno 
-130 
- 
-Concierto de rock​
-Máximo esfuerzo vocal 
-120 
-Umbral de dolor 
-Martillo neumático (1 m) 
-110 
-Extremadamente fuerte
+| Sonido / Situación | Nivel (dB) | Efecto aproximado |
+|---|---:|---|
+| Zona de despegue de cohete (sin protección auditiva) | 180 | Pérdida irreversible del oído |
+| Operación en pista de jet / Sirena de ataque aéreo | 140 | Fuerte dolor |
+| Trueno | 130 | Muy fuerte |
+| Concierto de rock / Máximo esfuerzo vocal | 120 | Umbral de dolor |
+| Martillo neumático (1 m) | 110 | Extremadamente fuerte |
+| Tren / Petardos | 100 | Muy fuerte |
+| Camión pesado (15 m) / Cataratas del Niágara | 90 | Muy molesto; daño auditivo posible con exposición prolongada |
+| Reloj despertador (60 cm) / Secador de cabello | 80 | Molesto |
+| Restaurante ruidoso / Tráfico abundante | 70 | Dificultad para usar el teléfono |
+| Conversación normal | 60 | Intrusivo |
+| Oficina calma | 50 | Calmo |
+| Biblioteca | 40 | Muy silencioso |
+| Susurro a 5 m | 30 | Muy calmo |
+| Susurro de hojas | 20 | Muy bajo |
+| Respiración | 10 | Apenas audible |
+| Umbral de audición / Aleteo de una mariposa | 0 | Umbral de audición |
 
 
-![sonido_page4_img1.png](../assets/imagenes/sonido_images/sonido_page4_img1.png)
+<figure>
+	<img src="{{ '/assets/imagenes/sonido_images/sonido_page4_img1.png' | relative_url }}" alt="Niveles sonoros 1">
+	<figcaption>Gráfica: ejemplos de niveles sonoros.</figcaption>
+</figure>
 
-![sonido_page4_img2.png](../assets/imagenes/sonido_images/sonido_page4_img2.png)
+<figure>
+	<img src="{{ '/assets/imagenes/sonido_images/sonido_page4_img2.png' | relative_url }}" alt="Niveles sonoros 2">
+	<figcaption>Tabla: actividades y niveles (dB).</figcaption>
+</figure>
 
-Tren​
-Petardos 
-100 
-Muy fuerte 
-Camión pesado (15 m)​
-Cataratas del Niágara 
-90​
-fortissimo ( fff ) 
-Muy molesto​
-Daño auditivo (8 Hrs) 
-Reloj despertador (60 cm)​
-Secador de cabello 
-80​
-molto forte ( ff ) 
-Molesto 
-Restaurante ruidoso​
-Tráfico abundante 
-70​
-forte ( f ) 
-Difícil uso del teléfono 
-Conversación normal 
-60​
-moderato ( mf ) 
-Intrusivo 
-Oficina calma 
-50​
-piano ( p ) 
-Calmo 
-Biblioteca 
-40​
-molto piano ( pp ) 
- 
-Susurro a 5 m 
-30​
-pianissimo ( ppp ) 
-Muy calmo 
-Susurro de hojas 
-20 
- 
-Respiración 
-10 
-Apenas audible 
-Aleteo de una mariposa 
-0 
-Umbral de audición
 
 
 Efectos sonoros  
@@ -182,7 +140,10 @@ usados por algunos animales como forma de radar, por ejemplo, el murciélago que
 puede percibir frecuencias cercanas a los 100,000 Hz
 
 
-![sonido_page6_img1.jpeg](../assets/imagenes/sonido_images/sonido_page6_img1.jpeg)
+<figure>
+	<img src="{{ '/assets/imagenes/sonido_images/sonido_page6_img1.jpeg' | relative_url }}" alt="Ultrasonidos">
+	<figcaption>Imagen: aplicaciones de ultrasonidos.</figcaption>
+</figure>
 
 Interferencia  
 El efecto dentro de sonido conocido como interferencia es aquel que ocurre 
@@ -234,9 +195,15 @@ Donde:
 ●​ f’ = frecuencia percibida
 
 
-![sonido_page8_img1.jpeg](../assets/imagenes/sonido_images/sonido_page8_img1.jpeg)
+<figure>
+	<img src="{{ '/assets/imagenes/sonido_images/sonido_page8_img1.jpeg' | relative_url }}" alt="Efecto Doppler diagrama">
+	<figcaption>Diagrama: efecto Doppler.</figcaption>
+</figure>
 
-![sonido_page8_img2.jpeg](../assets/imagenes/sonido_images/sonido_page8_img2.jpeg)
+<figure>
+	<img src="{{ '/assets/imagenes/sonido_images/sonido_page8_img2.jpeg' | relative_url }}" alt="Efecto Doppler fórmulas">
+	<figcaption>Fórmulas y variables del efecto Doppler.</figcaption>
+</figure>
 
 ●​ V = velocidad de propagación de la onda  
 ●​ Vo = velocidad del observador  
@@ -293,7 +260,10 @@ corto plazo.
 Ejemplos de efectos auditivos:
 
 
-![sonido_page10_img1.png](../assets/imagenes/sonido_images/sonido_page10_img1.png)
+<figure>
+	<img src="{{ '/assets/imagenes/sonido_images/sonido_page10_img1.png' | relative_url }}" alt="Efectos auditivos">
+	<figcaption>Infografía: efectos auditivos y medidas de protección.</figcaption>
+</figure>
 
 ●​ Efecto máscara: Cuando un sonido impide la percepción total o parcial de 
 otros sonidos presentes. 
