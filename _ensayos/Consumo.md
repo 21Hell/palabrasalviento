@@ -1,8 +1,9 @@
 ---
 title: "Consumo en la nueva era"
-date: 2025-11-15
+date: 2025-11-12
 layout: critica
 excerpt: "Análisis del consumo en la era digital y su impacto en la sociedad contemporánea."
+permalink: /ensayos/Consumo/
 ---
  
 Tocar el tema del consumo moderno desde mi esquina subjetiva es, de momento al empezar este artículo o reflexión, una tarea infranqueable.
