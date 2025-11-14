@@ -8,11 +8,17 @@ author: "Nombre A."
 
 SONIDO 
 Autores: 
+
 ●​ Fátima S.
+
 ●​ Iker M. 
+
 ●​ Iván M.
+
 ●​ Alfonso O.
+
 ●​ Benjamín V.
+
   
 
 
@@ -109,17 +115,6 @@ calcula según la expresión:
 | Susurro de hojas | 20 | Muy bajo |
 | Respiración | 10 | Apenas audible |
 | Umbral de audición / Aleteo de una mariposa | 0 | Umbral de audición |
-
-
-<figure>
-	<img src="{{ '/assets/imagenes/sonido_images/sonido_page4_img1.png' | relative_url }}" alt="Niveles sonoros 1">
-	<figcaption>Gráfica: ejemplos de niveles sonoros.</figcaption>
-</figure>
-
-<figure>
-	<img src="{{ '/assets/imagenes/sonido_images/sonido_page4_img2.png' | relative_url }}" alt="Niveles sonoros 2">
-	<figcaption>Tabla: actividades y niveles (dB).</figcaption>
-</figure>
 
 
 
@@ -267,13 +262,16 @@ Ejemplos de efectos auditivos:
 
 ●​ Efecto máscara: Cuando un sonido impide la percepción total o parcial de 
 otros sonidos presentes. 
+
 ●​ Acúfenos: Esto se produce por la alteración del nervio auditivo que, en 
 casos extremos puede causar ansiedad. 
 Los efectos no auditivos son aquellos que no percibimos por parte de nuestra 
 habilidad auditiva, si no, de otros medios. 
+
 Ejemplos de efectos no auditivos: 
 ●​ Efectos sobre el sueño: El ruido produce dificultades para conciliar el sueño 
 y despierta a quienes están dormidos. 
+
 ●​ Efectos en la atención: El ruido hace que la atención no se localice en una 
 actividad específica, haciendo que esta se pierda. 
 Formas de combatirlas 
@@ -281,12 +279,17 @@ Entendemos la contaminación acústica como el ruido (sonido excesivo) provocado
 por las actividades humanas mayormente. 
 La manera más razonable y fácil de combatir esta contaminación sería evitar 
 realizar actividades que generen un sonido excesivo. 
-Tenemos diversos tipos de materiales para aislar el ruido los cuáles son: 
+
+
+Tenemos diversos tipos de materiales para aislar el ruido los cuáles son:
+
 ●​ Celulosa: Éste es popular en el sector de construcción ya que además de 
 aislante acústico también es térmico. 
+
 ●​ Técnica multicapa: este como tal no es un material, pero se refiere al 
 hecho de colocar varias capas de material absorbente como los cartones de 
 huevo que son muy famosos ya que son fácil de conseguir y barato. 
+
 ●​ Corcho: se trata de un material económico, de fácil instalación y que a su 
 vez requiere de muy poco mantenimiento. 
  
