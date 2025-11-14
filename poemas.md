@@ -34,7 +34,7 @@ layout: default
     <strong>Disclaimer</strong><br><br>
   Los poemas aquí presentados son obras originales de Carlos Wolf y forman parte de un archivo histórico personal. Este espacio tiene como objetivo la expresión libre y no está destinado a la venta de ningún producto. Se trata de un blog de poemas, es decir, un sitio a razon de diario o libreta informal. Si deseas contactar al autor para cualquier consulta o propuesta, puedes hacerlo a través de su cuenta de Instagram:<br>
       <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">@cwolf_imc</a>.<br><br>
-       <span style="font-size:0.95em; color:#6c5d2f;">Nota: Este disclaimer fue hecho a petición de Gabriel Kryger. para no herir suceptibilidades de poetas y poetisas</span><br>
+       <span style="font-size:0.95em; color:#6c5d2f;">Nota: Este disclaimer fue hecho a petición de Mesa para no herir suceptibilidades de poetas y poetisas</span><br>
 
     <button id="poemas-disclaimer-hide-btn" style="margin-top:1em; padding:0.6em 2em; background:#ffe58f; color:#8c6d1f; border:none; border-radius:8px; font-size:1em; cursor:pointer;">No mostrar de nuevo</button>
   </div>
