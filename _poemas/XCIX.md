@@ -5,7 +5,6 @@ date: 2025-10-26
 show_full_date: false
 permalink: /poemas/XCIX/
 categoria: sin titulo 2025
-referencia_img: /assets/imagenes/g.png
 ---
 Veo el río
 Veo el río desde la oficina

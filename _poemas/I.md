@@ -5,6 +5,7 @@ date: 2015-09-09
 show_full_date: false
 permalink: /poemas/I/
 categoria: nostalgia
+autor: Carlos Wolf
 ---
 Ventanas opacas tapan el alma del agua del desierto.
 ¿Ora pues por los que no oran?

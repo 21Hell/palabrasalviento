@@ -5,6 +5,7 @@ date: 2015-09-10
 show_full_date: false
 permalink: /poemas/II/
 categoria: nostalgia
+autor: Carlos Wolf
 ---
 incluso yo
 Una ola de nada golpeo mi ser

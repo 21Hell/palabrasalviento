@@ -5,6 +5,7 @@ date: 2025-11-01
 show_full_date: false
 permalink: /poemas/CI/
 categoria: sin titulo 2025
+autor: Carlos Wolf
 ---
 
 Flor de otoño

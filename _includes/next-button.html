@@ -34,7 +34,7 @@
     {% if found and next_item == nil %}
       {% assign next_item = item %}
     {% endif %}
-    {% if item.url == page.url %}
+  {% if item.url | relative_url == page.url | relative_url %}
       {% assign found = true %}
     {% endif %}
   {% endfor %}
@@ -50,7 +50,7 @@
     {% if found and next_pelicula == nil %}
       {% assign next_pelicula = item %}
     {% endif %}
-    {% if item.url == page.url %}
+  {% if item.url | relative_url == page.url | relative_url %}
       {% assign found = true %}
     {% endif %}
   {% endfor %}
@@ -60,7 +60,7 @@
 
   {% assign last_seen = nil %}
   {% for item in site.peliculas %}
-    {% if item.url == page.url %}
+  {% if item.url | relative_url == page.url | relative_url %}
       {% if last_seen %}
         {% assign prev_pelicula = last_seen %}
       {% else %}
@@ -80,7 +80,7 @@
 {% if site.poemas and site.poemas.size > 0 %}
   {% assign last_seen = nil %}
   {% for item in site.poemas %}
-    {% if item.url == page.url %}
+  {% if item.url | relative_url == page.url | relative_url %}
       {% if last_seen %}
         {% assign prev_item = last_seen %}
       {% else %}
@@ -94,7 +94,7 @@
 {% if prev_item == nil and site.posts and site.posts.size > 0 %}
   {% assign last_seen = nil %}
   {% for item in site.posts %}
-    {% if item.url == page.url %}
+  {% if item.url | relative_url == page.url | relative_url %}
       {% if last_seen %}
         {% assign prev_item = last_seen %}
       {% else %}
@@ -108,7 +108,7 @@
 {% if prev_item == nil and site.peliculas and site.peliculas.size > 0 %}
   {% assign last_seen = nil %}
   {% for item in site.peliculas %}
-    {% if item.url == page.url %}
+  {% if item.url | relative_url == page.url | relative_url %}
       {% if last_seen %}
         {% assign prev_item = last_seen %}
       {% else %}
@@ -125,51 +125,63 @@
 {%- if page.collection == 'poemas' -%}
   {%- comment -%}
     Compute next/prev poem using Roman numerals order based on the title.
-    We iterate over a predefined Roman list and, for each numeral, find the poem with that title.
-    This avoids relying on dates or file ordering.
+    Build a compact ordered list of existing numerals and their urls, then find the index
+    of the current page in that compact list. This is less error-prone than per-iteration
+    url comparisons and avoids baseurl mismatches.
   {%- endcomment -%}
-  {% assign roman_order_str = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV,XVI,XVII,XVIII,XIX,XX,XXI,XXII,XXIII,XXIV,XXV,XXVI,XXVII,XXVIII,XXIX,XXX,XXXI,XXXII,XXXIII,XXXIV,XXXV,XXXVI,XXXVII,XXXVIII,XXXIX,XL,XLI,XLII,XLIII,XLIV,XLV,XLVI,XLVII,XLVIII,XLIX,L,LI,LII,LIII,LIV,LV,LVI,LVII,LVIII,LIX,LX,LXI,LXII,LXIII,LXIV,LXV,LXVI,LXVII,LXVIII,LXIX,LXX,LXXI,LXXII,LXXIII,LXXIV,LXXV,LXXVI,LXXVII,LXXVIII,LXXIX,LXXX,LXXXI,LXXXII,LXXXIII,LXXXIV,LXXXV,LXXXVI,LXXXVII,LXXXVIII,LXXXIX,XC,XCI,XCII,XCIII,XCIV,XCV,XCVI,XCVII,XCVIII,XCIX,C" %}
+  {% assign roman_order_str = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV,XVI,XVII,XVIII,XIX,XX,XXI,XXII,XXIII,XXIV,XXV,XXVI,XXVII,XXVIII,XXIX,XXX,XXXI,XXXII,XXXIII,XXXIV,XXXV,XXXVI,XXXVII,XXXVIII,XXXIX,XL,XLI,XLII,XLIII,XLIV,XLV,XLVI,XLVII,XLVIII,XLIX,L,LI,LII,LIII,LIV,LV,LVI,LVII,LVIII,LIX,LX,LXI,LXII,LXIII,LXIV,LXV,LXVI,LXVII,LXVIII,LXIX,LXX,LXXI,LXXII,LXXIII,LXXIV,LXXV,LXXVI,LXXVII,LXXVIII,LXXIX,LXXX,LXXXI,LXXXII,LXXXIII,LXXXIV,LXXXV,LXXXVI,LXXXVII,LXXXVIII,LXXXIX,XC,XCI,XCII,XCIII,XCIV,XCV,XCVI,XCVII,XCVIII,XCIX,C,CI,CII" %}
   {% assign roman_order = roman_order_str | split: ',' %}
 
-  {% assign first_poema = nil %}
-  {% assign last_poema_in_list = nil %}
-  {% assign prev_poema = nil %}
-  {% assign next_poema = nil %}
-  {% assign prev_found = nil %}
-  {% assign found_current = false %}
+  {% assign found_titles = "" | split: "," %}
+  {% assign found_urls = "" | split: "," %}
 
+  {%- comment -%} Build compact ordered lists of titles and urls that exist in site.poemas {%- endcomment -%}
   {% for rn in roman_order %}
-    {% assign candidate = nil %}
     {% for p in site.poemas %}
       {% if p.title == rn %}
-        {% assign candidate = p %}
+        {% assign found_titles = found_titles | push: rn %}
+        {% assign found_urls = found_urls | push: p.url %}
+        {% break %}
       {% endif %}
     {% endfor %}
-    {% if candidate %}
-      {% if first_poema == nil %}
-        {% assign first_poema = candidate %}
-      {% endif %}
-      {% assign last_poema_in_list = candidate %}
+  {% endfor %}
 
-      {% if found_current and next_poema == nil %}
-        {% assign next_poema = candidate %}
+  {% comment %} Find current index in the compact list (compare urls normalized) {% endcomment %}
+  {% assign current_index = -1 %}
+  {% for i in (0..found_urls.size) %}
+    {% assign u = found_urls[i] %}
+    {% if u %}
+      {% assign u_rel = u | relative_url %}
+      {% assign p_rel = page.url | relative_url %}
+      {% if u_rel == p_rel %}
+        {% assign current_index = i %}
+        {% break %}
       {% endif %}
-
-      {% if candidate.url == page.url %}
-        {% assign found_current = true %}
-        {% assign prev_poema = prev_found %}
-      {% endif %}
-
-      {% assign prev_found = candidate %}
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} Wrap-around if at the ends {%- endcomment -%}
-  {% if found_current and next_poema == nil %}
-    {% assign next_poema = first_poema %}
-  {% endif %}
-  {% if found_current and prev_poema == nil %}
-    {% assign prev_poema = last_poema_in_list %}
+  {% assign prev_poema = nil %}
+  {% assign next_poema = nil %}
+  {% if current_index != -1 %}
+    {% assign n = found_urls.size | minus: 1 %}
+    {% assign prev_index = current_index | minus: 1 %}
+    {% if prev_index < 0 %}
+      {% assign prev_index = n %}
+    {% endif %}
+    {% assign next_index = current_index | plus: 1 %}
+    {% if next_index > n %}
+      {% assign next_index = 0 %}
+    {% endif %}
+    {% assign prev_url = found_urls[prev_index] %}
+    {% assign next_url = found_urls[next_index] %}
+    {% for p in site.poemas %}
+      {% if p.url == prev_url %}
+        {% assign prev_poema = p %}
+      {% endif %}
+      {% if p.url == next_url %}
+        {% assign next_poema = p %}
+      {% endif %}
+    {% endfor %}
   {% endif %}
 
   <style>
@@ -211,7 +223,7 @@
       {% if found and next_pelicula == nil %}
         {% assign next_pelicula = item %}
       {% endif %}
-      {% if item.url == page.url %}
+  {% if item.url | relative_url == page.url | relative_url %}
         {% assign found = true %}
       {% endif %}
     {% endfor %}
@@ -223,7 +235,7 @@
   {% if prev_pelicula == nil %}
     {% assign last_seen = nil %}
     {% for item in site.peliculas %}
-      {% if item.url == page.url %}
+  {% if item.url | relative_url == page.url | relative_url %}
         {% if last_seen %}
           {% assign prev_pelicula = last_seen %}
         {% else %}

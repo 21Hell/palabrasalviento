@@ -5,6 +5,7 @@ date: 2025-11-13
 show_full_date: false
 permalink: /poemas/CII/
 categoria: sin titulo 2025
+autor: Carlos Wolf
 ---
 
 La forma de tu ojos o como es que las almendras me recuerdan a la forma de tus dientes.
