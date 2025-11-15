@@ -1,7 +1,8 @@
 ---
+
 title: "LIII"
 layout: poema_custom
-date: 2024-01-02
+date: 2024-01-03
 categoria: sin titulo 2024
 permalink: /poemas/LIII/
 autor: Carlos Wolf

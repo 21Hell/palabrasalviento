@@ -1,7 +1,8 @@
 ---
+
 title: "LIV"
 layout: poema_custom
-date: 2024-01-03
+date: 2024-01-04
 categoria: sin titulo 2024
 permalink: /poemas/LIV/
 autor: Carlos Wolf

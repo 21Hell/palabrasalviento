@@ -1,7 +1,8 @@
 ---
+
 title: "XVI"
 layout: poema
-date: 2021-01-07
+date: 2021-01-08
 show_full_date: false
 permalink: /poemas/XVI/
 categoria: panoramas

@@ -1,7 +1,8 @@
 ---
+
 title: "LIX"
 layout: poema_custom
-date: 2024-01-08
+date: 2024-01-09
 categoria: sin titulo 2024
 permalink: /poemas/LIX/
 autor: Carlos Wolf

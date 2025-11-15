@@ -1,7 +1,8 @@
 ---
+
 title: "LX"
 layout: poema
-date: 2024-01-09
+date: 2024-01-10
 categoria: sin titulo 2024
 permalink: /poemas/LX/
 autor: Carlos Wolf

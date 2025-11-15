@@ -1,7 +1,8 @@
 ---
+
 title: "XXIII"
 layout: poema
-date: 2021-01-14
+date: 2021-01-15
 show_full_date: false
 permalink: /poemas/XXIII/
 categoria: panoramas

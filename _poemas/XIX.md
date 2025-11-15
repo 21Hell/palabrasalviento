@@ -1,7 +1,8 @@
 ---
+
 title: "XIX"
 layout: poema
-date: 2021-01-10
+date: 2021-01-11
 show_full_date: false
 permalink: /poemas/XIX/
 categoria: panoramas

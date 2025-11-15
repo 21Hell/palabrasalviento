@@ -1,7 +1,8 @@
 ---
+
 title: "XXXVIII"
 layout: poema_custom
-date: 2023-09-13
+date: 2023-09-18
 show_full_date: false
 permalink: /poemas/XXXVIII/
 categoria: sin titulo 2023/2

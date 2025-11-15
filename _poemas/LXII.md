@@ -1,7 +1,8 @@
 ---
+
 title: "LXII"
 layout: poema
-date: 2024-01-11
+date: 2024-01-12
 categoria: sin titulo 2024
 permalink: /poemas/LXII/
 autor: Carlos Wolf

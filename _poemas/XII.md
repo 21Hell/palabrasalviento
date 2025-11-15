@@ -1,7 +1,8 @@
 ---
+
 title: "XII"
 layout: poema
-date: 2021-01-03
+date: 2021-01-04
 show_full_date: false
 permalink: /poemas/XII/
 categoria: panoramas

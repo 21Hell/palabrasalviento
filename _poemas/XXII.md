@@ -1,7 +1,8 @@
 ---
+
 title: "XXII"
 layout: poema
-date: 2021-01-13
+date: 2021-01-14
 show_full_date: false
 permalink: /poemas/XXII/
 categoria: panoramas

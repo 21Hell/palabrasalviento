@@ -1,7 +1,8 @@
 ---
+
 title: "LVIII"
 layout: poema
-date: 2024-01-07
+date: 2024-01-08
 categoria: sin titulo 2024
 permalink: /poemas/LVIII/
 autor: Carlos Wolf

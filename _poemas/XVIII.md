@@ -1,7 +1,8 @@
 ---
+
 title: "XVIII"
 layout: poema
-date: 2021-01-09
+date: 2021-01-10
 show_full_date: false
 permalink: /poemas/XVIII/
 categoria: panoramas

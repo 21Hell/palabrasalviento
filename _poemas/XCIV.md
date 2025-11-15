@@ -1,7 +1,8 @@
 ---
+
 title: "XCIV"
 layout: poema_custom
-date: 2025-09-14
+date: 2025-09-24
 show_full_date: false
 permalink: /poemas/XCIV/
 categoria: sin titulo 2025

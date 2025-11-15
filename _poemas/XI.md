@@ -1,7 +1,8 @@
 ---
+
 title: "XI"
 layout: poema
-date: 2021-01-02
+date: 2021-01-03
 show_full_date: false
 permalink: /poemas/XI/
 categoria: panoramas

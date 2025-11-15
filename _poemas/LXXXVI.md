@@ -1,7 +1,8 @@
 ---
+
 title: "LXXXVI"
 layout: poema_custom
-date: 2025-09-14
+date: 2025-09-16
 show_full_date: false
 permalink: /poemas/LXXXVI/
 categoria: sin titulo 2025

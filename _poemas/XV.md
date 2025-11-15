@@ -1,7 +1,8 @@
 ---
+
 title: "XV"
 layout: poema
-date: 2021-01-06
+date: 2021-01-07
 show_full_date: false
 permalink: /poemas/XV/
 categoria: panoramas

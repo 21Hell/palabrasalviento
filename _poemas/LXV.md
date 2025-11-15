@@ -1,7 +1,8 @@
 ---
+
 title: "LXV"
 layout: poema_custom
-date: 2024-01-14
+date: 2024-01-15
 categoria: sin titulo 2024
 permalink: /poemas/LXV/
 autor: Carlos Wolf

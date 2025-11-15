@@ -1,7 +1,8 @@
 ---
+
 title: "VIII"
 layout: poema
-date: 2019-09-01
+date: 2019-09-04
 show_full_date: false
 permalink: /poemas/VIII/
 categoria: nostalgia

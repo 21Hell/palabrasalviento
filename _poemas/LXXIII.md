@@ -1,7 +1,8 @@
 ---
+
 title: "LXXIII"
 layout: poema_custom
-date: 2024-01-20
+date: 2024-01-23
 show_full_date: false
 permalink: /poemas/LXXIII/
 categoria: sin titulo 2024

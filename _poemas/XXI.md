@@ -1,7 +1,8 @@
 ---
+
 title: "XXI"
 layout: poema
-date: 2021-01-12
+date: 2021-01-13
 show_full_date: false
 permalink: /poemas/XXI/
 categoria: panoramas

@@ -1,7 +1,8 @@
 ---
+
 title: "LXX"
 layout: poema_custom
-date: 2024-01-17
+date: 2024-01-20
 show_full_date: false
 permalink: /poemas/LXX/
 categoria: sin titulo 2024

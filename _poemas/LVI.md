@@ -1,7 +1,8 @@
 ---
+
 title: "LVI"
 layout: poema_nodos
-date: 2024-01-05
+date: 2024-01-06
 categoria: sin titulo 2024
 permalink: /poemas/LVI/
 autor: Carlos Wolf

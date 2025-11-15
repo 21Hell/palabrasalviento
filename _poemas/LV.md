@@ -1,7 +1,8 @@
 ---
+
 title: "LV"
 layout: poema_custom
-date: 2024-01-04
+date: 2024-01-05
 categoria: sin titulo 2024
 permalink: /poemas/LV/
 autor: Carlos Wolf

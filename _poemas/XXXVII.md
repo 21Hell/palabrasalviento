@@ -1,7 +1,8 @@
 ---
+
 title: "XXXVII"
 layout: poema_custom
-date: 2023-09-12
+date: 2023-09-17
 show_full_date: false
 permalink: /poemas/XXXVII/
 categoria: sin titulo 2023/2

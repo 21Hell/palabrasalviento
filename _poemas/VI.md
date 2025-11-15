@@ -1,7 +1,8 @@
 ---
+
 title: "VI"
 layout: poema
-date: 2019-09-01
+date: 2019-09-02
 show_full_date: false
 permalink: /poemas/VI/
 categoria: nostalgia

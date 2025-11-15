@@ -1,7 +1,8 @@
 ---
+
 title: "XXIV"
 layout: poema
-date: 2021-01-15
+date: 2021-01-16
 show_full_date: false
 permalink: /poemas/XXIV/
 categoria: panoramas

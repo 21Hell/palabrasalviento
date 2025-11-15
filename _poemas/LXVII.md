@@ -1,7 +1,8 @@
 ---
+
 title: "LXVII"
 layout: poema_custom
-date: 2024-01-16
+date: 2024-01-17
 show_full_date: false
 permalink: /poemas/LXVII/
 categoria: sin titulo 2024

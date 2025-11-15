@@ -1,7 +1,8 @@
 ---
+
 title: "C"
 layout: poema_custom
-date: 2025-10-26
+date: 2025-10-29
 show_full_date: false
 permalink: /poemas/C/
 categoria: sin titulo 2025

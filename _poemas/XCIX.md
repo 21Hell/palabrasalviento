@@ -1,7 +1,8 @@
 ---
+
 title: "XCIX"
 layout: poema_custom
-date: 2025-10-26
+date: 2025-10-28
 show_full_date: false
 permalink: /poemas/XCIX/
 categoria: sin titulo 2025

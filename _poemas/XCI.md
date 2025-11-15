@@ -1,7 +1,8 @@
 ---
+
 title: "XCI"
 layout: poema_custom
-date: 2025-09-14
+date: 2025-09-21
 show_full_date: false
 permalink: /poemas/XCI/
 categoria: sin titulo 2025

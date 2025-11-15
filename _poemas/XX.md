@@ -1,7 +1,8 @@
 ---
+
 title: "XX"
 layout: poema
-date: 2021-01-11
+date: 2021-01-12
 show_full_date: false
 permalink: /poemas/XX/
 categoria: panoramas

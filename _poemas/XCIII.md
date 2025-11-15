@@ -1,7 +1,8 @@
 ---
+
 title: "XCIII"
 layout: poema_custom
-date: 2025-09-14
+date: 2025-09-23
 show_full_date: false
 permalink: /poemas/XCIII/
 categoria: sin titulo 2025

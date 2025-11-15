@@ -1,7 +1,8 @@
 ---
+
 title: "VII"
 layout: poema
-date: 2019-09-01
+date: 2019-09-03
 show_full_date: false
 permalink: /poemas/VII/
 categoria: nostalgia

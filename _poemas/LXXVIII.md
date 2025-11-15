@@ -1,7 +1,8 @@
 ---
+
 title: "LXXVIII"
 layout: poema_custom
-date: 2024-01-25
+date: 2024-01-28
 show_full_date: false
 permalink: /poemas/LXXVIII/
 categoria: sin titulo 2024

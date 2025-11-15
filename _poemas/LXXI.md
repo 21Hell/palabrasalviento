@@ -1,7 +1,8 @@
 ---
+
 title: "LXXI"
 layout: poema_custom
-date: 2024-01-18
+date: 2024-01-21
 show_full_date: false
 permalink: /poemas/LXXI/
 categoria: sin titulo 2024
