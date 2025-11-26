@@ -11,7 +11,7 @@ parrafos:
   - texto: |
       ¿es muy obvio?
       ¿soy muy obvio?
-      ¿único cuanto menos?
+      ¿cínico cuanto menos?
     alineamiento: izquierda
   - texto: |
       ¿es normal que se sientan cremosas tus manos?

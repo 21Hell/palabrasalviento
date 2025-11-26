@@ -5,24 +5,24 @@ layout: default
 
 <div class="container" style="max-width:900px; margin:auto; padding:2em 1em;">
   <h1 style="color:#0056b3; font-size:2em; text-align:center; margin-bottom:1em;">Ensayos</h1>
-  <div class="ensayos-list" style="display:flex; flex-wrap:wrap; gap:2em; justify-content:center; margin-bottom:2em;">
+  <div class="ensayos-lista">
   {% assign ensayos = site.ensayos %}
   {% if ensayos.size == null %}
     {% assign ensayos = '' | split: '' %}
   {% endif %}
   {% assign ensayos_ordenados = ensayos | sort: "date" | reverse %}
   {% for ensayo in ensayos_ordenados %}
-      <div class="ensayo-card" style="background:#f7f7f7; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.08); padding:1.5em 2em; max-width:320px; min-width:220px; margin-bottom:1em; display:flex; flex-direction:column; align-items:flex-start;">
-        <a href="{{ site.baseurl }}{{ ensayo.url }}" style="font-size:1.2em; font-weight:bold; color:#0056b3; text-decoration:none; margin-bottom:0.5em;">{{ ensayo.title }}</a>
-        <span style="color:#888; font-size:0.95em; margin-bottom:0.7em;">{{ ensayo.date | date: "%Y-%m-%d" }}</span>
-        <span style="color:#444; font-size:1em; font-style:italic; white-space:pre-line;">
-          {% if ensayo.excerpt %}
-            {{ ensayo.excerpt }}
-          {% else %}
-            {{ ensayo.content | strip_html | truncatewords: 18, '...' }}
-          {% endif %}
-        </span>
-      </div>
+    <a href="{{ site.baseurl }}{{ ensayo.url }}" class="ensayo-card" style="display:block; text-decoration:none; color:inherit;">
+      <h2 style="margin-top:0;">{{ ensayo.title }}</h2>
+      <span class="ensayo-date">{{ ensayo.date | date: "%Y-%m-%d" }}</span>
+      <p>
+        {% if ensayo.excerpt %}
+          {{ ensayo.excerpt }}
+        {% else %}
+          {{ ensayo.content | strip_html | truncatewords: 18, '...' }}
+        {% endif %}
+      </p>
+    </a>
     {% endfor %}
   </div>
 </div>

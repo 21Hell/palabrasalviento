@@ -1,0 +1,54 @@
+/* Ensayo modern style (no background change) */
+.ensayo-content {
+  font-family: 'Inter', 'Roboto', 'Segoe UI', Arial, sans-serif;
+  color: #f5f5f5;
+  max-width: 700px;
+  margin: 2.5rem auto 3.5rem auto;
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+  background: transparent;
+}
+.ensayo-content h1, .ensayo-content h2 {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.7em;
+  letter-spacing: -0.01em;
+}
+.ensayo-content h1 {
+  font-size: 2.2rem;
+  margin-top: 0;
+}
+.ensayo-content h2 {
+  font-size: 1.4rem;
+  color: #e0e0e0;
+}
+.ensayo-content p, .ensayo-content ul, .ensayo-content ol {
+  color: #e5e5e5;
+  font-size: 1.13rem;
+  line-height: 1.7;
+  margin-bottom: 1.2em;
+}
+.ensayo-content time, .ensayo-content .ensayo-date {
+  color: #b0b0b0;
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 1.5em;
+  display: block;
+}
+.ensayo-content hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 2.5em 0;
+}
+.ensayo-content blockquote {
+  border-left: 3px solid #444;
+  color: #bdbdbd;
+  margin: 1.5em 0;
+  padding: 0.5em 1.2em;
+  font-style: italic;
+  background: rgba(255,255,255,0.02);
+}
+.ensayo-content li {
+  margin-bottom: 0.5em;
+}

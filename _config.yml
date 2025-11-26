@@ -66,6 +66,9 @@ collections:
   ensayos:
     output: true
 
+  libros:
+    output: true
+
 permalink: /:categories/:title/
 defaults:
   - scope:
@@ -85,3 +88,8 @@ defaults:
       path: "experimentos"
     values:
       layout: "experimento"
+
+  - scope:
+      path: "libros"
+    values:
+      layout: "critica"

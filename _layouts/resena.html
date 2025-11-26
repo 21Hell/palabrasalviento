@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="container resena-individual" style="max-width:700px; margin:40px auto; background:#fafafa; border-radius:8px; box-shadow:0 1px 6px rgba(0,0,0,0.04); padding:2em 1.5em;">
+  <h1 style="font-family:'Georgia',serif; color:#222; font-weight:normal; border-bottom:1px solid #e0e0e0; margin-bottom:0.7em;">{{ page.title }}</h1>
+  {% if page.autor_libro %}
+    <p class="autor-libro" style="color:#444; margin-top:0; margin-bottom:1em; font-size:1em; font-style:italic;">Autor del libro: {{ page.autor_libro }}</p>
+  {% endif %}
+  {% if page.date %}
+    <p class="fecha" style="color:#888; margin-top:0; margin-bottom:1.2em; font-size:0.98em;">Fecha de reseña: {{ page.date | date: "%d-%m-%Y" }}</p>
+  {% endif %}
+  <div class="resena-text" style="margin-top:1.5em; color:#222; font-size:1.08em; line-height:1.65; font-family:'Georgia',serif;">
+    {{ content }}
+  </div>
+  <div class="resena-autor" style="margin-top:2em; color:#888; font-size:0.95em; text-align:right;">Reseña de {{ page.autor }}</div>
+</div>
