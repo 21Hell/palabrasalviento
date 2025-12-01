@@ -12,7 +12,7 @@ Me parece curioso escribir una disertación sobre los temas del anarquismo dado 
 
 Decir antes que Graeber no me leería porque tiene un sentimiento supremamente arraigado en contra del academicismo Marxista (Trotskista etc etc). Ya que primeramente dice que no son ideas de un conjunto sino de individuos, y comanda la cuestión de "El Gran Hombre", el problema es que Graeber parece ignorar la Dialéctica Materialista, que no es una cuestión de "El Gran Hombre" sino de la historia y la sociedad, y cómo estas se entrelazan en el devenir de los pueblos y las naciones.
 
-Otra cosa a destcar es que sobre el texto "¿Eres Anarquista?" practicamente va a quedar relegado a un tema anecdotico, ya que el texto es más bien una especie de manifiesto, con preguntas moralinas, carentes de una base teórica sólida y se resumen a hacer preguntas cargadas de subjetividad y emotividad, y no a un análisis riguroso de la teoría política. cayendo en falacias varias entre las cuales estaria el envenenamioento del pozo y la falacia del verdadero escocés (entre otras).
+Otra cosa a destacar es que sobre el texto "¿Eres Anarquista?" practicamente va a quedar relegado a un tema anecdotico, ya que el texto es más bien una especie de manifiesto, con preguntas moralinas, carentes de una base teórica sólida y se resumen a hacer preguntas cargadas de subjetividad y emotividad, y no a un análisis riguroso de la teoría política. cayendo en falacias varias entre las cuales estaria el envenenamioento del pozo y la falacia del verdadero escocés (entre otras).
 
 ## Primera crítica: La contradicción de Graeber
 
