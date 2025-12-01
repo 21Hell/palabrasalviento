@@ -2,6 +2,7 @@
 title: "Un Brevísimo ensayo sobre algunos Textos diseminados de la teoría de Graeber"
 date: 2025-11-30
 layout: critica
+excerpt: "Pequeño esbozo critico sobre algunos textos de David Graeber."
 ---
 
 ## Introducción
@@ -11,6 +12,8 @@ David Graeber, dos textos que leí recomendados por el compañero Apollo, uno de
 Me parece curioso escribir una disertación sobre los temas del anarquismo dado a que no pretendo dar un sentido exhaustivo a la teoría política, sino más bien una visión distinta a simplemente aceptar a raja tabla la teoría de Graeber sobre el anarquismo.
 
 Decir antes que Graeber no me leería porque tiene un sentimiento supremamente arraigado en contra del academicismo Marxista (Trotskista etc etc). Ya que primeramente dice que no son ideas de un conjunto sino de individuos, y comanda la cuestión de "El Gran Hombre", el problema es que Graeber parece ignorar la Dialéctica Materialista, que no es una cuestión de "El Gran Hombre" sino de la historia y la sociedad, y cómo estas se entrelazan en el devenir de los pueblos y las naciones.
+
+Otra cosa a destcar es que sobre el texto "¿Eres Anarquista?" practicamente va a quedar relegado a un tema anecdotico, ya que el texto es más bien una especie de manifiesto, con preguntas moralinas, carentes de una base teórica sólida y se resumen a hacer pregunatas cargadas de subjetividad y emotividad, y no a un análisis riguroso de la teoría política. caeyndo en falacias varias entre als cuales estaria el envenenamioento del pozo y la falacia del verdadero escocés (entre otras).
 
 ## Primera crítica: La contradicción de Graeber
 
