@@ -4,8 +4,6 @@ date: 2025-11-30
 layout: critica
 ---
 
-# Un Brevísimo ensayo sobre algunos Textos diseminados de la teoría de Graeber
-
 ## Introducción
 
 David Graeber, dos textos que leí recomendados por el compañero Apollo, uno de ellos *Fragmentos de la antropología anarquista*, y el otro *¿Eres Anarquista?*
