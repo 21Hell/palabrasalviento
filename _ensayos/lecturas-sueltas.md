@@ -2,6 +2,7 @@
 title: "Un Brevísimo ensayo sobre algunos Textos diseminados de la teoría de Graeber"
 date: 2025-11-30
 layout: critica
+excerpt: "Anarcopía, Estado y violencia simbólica en David Graeber"
 ---
 
 ## Introducción
