@@ -2,7 +2,6 @@
 title: "Un Brevísimo ensayo sobre algunos Textos diseminados de la teoría de Graeber"
 date: 2025-11-30
 layout: critica
-excerpt: "Pequeño esbozo critico sobre algunos textos de David Graeber."
 ---
 
 ## Introducción
