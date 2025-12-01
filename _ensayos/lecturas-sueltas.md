@@ -7,11 +7,9 @@ excerpt: "Anarcopía, Estado y violencia simbólica en David Graeber"
 
 ## Introducción
 
-David Graeber, dos textos que leí recomendados por el compañero Apollo, uno de ellos *Fragmentos de la antropología anarquista*, y el otro *¿Eres Anarquista?*
+David Graeber, autor de los dos textos que leí por recomendación del compañero Apollo, *Fragmentos de antropología anarquista* y *¿Eres anarquista?*, sirve como punto de partida para una reflexión sobre el anarquismo. No busco ofrecer una revisión exhaustiva de esta tradición política, sino plantear una lectura que no se limite a aceptar de manera dogmatica los postulados de Graeber o los Anarquistas.
 
-Me parece curioso escribir una disertación sobre los temas del anarquismo dado a que no pretendo dar un sentido exhaustivo a la teoría política, sino más bien una visión distinta a simplemente aceptar a raja tabla la teoría de Graeber sobre el anarquismo.
-
-Decir antes que Graeber no me leería porque tiene un sentimiento supremamente arraigado en contra del academicismo Marxista (Trotskista etc etc). Ya que primeramente dice que no son ideas de un conjunto sino de individuos, y comanda la cuestión de "El Gran Hombre", el problema es que Graeber parece ignorar la Dialéctica Materialista, que no es una cuestión de "El Gran Hombre" sino de la historia y la sociedad, y cómo estas se entrelazan en el devenir de los pueblos y las naciones.
+Hay que señalar que Graeber, de entrada, ni siquiera se tomaría el tiempo de leerme, porque tiene un rechazo casi visceral hacia el academicismo Marxista (Trotskista etc etc). Ya que primeramente dice que no son ideas de un conjunto sino de individuos, y comanda la cuestión de "El Gran Hombre", el problema es que Graeber parece ignorar la Dialéctica Materialista, que no es una cuestión de "El Gran Hombre" sino de la historia y la sociedad, y cómo estas se entrelazan en el devenir de los pueblos y las naciones.
 
 Otra cosa a destacar es que sobre el texto "¿Eres Anarquista?" practicamente va a quedar relegado a un tema anecdotico, ya que el texto es más bien una especie de manifiesto, con preguntas moralinas, carentes de una base teórica sólida y se resumen a hacer preguntas cargadas de subjetividad y emotividad, y no a un análisis riguroso de la teoría política. cayendo en falacias varias entre las cuales estaria el envenenamioento del pozo y la falacia del verdadero escocés (entre otras).
 
