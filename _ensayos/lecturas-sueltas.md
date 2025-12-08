@@ -205,22 +205,28 @@ El problema no es si la ideología coincide con la práctica. En la lectura de �
 
 Los problemas fundamentales del texto de Graeber desde Marx son:
 
-### 1. Idealismo antropológico
+### 1. Idealismo 
+
 Pone lo imaginario en el centro, no las condiciones materiales.
 
 ### 2. Ausencia de teoría de clases
+
 Habla del Estado como aparato simbólico, no como máquina de dominación de una clase sobre otra.
 
 ### 3. Confusión entre representación y función
+
 Estudia cómo el Estado se justifica, no por qué surge.
 
-### 4. Desinterés por la economía política
+### 4. Desinterés por la economía 
+
 No explica tributación, excedente, violencia, propiedad, acumulación.
 
 ### 5. Equivalencia equivocada entre tipos de poder
+
 Compara coerción persa, griega y amazónica sin distinguir modos de producción.
 
 ### 6. Ignora la relación estructural entre Estado y capital
+
 El Estado moderno no es simplemente imaginario más coerción, sino la forma política del capitalismo.
 
 ### En síntesis:
@@ -259,4 +265,3 @@ La fuerza simbólica opera así:
 - Genera sujetos que cooperan con la dominación porque la creen parte del orden del mundo
 
 Por eso Žižek dice que la autoridad simbólica funciona incluso sin un agente real presente. La porra es el soporte material inicial, pero la dominación se sostiene por la dimensión simbólica que la transforma en una estructura que regula la vida social. Con el tiempo, la amenaza física se hace excepcional porque la amenaza simbólica ya está instalada.
-
