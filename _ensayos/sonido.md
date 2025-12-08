@@ -265,53 +265,50 @@ Ejemplos de efectos auditivos:
 	<figcaption>Infografía: efectos auditivos y medidas de protección.</figcaption>
 </figure>
 
-●​ Efecto máscara: Cuando un sonido impide la percepción total o parcial de 
-otros sonidos presentes. 
-●​ Acúfenos: Esto se produce por la alteración del nervio auditivo que, en 
-casos extremos puede causar ansiedad. 
-Los efectos no auditivos son aquellos que no percibimos por parte de nuestra 
-habilidad auditiva, si no, de otros medios. 
-Ejemplos de efectos no auditivos: 
-●​ Efectos sobre el sueño: El ruido produce dificultades para conciliar el sueño 
-y despierta a quienes están dormidos. 
-●​ Efectos en la atención: El ruido hace que la atención no se localice en una 
-actividad específica, haciendo que esta se pierda. 
-Formas de combatirlas 
-Entendemos la contaminación acústica como el ruido (sonido excesivo) provocado 
-por las actividades humanas mayormente. 
-La manera más razonable y fácil de combatir esta contaminación sería evitar 
-realizar actividades que generen un sonido excesivo. 
-Tenemos diversos tipos de materiales para aislar el ruido los cuáles son: 
-●​ Celulosa: Éste es popular en el sector de construcción ya que además de 
-aislante acústico también es térmico. 
-●​ Técnica multicapa: este como tal no es un material, pero se refiere al 
-hecho de colocar varias capas de material absorbente como los cartones de 
-huevo que son muy famosos ya que son fácil de conseguir y barato. 
-●​ Corcho: se trata de un material económico, de fácil instalación y que a su 
-vez requiere de muy poco mantenimiento. 
- 
- 
+●​ Efecto máscara: Cuando un sonido impide la percepción total o parcial de
+otros sonidos presentes.
+
+●​ Acúfenos: Esto se produce por la alteración del nervio auditivo que, en
+casos extremos puede causar ansiedad.
+Los efectos no auditivos son aquellos que no percibimos por parte de nuestra
+habilidad auditiva, si no, de otros medios.
+
+Ejemplos de efectos no auditivos:
+●​ Efectos sobre el sueño: El ruido produce dificultades para conciliar el sueño
+y despierta a quienes están dormidos.
+
+●​ Efectos en la atención: El ruido hace que la atención no se localice en una
+actividad específica, haciendo que esta se pierda.
+Formas de combatirlas
+Entendemos la contaminación acústica como el ruido (sonido excesivo) provocado
+por las actividades humanas mayormente.
+
+La manera más razonable y fácil de combatir esta contaminación sería evitar
+realizar actividades que generen un sonido excesivo.
+Tenemos diversos tipos de materiales para aislar el ruido los cuáles son:
+
+●​ Celulosa: Éste es popular en el sector de construcción ya que además de
+aislante acústico también es térmico.
+●​ Técnica multicapa: este como tal no es un material, pero se refiere al
+hecho de colocar varias capas de material absorbente como los cartones de
+huevo que son muy famosos ya que son fácil de conseguir y barato.
+●​ Corcho: se trata de un material económico, de fácil instalación y que a su
+vez requiere de muy poco mantenimiento
+
 FUENTES DE CONSULTA
 
-
-http://www.anarkasis.net/pitagoras/574_nivel_intensidad/ 
-http://roble.pntic.mec.es/~mbedmar/iesao/quimica/sonidofi.htm 
-https://www.fisic.ch/contenidos/ondas-y-sonido/velocidad-del-sonido/ 
-https://www.nfon.com/es/servicio/base-de-conocimiento/base-de-conocimiento-des
-tacar/ondas-sonoras 
-https://www.eumus.edu.uy/eme/ensenanza/acustica/apuntes/material-viejo/fisica_r/ 
-https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.sc.ehu.es%2Fsbweb
-%2Ffisica_%2Fondas%2Facustica%2Fsonido%2Fsonido1.html&psig=AOvVaw3xb
-glzBHNJ2xq8Q0gvKWJr&ust=1582087262503000&source=images&cd=vfe&ved=
-0CAIQjRxqFwoTCLjYhL2k2ucCFQAAAAAdAAAAABAD 
-https://www.construmatica.com/construpedia/Intensidad_del_Sonido 
-http://e-ducativa.catedu.es/44700165/aula/archivos/repositorio/3000/3212/html/31_
-intensidad_sonora.html 
-http://blogdefisica5a-sonido.blogspot.com/2010/09/resonancia-infrasonico-y-ultraso
-nico.html 
-http://hyperphysics.phy-astr.gsu.edu/hbasees/Sound/interf.html 
-http://www.mecapedia.uji.es/vibracion_forzada.htm 
-http://musiki.org.ar/Resonancia 
-http://hyperphysics.phy-astr.gsu.edu/hbasees/Sound/earsens.html 
-https://www.medel.com/esl/how-hearing-works/
+- [Nivel de intensidad - Anarkasis](http://www.anarkasis.net/pitagoras/574_nivel_intensidad/)
+- [Sonido - IES](http://roble.pntic.mec.es/~mbedmar/iesao/quimica/sonidofi.htm)
+- [Velocidad del sonido - Fisic](https://www.fisic.ch/contenidos/ondas-y-sonido/velocidad-del-sonido/)
+- [Ondas sonoras - NFON](https://www.nfon.com/es/servicio/base-de-conocimiento/base-de-conocimiento-destacar/ondas-sonoras)
+- [Física acústica - EUMUS](https://www.eumus.edu.uy/eme/ensenanza/acustica/apuntes/material-viejo/fisica_r/)
+- [Sonido - Universidad del País Vasco](http://www.sc.ehu.es/sbweb/fisica_/ondas/acustica/sonido/sonido1.html)
+- [Intensidad del sonido - Construmatica](https://www.construmatica.com/construpedia/Intensidad_del_Sonido)
+- [Intensidad sonora - E-ducativa](http://e-ducativa.catedu.es/44700165/aula/archivos/repositorio/3000/3212/html/31_intensidad_sonora.html)
+- [Resonancia, infrasónico y ultrasónico](http://blogdefisica5a-sonido.blogspot.com/2010/09/resonancia-infrasonico-y-ultrasonico.html)
+- [Interferencia - HyperPhysics](http://hyperphysics.phy-astr.gsu.edu/hbasees/Sound/interf.html)
+- [Vibración forzada - Mecapedia](http://www.mecapedia.uji.es/vibracion_forzada.htm)
+- [Resonancia - Musiki](http://musiki.org.ar/Resonancia)
+- [Sensibilidad del oído - HyperPhysics](http://hyperphysics.phy-astr.gsu.edu/hbasees/Sound/earsens.html)
+- [Cómo funciona la audición - MED-EL](https://www.medel.com/esl/how-hearing-works/)
 

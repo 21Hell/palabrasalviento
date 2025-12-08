@@ -1,11 +1,6 @@
----
-title: "Medicamentos y Drogas"
-date: 2025-09-20
-layout: critica
-excerpt: "Reflexión sobre la crítica, el ensayo y la libertad creativa."
----
 
 Nota (WIP). Este ensayo está en proceso de redacción. Los contenidos pueden cambiar ... Última actualización: 4 de noviembre de 2025.
+
 
 
 Ya desde el planteamiento del título del ensayo estoy haciendo una presuposición mereológica sobre los términos que voy a utilizar. Medicamentos y drogas. Dándoles un carácter de división característica y eso podría ser un estado cegado. Pero creo importante esta distinción debido a la forma en la que se me han presentado estos temas de forma personal.
@@ -27,7 +22,6 @@ La importancia de la forma farmacéutica reside en que determina la eficacia del
 
 Esto es fundamental ya que para su consumo los medicamentos deben pasar por un proceso de aprobación y regulación por parte de entidades gubernamentales como la FDA (Administración de Alimentos y Medicamentos) en Estados Unidos o la EMA (Agencia Europea de Medicamentos) en Europa. Estas agencias evalúan la seguridad, eficacia y calidad de los medicamentos antes de que puedan ser comercializados y utilizados por la población.
 
-
 Tabaco
 
 El tabaco no es un medicamento, pero la nicotina es una sustancia psicoactiva con potente acción sobre el sistema nervioso central. La nicotina estimula receptores nicotínicos de acetilcolina, altera la liberación de neurotransmisores (dopamina, noradrenalina, serotonina) y produce efectos de recompensa, atención y alivio transitorio del estrés, lo que explica su alto potencial adictivo. El consumo repetido genera tolerancia y dependencia psicológica y física; la retirada produce síndrome de abstinencia (irritabilidad, ansiedad, dificultad para concentrarse, aumento del apetito) que complica el abandono.
@@ -36,9 +30,6 @@ El tabaco no es un medicamento, pero la nicotina es una sustancia psicoactiva co
 Alcohol
 
 El alcohol etílico es una sustancia psicoactiva con propiedades depresoras del sistema nervioso central y potencial para dependencia. Su efecto depende de dosis, patrón de consumo y contexto; el consumo excesivo agudo aumenta el riesgo de lesiones y comportamientos dañinos; el consumo crónico incrementa la carga de enfermedad (enfermedad hepática, cardiopatías, varios tipos de cáncer, trastornos neuropsiquiátricos).
-
-
-
 
 Drogas psicoactivas
 
@@ -68,7 +59,6 @@ En 1957 la OMS volvió a definir ambos términos: la toxicomanía se mantuvo com
 4. Cuando existen efectos nocivos, suelen recaer sobre todo en el propio individuo.
 
 Estas distinciones históricas muestran cómo los marcos clínicos y normativos han intentado separar el fenómeno del hábito del de la dependencia patológica, aunque en la práctica las fronteras son a menudo menos nítidas.
-
 
 Referencias (seleccionadas)
 
