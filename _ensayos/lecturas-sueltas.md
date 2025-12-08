@@ -78,7 +78,7 @@ El anarquismo no puede pretender transformar la sociedad mientras rechaza precis
 
 Y aplicando el uso de la falacia del verdadero escocés, Graeber descalifica a cualquier anarquista que quiera involucrarse en la política como alguien que no se precie de ser anarquista.
 
-### Denotando:
+### Denotando
 
 El problema es que, al no tener una base teórica sólida, el anarquismo tiende a caer en tres trampas principales que lo debilitan como proyecto político:
 
@@ -205,7 +205,7 @@ El problema no es si la ideología coincide con la práctica. En la lectura de �
 
 Los problemas fundamentales del texto de Graeber desde Marx son:
 
-### 1. Idealismo 
+### 1. Idealismo
 
 Pone lo imaginario en el centro, no las condiciones materiales.
 
@@ -217,7 +217,7 @@ Habla del Estado como aparato simbólico, no como máquina de dominación de una
 
 Estudia cómo el Estado se justifica, no por qué surge.
 
-### 4. Desinterés por la economía 
+### 4. Desinterés por la economía política
 
 No explica tributación, excedente, violencia, propiedad, acumulación.
 
@@ -229,7 +229,7 @@ Compara coerción persa, griega y amazónica sin distinguir modos de producción
 
 El Estado moderno no es simplemente imaginario más coerción, sino la forma política del capitalismo.
 
-### En síntesis:
+### En síntesis
 
 Graeber ofrece una **fenomenología del Estado**, no una teoría del Estado.
 

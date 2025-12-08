@@ -37,4 +37,3 @@ A muchas personas realmente les da igual; sin embargo, en términos de privacida
 #### Referencias
 
 Cheshire, Tom. "Behind the Scenes at Donald Trump's UK Digital War Room." Sky News, 22 Oct. 2016, [www.sky.com/story/behind-the-scenes-at-donald-trumps-uk-digital-war-room-10661571](https://www.sky.com/story/behind-the-scenes-at-donald-trumps-uk-digital-war-room-10661571).
-

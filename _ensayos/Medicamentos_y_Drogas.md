@@ -1,8 +1,6 @@
 
 Nota (WIP). Este ensayo está en proceso de redacción. Los contenidos pueden cambiar ... Última actualización: 4 de noviembre de 2025.
 
-
-
 Ya desde el planteamiento del título del ensayo estoy haciendo una presuposición mereológica sobre los términos que voy a utilizar. Medicamentos y drogas. Dándoles un carácter de división característica y eso podría ser un estado cegado. Pero creo importante esta distinción debido a la forma en la que se me han presentado estos temas de forma personal.
 Medicamentos
 
@@ -26,7 +24,6 @@ Tabaco
 
 El tabaco no es un medicamento, pero la nicotina es una sustancia psicoactiva con potente acción sobre el sistema nervioso central. La nicotina estimula receptores nicotínicos de acetilcolina, altera la liberación de neurotransmisores (dopamina, noradrenalina, serotonina) y produce efectos de recompensa, atención y alivio transitorio del estrés, lo que explica su alto potencial adictivo. El consumo repetido genera tolerancia y dependencia psicológica y física; la retirada produce síndrome de abstinencia (irritabilidad, ansiedad, dificultad para concentrarse, aumento del apetito) que complica el abandono.
 
-
 Alcohol
 
 El alcohol etílico es una sustancia psicoactiva con propiedades depresoras del sistema nervioso central y potencial para dependencia. Su efecto depende de dosis, patrón de consumo y contexto; el consumo excesivo agudo aumenta el riesgo de lesiones y comportamientos dañinos; el consumo crónico incrementa la carga de enfermedad (enfermedad hepática, cardiopatías, varios tipos de cáncer, trastornos neuropsiquiátricos).
@@ -44,6 +41,7 @@ Historia y definiciones según la OMS
 La OMS, a través de sus comités de expertos, se ha ocupado desde hace décadas del tema de las drogodependencias. Ya en 1950 distinguió entre «drogas toxicomanígenas» y «drogas que engendran hábito» (WHO, 1950). En dicho informe definió la droga que engendra hábito como «la que se toma o puede tomarse de manera repetida sin producir todas las características que figuran en la definición de la toxicomanía y que no suele considerarse nociva para el individuo y para la sociedad».
 
 Por otra parte, la toxicomanía se describió por las siguientes características:
+
 1. Un invencible deseo o necesidad (compulsión) de seguir consumiendo la droga y de obtenerla por todos los medios.
 2. Una tendencia a aumentar la dosis.
 3. Una relación de dependencia psíquica (psicológica) y, generalmente, física respecto a los efectos de la droga.
@@ -53,6 +51,7 @@ El informe añadía que la toxicomanía era nociva para el individuo y para la s
 En 1952 el Comité reiteró que era posible y necesario distinguir la toxicomanía de la habituación y las drogas toxicomanígenas de las drogas que engendran hábito; no obstante, señaló la posibilidad de un daño individual y colectivo por parte de estas últimas, destacando que en ellas la falta de deseo compulsivo podía ser sustituida por el desarrollo de un hábito de consumo fundado en la persuasión de que sus efectos son beneficiosos.
 
 En 1957 la OMS volvió a definir ambos términos: la toxicomanía se mantuvo como un estado de intoxicación periódica o crónica producido por el consumo repetido de una droga (natural o sintética) con las características ya citadas (compulsión, aumento de dosis, dependencia psíquica y física, y efecto nocivo para el individuo y la sociedad). La habituación se describió como la situación originada por la administración repetida de una droga y se caracterizó por:
+
 1. Un deseo (no una compulsión) de seguir tomando la droga por la sensación de bienestar que produce.
 2. Una tendencia escasa o nula a aumentar la dosis.
 3. Cierto grado de dependencia psíquica respecto a los efectos de la droga, pero sin dependencia física con el consiguiente síndrome de abstinencia.
