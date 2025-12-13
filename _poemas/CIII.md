@@ -1,7 +1,7 @@
 ---
 title: "CIII"
 layout: poema
-date: 2025-12-15
+date: 2025-12-14
 show_full_date: false
 permalink: /poemas/CIII/
 categoria: sin titulo 2025

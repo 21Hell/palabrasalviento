@@ -1,6 +1,11 @@
 ---
-layout: poema
 title: "CV"
+layout: poema
+date: 2025-12-10
+show_full_date: false
+permalink: /poemas/CV/
+categoria: sin titulo 2025
+autor: Carlos Wolf
 ---
 
 Escala sobre mi cuello un sueño
