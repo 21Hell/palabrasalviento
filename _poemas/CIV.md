@@ -1,7 +1,7 @@
 ---
 title: "CIV"
 layout: poema
-date: 2025-12-12
+date: 2025-12-11
 show_full_date: false
 permalink: /poemas/CIV/
 categoria: sin titulo 2025

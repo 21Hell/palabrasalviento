@@ -1,7 +1,7 @@
 ---
 title: "CV"
 layout: poema
-date: 2025-12-10
+date: 2025-12-12
 show_full_date: false
 permalink: /poemas/CV/
 categoria: sin titulo 2025

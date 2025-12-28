@@ -4,7 +4,7 @@ title: "LXIII"
 layout: poema
 date: 2024-01-13
 categoria: sin titulo 2024
-permalink: /poemas/LXXIV/
+permalink: /poemas/LXIII/
 autor: Carlos Wolf
 show_full_date: false
 ---

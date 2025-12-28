@@ -16,7 +16,7 @@ parrafos:
     alineamiento: izquierda
   - texto: |
       Casi recuerdo tu rostro
-      Con las llamas
+      Con las llemas
       Quiero memorizarte
     alineamiento: izquierda
   - texto: |
