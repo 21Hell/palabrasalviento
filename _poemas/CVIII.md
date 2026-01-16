@@ -1,5 +1,4 @@
 ---
-
 title: "CVIII"
 layout: poema
 date: 2025-12-28
@@ -25,4 +24,4 @@ yo: el fin
 
 Al fin se acaba el mundo corazon
 
-Acaste con mi mundo, corazon
+Acabaste con mi mundo, corazon

@@ -1,5 +1,4 @@
 ---
-
 title: "CVI"
 layout: poema
 date: 2025-12-28
