@@ -7,7 +7,6 @@ permalink: /poemas/CXV/
 categoria: sin titulo sin fecha
 autor: Carlos Wolf
 ---
-
 Quiero escribir un poema que no sea para ella
 Preferiría no amarla
 

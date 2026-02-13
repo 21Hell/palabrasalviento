@@ -7,7 +7,6 @@ permalink: /poemas/CXIV/
 categoria: sin titulo sin fecha
 autor: Carlos Wolf
 ---
-
 La gente me pregunta cómo tengo tanto tiempo
 para hacer tantas cosas
 
