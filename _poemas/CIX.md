@@ -1,5 +1,4 @@
 ---
-
 title: "CIX"
 layout: poema
 date: 2026-01-06
