@@ -7,13 +7,68 @@ layout: none
     <title>{{ site.title }} - Poemas</title>
     <link>{{ site.url }}{{ site.baseurl }}/poemas</link>
     <description>{{ site.description }}</description>
-    {% assign poemas_ordenados = site.poemas | sort: 'date' | reverse | slice: 0, 50 %}
-    {% for poema in poemas_ordenados %}
+    {%- comment -%} Collect poems: iterate `site.poemas` (sorted) first, then pages with `layout: poema_custom` to avoid mixing types when sorting {%- endcomment -%}
+    {% assign custom_poems = site.pages | where: "layout", "poema_custom" %}
+    {% assign poemas_sorted = site.poemas | sort: 'date' | reverse %}
+    {% for poema in poemas_sorted %}
     <item>
       <title>{{ poema.title }}</title>
       <link>{{ site.url }}{{ site.baseurl }}{{ poema.url }}</link>
-      <description>{{ poema.content | xml_escape | strip_html | truncatewords: 40, '...' }}</description>
-      <pubDate>{{ poema.date | date_to_rfc822 }}</pubDate>
+      <!-- debug: parrafos_size={{ poema.parrafos | size }} data_parrafos_size={{ poema.data.parrafos | size }} -->
+      <description>
+        {%- if poema.excerpt and poema.excerpt != "" -%}
+          {{ poema.excerpt | xml_escape | strip_html | truncatewords: 40, '...' }}
+        {%- elsif poema.content and poema.content != "" -%}
+          {{ poema.content | xml_escape | strip_html | truncatewords: 40, '...' }}
+        {%- elsif poema.parrafos or poema.data.parrafos -%}
+          {%- capture poema_text -%}
+            {%- assign pset = poema.parrafos | default: poema.data.parrafos -%}
+            {%- for p in pset -%}
+              {%- if p.text -%}{{ p.text }}{%- elsif p.texto -%}{{ p.texto }}{%- else -%}{{ p }}{%- endif -%}
+              {%- unless forloop.last -%}\n{%- endunless -%}
+            {%- endfor -%}
+          {%- endcapture -%}
+          {%- assign poema_text = poema_text | strip -%}
+          {%- if poema_text != "" -%}
+            {{ poema_text | strip_html | xml_escape | truncatewords: 40, '...' }}
+          {%- else -%}
+            {{ "" }}
+          {%- endif -%}
+        {%- else -%}
+          {{ "" }}
+        {%- endif -%}
+      </description>
+      <pubDate>{% if poema.date %}{{ poema.date | date_to_rfc822 }}{% endif %}</pubDate>
+      <category>{% if poema.categoria %}{{ poema.categoria }}{% elsif poema.categories %}{{ poema.categories | join: ", " }}{% endif %}</category>
+    </item>
+    {% endfor %}
+    {% for poema in custom_poems %}
+    <item>
+      <title>{{ poema.title }}</title>
+      <link>{{ site.url }}{{ site.baseurl }}{{ poema.url }}</link>
+      <description>
+        {%- if poema.excerpt and poema.excerpt != "" -%}
+          {{ poema.excerpt | xml_escape | strip_html | truncatewords: 40, '...' }}
+        {%- elsif poema.content and poema.content != "" -%}
+          {{ poema.content | xml_escape | strip_html | truncatewords: 40, '...' }}
+        {%- elsif poema.parrafos -%}
+          {%- capture poema_text -%}
+            {%- for p in poema.parrafos -%}
+              {%- if p.text -%}{{ p.text }}{%- elsif p.texto -%}{{ p.texto }}{%- else -%}{{ p }}{%- endif -%}
+              {%- unless forloop.last -%}\n{%- endunless -%}
+            {%- endfor -%}
+          {%- endcapture -%}
+          {%- assign poema_text = poema_text | strip -%}
+          {%- if poema_text != "" -%}
+            {{ poema_text | strip_html | xml_escape | truncatewords: 40, '...' }}
+          {%- else -%}
+            {{ "" }}
+          {%- endif -%}
+        {%- else -%}
+          {{ "" }}
+        {%- endif -%}
+      </description>
+      <pubDate>{% if poema.date %}{{ poema.date | date_to_rfc822 }}{% endif %}</pubDate>
       <category>{% if poema.categoria %}{{ poema.categoria }}{% elsif poema.categories %}{{ poema.categories | join: ", " }}{% endif %}</category>
     </item>
     {% endfor %}

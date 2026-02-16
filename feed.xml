@@ -7,13 +7,30 @@ layout: none
     <title>{{ site.title }} - Todo</title>
     <link>{{ site.url }}{{ site.baseurl }}/</link>
     <description>{{ site.description }}</description>
+    {%- comment -%} Collect site posts, collection items and pages that act as articles (layout: post) {%- endcomment -%}
     {% assign all_items = site.posts | concat: site.poemas | concat: site.peliculas | concat: site.experimentos | concat: site.ensayos | concat: site.libros %}
     {% assign all_items = all_items | sort: 'date' | reverse | slice: 0, 50 %}
     {% for item in all_items %}
     <item>
       <title>{{ item.title }}</title>
       <link>{{ site.url }}{{ site.baseurl}}{{ item.url }}</link>
-      <description>{{ item.content | xml_escape | strip_html | truncatewords: 40, '...' }}</description>
+      <description>
+        {%- if item.excerpt and item.excerpt != "" -%}
+          {{ item.excerpt | xml_escape | strip_html | truncatewords: 40, '...' }}
+        {%- elsif item.content and item.content != "" -%}
+          {{ item.content | xml_escape | strip_html | truncatewords: 40, '...' }}
+        {%- elsif item.parrafos or item.data.parrafos -%}
+          {%- capture item_text -%}
+            {%- assign pset = item.parrafos | default: item.data.parrafos -%}
+            {%- for p in pset -%}
+              {{ p.text | default: p.texto }} 
+            {%- endfor -%}
+          {%- endcapture -%}
+          {{ item_text | xml_escape | strip_html | truncatewords: 40, '...' }}
+        {%- else -%}
+          {{ "" }}
+        {%- endif -%}
+      </description>
       <pubDate>{{ item.date | date_to_rfc822 }}</pubDate>
       <category>{% if item.categoria %}{{ item.categoria }}{% elsif item.categories %}{{ item.categories | join: ", " }}{% endif %}</category>
     </item>
