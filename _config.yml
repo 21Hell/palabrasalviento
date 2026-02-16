@@ -24,8 +24,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   Un monton de palabras tiradas al viento 
 
 
-url: "https://21Hell.github.io"
-baseurl: "/palabrasalviento"   # <- pon esto si NO es tu página raíz
+url: "http://cwolf.kernelpanic.lol"
+baseurl: ""
 
 twitter_username: jekyllrb
 github_username:  jekyll
