@@ -7,13 +7,14 @@ layout: none
     <title>{{ site.title }} - Poemas</title>
     <link>{{ site.url }}{{ site.baseurl }}/poemas</link>
     <description>{{ site.description }}</description>
-    {% for poema in site.poemas %}
+    {% assign poemas_ordenados = site.poemas | sort: 'date' | reverse | slice: 0, 50 %}
+    {% for poema in poemas_ordenados %}
     <item>
       <title>{{ poema.title }}</title>
       <link>{{ site.url }}{{ site.baseurl }}{{ poema.url }}</link>
       <description>{{ poema.content | xml_escape | strip_html | truncatewords: 40, '...' }}</description>
       <pubDate>{{ poema.date | date_to_rfc822 }}</pubDate>
-      <category>{{ poema.categoria }}</category>
+      <category>{% if poema.categoria %}{{ poema.categoria }}{% elsif poema.categories %}{{ poema.categories | join: ", " }}{% endif %}</category>
     </item>
     {% endfor %}
   </channel>

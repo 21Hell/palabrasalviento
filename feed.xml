@@ -7,14 +7,15 @@ layout: none
     <title>{{ site.title }} - Todo</title>
     <link>{{ site.url }}{{ site.baseurl }}/</link>
     <description>{{ site.description }}</description>
-  {% assign all_items = site.posts | concat: site.poemas | concat: site.peliculas | concat: site.experimentos | concat: site.ensayos | sort: 'date' | reverse | slice: 0, 1 %}
-  {% for item in all_items %}
+    {% assign all_items = site.posts | concat: site.poemas | concat: site.peliculas | concat: site.experimentos | concat: site.ensayos | concat: site.libros %}
+    {% assign all_items = all_items | sort: 'date' | reverse | slice: 0, 50 %}
+    {% for item in all_items %}
     <item>
       <title>{{ item.title }}</title>
       <link>{{ site.url }}{{ site.baseurl}}{{ item.url }}</link>
       <description>{{ item.content | xml_escape | strip_html | truncatewords: 40, '...' }}</description>
       <pubDate>{{ item.date | date_to_rfc822 }}</pubDate>
-      <category>{{ item.categoria | default: item.categories }}</category>
+      <category>{% if item.categoria %}{{ item.categoria }}{% elsif item.categories %}{{ item.categories | join: ", " }}{% endif %}</category>
     </item>
     {% endfor %}
   </channel>
