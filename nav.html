@@ -141,15 +141,17 @@
     background: #fff;
     border-bottom: 1px solid #e0e0e0;
     padding: 0.5rem 0;
-    display: none;
     width: 100%;
     align-items: flex-start;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     z-index: 1000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
 
   .navbar-menu.active {
-    display: flex;
+    max-height: 500px;
   }
 
   .navbar-menu li {
@@ -170,6 +172,10 @@
     background: #f8f8f8;
     border-left-color: #0056b3;
     border-bottom: none;
+  }
+
+  .navbar-rss {
+    padding: 0.6rem clamp(1rem, 2vw, 1.5rem) !important;
   }
 
   .navbar-rss:hover {
