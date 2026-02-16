@@ -1,0 +1,219 @@
+/* Responsive Framework Overrides for Pico CSS + Custom Brand */
+
+/* Root responsive variables */
+:root {
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+  --spacing-2xl: 3rem;
+  
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
+}
+
+/* Ensure full viewport responsiveness */
+html, body {
+  width: 100%;
+  height: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Override Pico container for content */
+main, .container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: var(--spacing-lg) auto;
+  padding: var(--spacing-md);
+  box-sizing: border-box;
+}
+
+/* Responsive typography */
+h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+p, li, span {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  line-height: 1.6;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive grid system */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  main, .container {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  main, .container {
+    max-width: var(--container-xl);
+    padding: var(--spacing-xl);
+  }
+}
+
+/* Responsive flex utilities */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Responsive spacing utilities */
+@media (max-width: 640px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  main, .container {
+    padding: var(--spacing-sm);
+    margin: var(--spacing-sm) 0;
+  }
+  
+  h1, h2, h3 {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+@media (min-width: 641px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* Responsive tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 0.9rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+  }
+}
+
+/* Responsive buttons */
+button, input[type="submit"], input[type="button"] {
+  padding: 0.5rem 1.25rem;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+@media (max-width: 640px) {
+  button, input[type="submit"], input[type="button"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Responsive forms */
+form {
+  max-width: 100%;
+}
+
+input, textarea, select {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+fieldset {
+  padding: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+}
+
+/* Responsive lists */
+ul, ol {
+  padding-left: clamp(1rem, 3vw, 2.5rem);
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Ensure content doesn't overflow on small screens */
+@media (max-width: 480px) {
+  pre, code {
+    font-size: 0.8rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .container, main {
+    padding: var(--spacing-xs);
+  }
+}
+
+/* Print styles */
+@media print {
+  main, .container {
+    box-shadow: none;
+    border: none;
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  nav, footer, .no-print {
+    display: none;
+  }
+}
