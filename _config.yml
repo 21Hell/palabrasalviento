@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Un monton de palabras tiradas al viento 
 
 
-url: "http://cwolf.kernelpanic.lol"
+url: "https://cwolf.kernelpanic.lol"
 baseurl: ""
 
 twitter_username: jekyllrb
