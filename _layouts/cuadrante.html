@@ -1,0 +1,270 @@
+---
+layout: default
+---
+
+<div class="oulipo-nodos-tool" style="max-width:900px;margin:40px auto;padding:2em;background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.08);">
+  <h1 style="font-family:'Times New Roman',serif;">Generador Oulipiano de Nodos</h1>
+  <p>Elige o escribe palabras para cada categoría y configura las conexiones. Arrastra los nodos para reorganizarlos. ¡Experimenta!</p>
+  <form id="oulipo-form" style="margin-bottom:2em;">
+    <div style="display:flex;gap:1em;flex-wrap:wrap;">
+      <div>
+        <label>Verbos<br><textarea id="oulipo-verbs" rows="3" style="width:140px;">gemir
+ahogar</textarea></label>
+      </div>
+      <div>
+        <label>Sustantivos<br><textarea id="oulipo-nouns" rows="3" style="width:140px;">agua
+fondo
+ceniza
+pantalla</textarea></label>
+      </div>
+      <div>
+        <label>Adjetivos<br><textarea id="oulipo-adjs" rows="3" style="width:140px;">oscura
+virtual</textarea></label>
+      </div>
+      <div>
+        <label>Número de nodos<br><input type="number" id="oulipo-num-nodes" min="4" max="12" value="4" style="width:60px;"></label>
+      </div>
+    </div>
+    <div style="margin-top:1em;">
+      <label>Tipo de conexión:<br>
+        <select id="oulipo-conn-type">
+          <option value="all">Todos con todos</option>
+          <option value="cycle">Ciclo</option>
+          <option value="cross">Cruzado</option>
+          <option value="random">Aleatorio</option>
+        </select>
+      </label>
+      <button type="button" id="oulipo-generate" style="margin-left:1em;">Generar</button>
+    </div>
+  </form>
+  <div id="oulipo-nodos-visual" style="position:relative;min-height:420px;background:#f8f8f8;border-radius:10px;"></div>
+  <div style="margin-top:2em;">
+    <button id="oulipo-export" style="margin-right:1em;">Exportar texto</button>
+    <textarea id="oulipo-output" rows="5" style="width:100%;margin-top:1em;" readonly></textarea>
+  </div>
+</div>
+
+<script>
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function pickWords(verbs, nouns, adjs, n) {
+  let pool = shuffle([
+    ...verbs.map(w=>({w, t:'verbo'})),
+    ...nouns.map(w=>({w, t:'sustantivo'})),
+    ...adjs.map(w=>({w, t:'adjetivo'}))
+  ]);
+  let out = [];
+  let used = {verbo:0, sustantivo:0, adjetivo:0};
+  for(let i=0;i<n;i++) {
+    let next = pool.shift();
+    if(!next) break;
+    out.push(next);
+    used[next.t]++;
+  }
+  return out;
+}
+
+function makeEdges(n, type) {
+  let edges = [];
+  if(type==='all') {
+    for(let i=0;i<n;i++) for(let j=0;j<n;j++) if(i!==j) edges.push([i,j]);
+  } else if(type==='cycle') {
+    for(let i=0;i<n;i++) edges.push([i,(i+1)%n]);
+  } else if(type==='cross') {
+    for(let i=0;i<n;i++) edges.push([i,(i+2)%n]);
+  } else if(type==='random') {
+    for(let i=0;i<n;i++) {
+      let j = i;
+      while(j===i) j = Math.floor(Math.random()*n);
+      edges.push([i,j]);
+    }
+    for(let k=0;k<Math.max(1,Math.floor(n/2));k++) {
+      let a = Math.floor(Math.random()*n), b=a;
+      while(b===a) b = Math.floor(Math.random()*n);
+      edges.push([a,b]);
+    }
+  }
+  return edges;
+}
+
+function renderNodos(words, edges) {
+  const visual = document.getElementById('oulipo-nodos-visual');
+  visual.innerHTML = '';
+  const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('class','oulipo-connections');
+  svg.style.position = 'absolute';
+  svg.style.inset = '0';
+  svg.style.width = '100%';
+  svg.style.height = '100%';
+  svg.style.pointerEvents = 'none';
+  svg.style.overflow = 'visible';
+  svg.style.zIndex = '1';
+  visual.appendChild(svg);
+  const nodes = [];
+  words.forEach((w,i)=>{
+    const div = document.createElement('div');
+    div.className = 'oulipo-nodo';
+    div.textContent = w.w;
+    div.dataset.idx = i;
+    div.style.position = 'absolute';
+    div.style.background = 'rgba(0,0,0,0.85)';
+    div.style.color = '#fff';
+    div.style.padding = '0.8em 1em';
+    div.style.borderRadius = '8px';
+    div.style.fontFamily = 'Georgia,serif';
+    div.style.fontSize = '1.1em';
+    div.style.boxShadow = '0 6px 18px rgba(0,0,0,0.18)';
+    div.style.cursor = 'grab';
+    div.style.userSelect = 'none';
+    div.style.zIndex = 2;
+    visual.appendChild(div);
+    nodes.push(div);
+  });
+  // random positions
+  const crect = visual.getBoundingClientRect();
+  const placed = [];
+  nodes.forEach(n => {
+    const width = 120 + Math.random()*60;
+    const height = 40 + Math.random()*20;
+    const maxW = Math.max(20, visual.offsetWidth - width - 20);
+    const maxH = Math.max(20, visual.offsetHeight - height - 20);
+    let left, top, tries = 0;
+    do {
+      left = Math.random() * maxW + 20;
+      top = Math.random() * maxH + 20;
+      const rect = { left, top, right: left + width, bottom: top + height };
+      const overlapping = placed.some(p => !(rect.right < p.left || rect.left > p.right || rect.bottom < p.top || rect.top > p.bottom));
+      if(!overlapping) break;
+      tries++;
+    } while(tries < 30);
+    n.style.left = left + 'px';
+    n.style.top = top + 'px';
+    placed.push({ left: left, top: top, right: left + width, bottom: top + height });
+  });
+  // draw edges
+  function getCenter(el){
+    const rect = el.getBoundingClientRect();
+    const crect = visual.getBoundingClientRect();
+    return { x: rect.left - crect.left + rect.width/2, y: rect.top - crect.top + rect.height/2 };
+  }
+  edges.forEach(pair => {
+    const a = getCenter(nodes[pair[0]]);
+    const b = getCenter(nodes[pair[1]]);
+    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1', a.x);
+    line.setAttribute('y1', a.y);
+    line.setAttribute('x2', b.x);
+    line.setAttribute('y2', b.y);
+    line.setAttribute('stroke', 'rgba(0,0,0,0.18)');
+    line.setAttribute('stroke-width', '2');
+    line.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(line);
+  });
+  // drag
+  nodes.forEach(node => {
+    node.addEventListener('pointerdown', startDrag);
+    node.style.touchAction = 'none';
+  });
+  let dragEl = null, startX=0, startY=0, origX=0, origY=0;
+  function startDrag(e){
+    dragEl = e.currentTarget;
+    nodes.forEach(nd => nd.style.zIndex = 2);
+    dragEl.style.zIndex = 9999;
+    dragEl.setPointerCapture(e.pointerId);
+    const rect = dragEl.getBoundingClientRect();
+    const crect = visual.getBoundingClientRect();
+    startX = e.clientX; startY = e.clientY;
+    origX = rect.left - crect.left;
+    origY = rect.top - crect.top;
+    dragEl.style.cursor = 'grabbing';
+    dragEl.style.transition = 'none';
+    dragEl.addEventListener('pointermove', onDrag);
+    dragEl.addEventListener('pointerup', endDrag);
+    dragEl.addEventListener('pointercancel', endDrag);
+  }
+  function onDrag(e){
+    if(!dragEl) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    let nx = origX + dx;
+    let ny = origY + dy;
+    nx = Math.max(0, Math.min(nx, visual.offsetWidth - dragEl.offsetWidth));
+    ny = Math.max(0, Math.min(ny, visual.offsetHeight - dragEl.offsetHeight));
+    dragEl.style.left = nx + 'px';
+    dragEl.style.top = ny + 'px';
+    // redraw lines
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    edges.forEach(pair => {
+      const a = getCenter(nodes[pair[0]]);
+      const b = getCenter(nodes[pair[1]]);
+      const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+      line.setAttribute('x1', a.x);
+      line.setAttribute('y1', a.y);
+      line.setAttribute('x2', b.x);
+      line.setAttribute('y2', b.y);
+      line.setAttribute('stroke', 'rgba(0,0,0,0.18)');
+      line.setAttribute('stroke-width', '2');
+      line.setAttribute('stroke-linecap', 'round');
+      svg.appendChild(line);
+    });
+  }
+  function endDrag(e){
+    if(!dragEl) return;
+    try{ dragEl.releasePointerCapture(e.pointerId); }catch(_){}
+    dragEl.style.cursor = 'grab';
+    dragEl.style.transition = '';
+    dragEl.removeEventListener('pointermove', onDrag);
+    dragEl.removeEventListener('pointerup', endDrag);
+    dragEl.removeEventListener('pointercancel', endDrag);
+    dragEl.style.zIndex = 2;
+    dragEl = null;
+  }
+}
+
+document.getElementById('oulipo-generate').onclick = function(){
+  const verbs = document.getElementById('oulipo-verbs').value.split(/\n|,/).map(w=>w.trim()).filter(Boolean);
+  const nouns = document.getElementById('oulipo-nouns').value.split(/\n|,/).map(w=>w.trim()).filter(Boolean);
+  const adjs = document.getElementById('oulipo-adjs').value.split(/\n|,/).map(w=>w.trim()).filter(Boolean);
+  const n = Math.max(4, Math.min(12, parseInt(document.getElementById('oulipo-num-nodes').value)||4));
+  const connType = document.getElementById('oulipo-conn-type').value;
+  const words = pickWords(verbs, nouns, adjs, n);
+  const edges = makeEdges(words.length, connType);
+  renderNodos(words, edges);
+  // output
+  let txt = words.map(w=>w.w).join(' - ');
+  document.getElementById('oulipo-output').value = txt;
+};
+
+document.getElementById('oulipo-export').onclick = function(){
+  const txt = document.getElementById('oulipo-output').value;
+  navigator.clipboard.writeText(txt);
+  alert('Texto copiado al portapapeles');
+};
+
+// inicial
+setTimeout(()=>{
+  document.getElementById('oulipo-generate').click();
+}, 200);
+</script>
+
+<style>
+.oulipo-nodo {
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.oulipo-nodo:active {
+  box-shadow: 0 0 0 4px #0056b333;
+  background: #222;
+}
+@media (max-width: 700px) {
+  .oulipo-nodo { position: static !important; width: auto !important; margin: 0.6rem 0; }
+  #oulipo-nodos-visual { min-height: 220px; }
+  .oulipo-nodo { cursor: default !important; }
+  svg.oulipo-connections { display: none; }
+}
+</style>
