@@ -8,6 +8,11 @@ layout: default
   {% else %}
     <p class="fecha" style="color:#888; margin-top:0; margin-bottom:1.5em; font-size:1.1em;">{{ page.date | date: "%Y" }}</p>
   {% endif %}
+  {% if page.imagen %}
+  <div class="poema-imagen" style="margin:1.5em 0; text-align:center;">
+    <img src="{{ site.baseurl }}/assets/imagenes/{{ page.imagen }}" alt="{{ page.title }}" style="max-width:100%; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+  </div>
+  {% endif %}
   <div class="poema-text" style="margin-top:2em; color:#222; font-size:1.25em; white-space:pre-line; font-family:'Georgia',serif; line-height:1.7;">
   {% if page.parrafos %}
     {% for p in page.parrafos %}
@@ -44,6 +49,14 @@ layout: default
         .poema-text .news{ display:block; }
       }
     </style>
+  {% if page.instagram %}
+  <div class="poema-instagram" style="margin-top:2em; text-align:center;">
+    <a href="{{ page.instagram }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color:#fff; text-decoration:none; padding:12px 24px; border-radius:8px; font-size:1em; font-weight:500; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      Ver carrusel en Instagram
+    </a>
+  </div>
+  {% endif %}
   <div class="poema-autor" style="margin-top:2em; color:#888; font-size:0.98em; text-align:right;">Autor: <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">Carlos Wolf</a></div>
   </div>
 <div>

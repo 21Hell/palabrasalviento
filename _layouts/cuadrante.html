@@ -3,8 +3,8 @@ layout: default
 ---
 
 <div class="oulipo-nodos-tool" style="max-width:900px;margin:40px auto;padding:2em;background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.08);">
-  <h1 style="font-family:'Times New Roman',serif;">Generador Oulipiano de Nodos</h1>
-  <p>Elige o escribe palabras para cada categoría y configura las conexiones. Arrastra los nodos para reorganizarlos. ¡Experimenta!</p>
+  <h1 style="font-family:'Times New Roman',serif;">Generador Oulipiano de Carlos</h1>
+  <p>Generador de poemas usando Poesia Potencial</p>
   <form id="oulipo-form" style="margin-bottom:2em;">
     <div style="display:flex;gap:1em;flex-wrap:wrap;">
       <div>
@@ -25,6 +25,20 @@ virtual</textarea></label>
         <label>Número de nodos<br><input type="number" id="oulipo-num-nodes" min="4" max="12" value="4" style="width:60px;"></label>
       </div>
     </div>
+    
+    <!-- Nexos con checkboxes -->
+    <div style="margin-top:1.5em;">
+      <label style="font-weight:bold;">Nexos (selecciona los que quieras usar):</label>
+      <div style="margin-top:0.5em;display:flex;gap:0.5em;">
+        <button type="button" id="nexos-all" style="font-size:0.85em;">Todos</button>
+        <button type="button" id="nexos-none" style="font-size:0.85em;">Ninguno</button>
+        <button type="button" id="nexos-preposiciones" style="font-size:0.85em;">Preposiciones</button>
+        <button type="button" id="nexos-conjunciones" style="font-size:0.85em;">Conjunciones</button>
+        <button type="button" id="nexos-articulos" style="font-size:0.85em;">Artículos</button>
+      </div>
+      <div id="nexos-container" style="margin-top:0.8em;display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:0.4em;max-height:200px;overflow-y:auto;background:#f9f9f9;padding:1em;border-radius:8px;border:1px solid #eee;"></div>
+    </div>
+    
     <div style="margin-top:1em;">
       <label>Tipo de conexión:<br>
         <select id="oulipo-conn-type">
@@ -34,23 +48,104 @@ virtual</textarea></label>
           <option value="random">Aleatorio</option>
         </select>
       </label>
+      <label style="margin-left:1em;">Estilo de poema:<br>
+        <select id="oulipo-poem-style">
+          <option value="lineal">Lineal (verso por verso)</option>
+          <option value="prosa">Prosa continua</option>
+          <option value="fragmento">Fragmentos</option>
+          <option value="escalonado">Escalonado</option>
+        </select>
+      </label>
       <button type="button" id="oulipo-generate" style="margin-left:1em;">Generar</button>
     </div>
   </form>
   <div id="oulipo-nodos-visual" style="position:relative;min-height:420px;background:#f8f8f8;border-radius:10px;"></div>
   <div style="margin-top:2em;">
+    <h3 style="font-family:'Times New Roman',serif;margin-bottom:0.5em;">Poema Generado</h3>
+    <div id="oulipo-poem" style="background:#fafafa;padding:1.5em;border-radius:8px;font-family:Georgia,serif;font-size:1.15em;line-height:1.8;white-space:pre-line;min-height:80px;border:1px solid #eee;"></div>
+  </div>
+  <div style="margin-top:2em;">
     <button id="oulipo-export" style="margin-right:1em;">Exportar texto</button>
+    <button id="oulipo-regenerate-poem" style="margin-right:1em;">Regenerar solo poema</button>
     <textarea id="oulipo-output" rows="5" style="width:100%;margin-top:1em;" readonly></textarea>
   </div>
 </div>
 
 <script>
-function shuffle(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+// Todos los nexos del español organizados por categoría
+const NEXOS_ESPANOL = {
+  preposiciones: ['a', 'ante', 'bajo', 'cabe', 'con', 'contra', 'de', 'desde', 'durante', 'en', 'entre', 'hacia', 'hasta', 'mediante', 'para', 'por', 'según', 'sin', 'so', 'sobre', 'tras', 'versus', 'vía'],
+  locuciones_prep: ['a causa de', 'a favor de', 'a través de', 'acerca de', 'al lado de', 'alrededor de', 'antes de', 'a pesar de', 'cerca de', 'con tal de', 'de acuerdo con', 'debajo de', 'delante de', 'dentro de', 'después de', 'detrás de', 'en busca de', 'en contra de', 'en cuanto a', 'en frente de', 'en lugar de', 'en medio de', 'en torno a', 'en vez de', 'encima de', 'frente a', 'fuera de', 'gracias a', 'junto a', 'lejos de', 'más allá de', 'por encima de', 'por medio de'],
+  conjunciones_coord: ['y', 'e', 'ni', 'o', 'u', 'pero', 'mas', 'sino', 'aunque', 'sin embargo', 'no obstante', 'así que', 'por tanto', 'por consiguiente', 'entonces'],
+  conjunciones_subord: ['que', 'si', 'como', 'cuando', 'donde', 'porque', 'aunque', 'mientras', 'apenas', 'conforme', 'según', 'siempre que', 'a fin de que', 'para que', 'puesto que', 'ya que', 'dado que', 'pues', 'como si', 'tan pronto como', 'antes de que', 'después de que', 'hasta que', 'desde que', 'a menos que', 'con tal de que', 'a condición de que'],
+  articulos: ['el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas', 'lo'],
+  otros: ['del', 'al', 'como el', 'como la', 'como un', 'como una', 'en el', 'en la', 'de la', 'de los', 'con el', 'con la', 'por el', 'por la', 'hacia el', 'hacia la', 'sobre el', 'sobre la', 'entre los', 'entre las', 'sin el', 'sin la']
+};
+
+// Inicializar checkboxes de nexos
+function initNexosCheckboxes() {
+  const container = document.getElementById('nexos-container');
+  container.innerHTML = '';
+  
+  const allNexos = [];
+  for (const cat in NEXOS_ESPANOL) {
+    NEXOS_ESPANOL[cat].forEach(n => {
+      allNexos.push({ nexo: n, cat: cat });
+    });
   }
-  return arr;
+  
+  allNexos.forEach(item => {
+    const label = document.createElement('label');
+    label.style.cssText = 'display:flex;align-items:center;gap:4px;font-size:0.9em;cursor:pointer;';
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.value = item.nexo;
+    cb.dataset.cat = item.cat;
+    cb.checked = ['preposiciones', 'articulos'].includes(item.cat); // Por defecto preposiciones y artículos
+    label.appendChild(cb);
+    label.appendChild(document.createTextNode(item.nexo));
+    container.appendChild(label);
+  });
+}
+
+// Botones de selección rápida
+document.getElementById('nexos-all').onclick = () => {
+  document.querySelectorAll('#nexos-container input[type="checkbox"]').forEach(cb => cb.checked = true);
+};
+document.getElementById('nexos-none').onclick = () => {
+  document.querySelectorAll('#nexos-container input[type="checkbox"]').forEach(cb => cb.checked = false);
+};
+document.getElementById('nexos-preposiciones').onclick = () => {
+  document.querySelectorAll('#nexos-container input[type="checkbox"]').forEach(cb => {
+    cb.checked = cb.dataset.cat === 'preposiciones' || cb.dataset.cat === 'locuciones_prep';
+  });
+};
+document.getElementById('nexos-conjunciones').onclick = () => {
+  document.querySelectorAll('#nexos-container input[type="checkbox"]').forEach(cb => {
+    cb.checked = cb.dataset.cat === 'conjunciones_coord' || cb.dataset.cat === 'conjunciones_subord';
+  });
+};
+document.getElementById('nexos-articulos').onclick = () => {
+  document.querySelectorAll('#nexos-container input[type="checkbox"]').forEach(cb => {
+    cb.checked = cb.dataset.cat === 'articulos' || cb.dataset.cat === 'otros';
+  });
+};
+
+function getSelectedNexos() {
+  const nexos = [];
+  document.querySelectorAll('#nexos-container input[type="checkbox"]:checked').forEach(cb => {
+    nexos.push(cb.value);
+  });
+  return nexos.length > 0 ? nexos : ['y', 'con', 'en', 'de']; // fallback
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
 function pickWords(verbs, nouns, adjs, n) {
@@ -231,14 +326,86 @@ document.getElementById('oulipo-generate').onclick = function(){
   const verbs = document.getElementById('oulipo-verbs').value.split(/\n|,/).map(w=>w.trim()).filter(Boolean);
   const nouns = document.getElementById('oulipo-nouns').value.split(/\n|,/).map(w=>w.trim()).filter(Boolean);
   const adjs = document.getElementById('oulipo-adjs').value.split(/\n|,/).map(w=>w.trim()).filter(Boolean);
+  const nexos = getSelectedNexos();
   const n = Math.max(4, Math.min(12, parseInt(document.getElementById('oulipo-num-nodes').value)||4));
   const connType = document.getElementById('oulipo-conn-type').value;
+  const poemStyle = document.getElementById('oulipo-poem-style').value;
   const words = pickWords(verbs, nouns, adjs, n);
   const edges = makeEdges(words.length, connType);
   renderNodos(words, edges);
+  // Generate poem with nexos
+  const poem = generatePoem(words, nexos, poemStyle);
+  document.getElementById('oulipo-poem').innerHTML = poem;
   // output
   let txt = words.map(w=>w.w).join(' - ');
-  document.getElementById('oulipo-output').value = txt;
+  document.getElementById('oulipo-output').value = txt + '\n\n--- Poema ---\n' + poem.replace(/<br>/g, '\n').replace(/&nbsp;/g, ' ').replace(/<[^>]+>/g, '');
+};
+
+function generatePoem(words, nexos, style) {
+  const wordList = words.map(w => w.w);
+  const shuffledWords = shuffle([...wordList]);
+  const shuffledNexos = shuffle([...nexos]);
+  
+  let poem = '';
+  
+  if (style === 'lineal') {
+    // Verso por verso: palabra + nexo + palabra
+    for (let i = 0; i < shuffledWords.length; i++) {
+      const nexo = shuffledNexos[i % shuffledNexos.length];
+      const nextWord = shuffledWords[(i + 1) % shuffledWords.length];
+      poem += shuffledWords[i] + ' ' + nexo + ' ' + nextWord + '<br>';
+    }
+  } else if (style === 'prosa') {
+    // Prosa continua
+    let parts = [];
+    for (let i = 0; i < shuffledWords.length; i++) {
+      parts.push(shuffledWords[i]);
+      if (i < shuffledWords.length - 1) {
+        parts.push(shuffledNexos[i % shuffledNexos.length]);
+      }
+    }
+    poem = parts.join(' ') + '.';
+  } else if (style === 'fragmento') {
+    // Fragmentos poéticos
+    const chunks = [];
+    for (let i = 0; i < shuffledWords.length; i += 2) {
+      const w1 = shuffledWords[i];
+      const w2 = shuffledWords[i + 1] || shuffledWords[0];
+      const nexo = shuffledNexos[Math.floor(Math.random() * shuffledNexos.length)];
+      chunks.push(w1 + ' ' + nexo + ' ' + w2);
+    }
+    poem = chunks.join('<br><br>');
+  } else if (style === 'escalonado') {
+    // Escalonado visual
+    let indent = 0;
+    for (let i = 0; i < shuffledWords.length; i++) {
+      const spaces = '&nbsp;'.repeat(indent * 4);
+      const nexo = shuffledNexos[i % shuffledNexos.length];
+      if (i < shuffledWords.length - 1) {
+        poem += spaces + shuffledWords[i] + ' ' + nexo + '<br>';
+      } else {
+        poem += spaces + shuffledWords[i];
+      }
+      indent = (indent + 1) % 4;
+    }
+  }
+  
+  return poem;
+}
+
+document.getElementById('oulipo-regenerate-poem').onclick = function(){
+  const verbs = document.getElementById('oulipo-verbs').value.split(/\n|,/).map(w=>w.trim()).filter(Boolean);
+  const nouns = document.getElementById('oulipo-nouns').value.split(/\n|,/).map(w=>w.trim()).filter(Boolean);
+  const adjs = document.getElementById('oulipo-adjs').value.split(/\n|,/).map(w=>w.trim()).filter(Boolean);
+  const nexos = getSelectedNexos();
+  const n = Math.max(4, Math.min(12, parseInt(document.getElementById('oulipo-num-nodes').value)||4));
+  const poemStyle = document.getElementById('oulipo-poem-style').value;
+  const words = pickWords(verbs, nouns, adjs, n);
+  const poem = generatePoem(words, nexos, poemStyle);
+  document.getElementById('oulipo-poem').innerHTML = poem;
+  // update output
+  let txt = words.map(w=>w.w).join(' - ');
+  document.getElementById('oulipo-output').value = txt + '\n\n--- Poema ---\n' + poem.replace(/<br>/g, '\n').replace(/&nbsp;/g, ' ').replace(/<[^>]+>/g, '');
 };
 
 document.getElementById('oulipo-export').onclick = function(){
@@ -247,7 +414,8 @@ document.getElementById('oulipo-export').onclick = function(){
   alert('Texto copiado al portapapeles');
 };
 
-// inicial
+// Inicializar nexos y generar
+initNexosCheckboxes();
 setTimeout(()=>{
   document.getElementById('oulipo-generate').click();
 }, 200);
