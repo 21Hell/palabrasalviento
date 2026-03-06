@@ -27,7 +27,7 @@ layout: default
         height: 500px;
         border-radius: 12px;
         box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-        background: #1a1a2e;
+        background: #dcdcdc; /* gris claro */
         margin: 2em 0;
         position: relative;
     }
@@ -97,7 +97,7 @@ layout: default
     
     // Configuración de la escena
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x1a1a2e);
+    scene.background = new THREE.Color(0xdcdcdc); // gris claro
     
     // Cámara
     const camera = new THREE.PerspectiveCamera(
@@ -106,7 +106,7 @@ layout: default
         0.1,
         1000
     );
-    camera.position.set(0, 10, 5);
+    camera.position.set(0, 14, 6);
     
     // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true });
