@@ -1,0 +1,239 @@
+---
+layout: default
+---
+<style>
+    .modelo3d-container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #e0e0e0;
+        border-radius: 16px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        padding: 2.5em 2em;
+        text-align: center;
+    }
+    .modelo3d-container h1 {
+        font-family: 'Arial Black', sans-serif;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 0.5em;
+    }
+    .modelo3d-container .fecha {
+        color: #888;
+        margin-top: 0;
+        margin-bottom: 1.5em;
+        font-size: 1.1em;
+    }
+    #canvas-container {
+        width: 100%;
+        height: 500px;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        background: #1a1a2e;
+        margin: 2em 0;
+        position: relative;
+    }
+    #canvas-container canvas {
+        border-radius: 12px;
+    }
+    .modelo3d-controls {
+        margin-top: 1em;
+        color: #666;
+        font-size: 0.9em;
+    }
+    .modelo3d-autor {
+        margin-top: 2em;
+        color: #888;
+        font-size: 0.98em;
+        text-align: right;
+    }
+    .modelo3d-autor a {
+        color: #0056b3;
+        text-decoration: none;
+    }
+    .loading-indicator {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 1.2em;
+    }
+</style>
+
+<div class="modelo3d-container">
+    <h1>{{ page.title }}</h1>
+    {% if page.show_full_date %}
+        <p class="fecha">{{ page.date | date: "%d-%m-%Y" }}</p>
+    {% else %}
+        <p class="fecha">{{ page.date | date: "%Y" }}</p>
+    {% endif %}
+
+    <div class="modelo3d-content" style="color:#222; font-size:1.15em; line-height:1.6;">
+        {{ content }}
+    </div>
+
+    <div id="canvas-container">
+        <div class="loading-indicator" id="loading">Cargando modelo...</div>
+    </div>
+
+    <div class="modelo3d-controls">
+        🖱️ Arrastra para rotar • Scroll para zoom • Click derecho para mover
+    </div>
+
+    <div class="modelo3d-autor">
+        Autor: <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener">Carlos Wolf</a>
+    </div>
+</div>
+
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
+
+<script>
+(function() {
+    const container = document.getElementById('canvas-container');
+    const loading = document.getElementById('loading');
+    
+    // Configuración de la escena
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x1a1a2e);
+    
+    // Cámara
+    const camera = new THREE.PerspectiveCamera(
+        45,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        1000
+    );
+    camera.position.set(0, 10, 5);
+    
+    // Renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.shadowMap.enabled = true;
+    container.appendChild(renderer.domElement);
+    
+    // Controles de órbita
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.enableZoom = true;
+    controls.autoRotate = {{ page.auto_rotate | default: true }};
+    controls.autoRotateSpeed = {{ page.auto_rotate_speed | default: 1.5 }};
+    
+    // Iluminación (baja)
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    directionalLight.position.set(5, 10, 7);
+    directionalLight.castShadow = true;
+    scene.add(directionalLight);
+
+    const backLight = new THREE.DirectionalLight(0xffffff, 0.3);
+    backLight.position.set(-5, 5, -5);
+    scene.add(backLight);
+
+    const frontLight = new THREE.DirectionalLight(0xffffff, 0.25);
+    frontLight.position.set(0, 0, 10);
+    scene.add(frontLight);
+
+    const bottomLight = new THREE.DirectionalLight(0xffffff, 0.2);
+    bottomLight.position.set(0, -5, 0);
+    scene.add(bottomLight);
+    
+    // Cargar modelo
+    const modelPath = '{{ page.modelo_obj | relative_url }}';
+    const mtlPath = '{{ page.modelo_mtl | relative_url }}';
+    
+    function loadModel() {
+        if (mtlPath && mtlPath !== '') {
+            const mtlLoader = new THREE.MTLLoader();
+            mtlLoader.load(mtlPath, function(materials) {
+                materials.preload();
+                const objLoader = new THREE.OBJLoader();
+                objLoader.setMaterials(materials);
+                objLoader.load(modelPath, onModelLoaded, onProgress, onError);
+            }, onProgress, function() {
+                // Si falla cargar MTL, cargar solo OBJ
+                const objLoader = new THREE.OBJLoader();
+                objLoader.load(modelPath, onModelLoaded, onProgress, onError);
+            });
+        } else {
+            const objLoader = new THREE.OBJLoader();
+            objLoader.load(modelPath, onModelLoaded, onProgress, onError);
+        }
+    }
+    
+    function onModelLoaded(object) {
+        // Centrar y escalar modelo
+        const box = new THREE.Box3().setFromObject(object);
+        const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
+
+        const maxDim = Math.max(size.x, size.y, size.z) || 1;
+
+        // mover el modelo al origen antes de escalar
+        object.position.sub(center);
+
+        const scale = 3 / maxDim;
+        object.scale.setScalar(scale);
+        
+        // Material por defecto si no tiene
+        object.traverse(function(child) {
+            if (child.isMesh) {
+                if (!child.material || child.material.name === '') {
+                    child.material = new THREE.MeshStandardMaterial({
+                        color: 0x{{ page.model_color | default: 'cccccc' }},
+                        metalness: 0.3,
+                        roughness: 0.7
+                    });
+                }
+                child.castShadow = true;
+                child.receiveShadow = true;
+            }
+        });
+        
+        scene.add(object);
+
+        // centrar los controles y ocultar loading
+        controls.target.set(0, 0, 0);
+        controls.update();
+        loading.style.display = 'none';
+    }
+    
+    function onProgress(xhr) {
+        if (xhr.lengthComputable) {
+            const percent = (xhr.loaded / xhr.total * 100).toFixed(0);
+            loading.textContent = `Cargando modelo... ${percent}%`;
+        }
+    }
+    
+    function onError(error) {
+        console.error('Error cargando modelo:', error);
+        loading.textContent = 'Error al cargar el modelo';
+        loading.style.color = '#ff6b6b';
+    }
+    
+    loadModel();
+    
+    // Animación
+    function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+    }
+    animate();
+    
+    // Responsive
+    window.addEventListener('resize', function() {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+})();
+</script>
+
+{% include next-button.html %}
