@@ -1,0 +1,192 @@
+/* Landing Page Styles - Solo para la página de inicio */
+
+.hero {
+	background: #2f2a24;
+	border: 2px solid;
+	border-color: #dfdfdf #808080 #808080 #dfdfdf;
+	color: #fff;
+	padding: 1.5em;
+	text-align: center;
+	margin: 1em;
+	box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #1d1a16;
+	font-family: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
+}
+
+.hero h1 {
+	font-size: 2em;
+	font-weight: bold;
+	margin: 0.5em 0;
+	color: #f3d36b;
+	text-shadow: 1px 1px #2f2a24;
+}
+
+.hero p {
+	font-size: 0.95em;
+	color: #e0e0e0;
+	line-height: 1.5;
+	margin: 0.5em 0;
+}
+
+.container-main {
+	max-width: 900px;
+	margin: 1em auto;
+	padding: 0 0.5em;
+	font-family: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
+}
+
+.section {
+	margin-bottom: 1em;
+}
+
+.latest-entry-title {
+	margin-top: 2em;
+	color: #7a3e00;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 0.2em;
+	font-family: 'Times New Roman', serif;
+	max-width: 640px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.latest-entry-link {
+	display: block;
+	max-width: 640px;
+	margin: 0.6em auto 0;
+	text-decoration: none;
+}
+
+.latest-entry-card {
+	background: #f7f7f7;
+	border-radius: 18px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+	padding: 1em 1.1em;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.latest-entry-link:hover .latest-entry-card {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.latest-entry-name {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #7a3e00;
+	border-bottom: 2px dotted #7a3e00;
+	margin: 0;
+	line-height: 1.2;
+}
+
+.latest-entry-card .poema-link {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #7a3e00;
+	text-decoration: none;
+	border-bottom: 2px dotted #7a3e00;
+	transition: border-color 0.2s, color 0.2s;
+}
+
+.latest-entry-card .poema-link:hover {
+	color: #a14f00;
+	border-bottom-color: #a14f00;
+}
+
+.latest-entry-card .poema-year {
+	color: #888;
+	font-size: 0.95em;
+	margin: 0.5em 0 0;
+}
+
+.latest-entry-card .poema-excerpt {
+	color: #444;
+	font-size: 1em;
+	font-style: italic;
+	white-space: normal;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.card {
+	background: #c0c0c0;
+	border: 2px solid;
+	border-color: #dfdfdf #808080 #808080 #dfdfdf;
+	padding: 0.8em;
+	box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #1d1a16;
+	margin: 0.5em 0;
+}
+
+.card h2 {
+	background: #2f2a24;
+	color: #f3d36b;
+	padding: 0.3em 0.4em;
+	margin: -0.8em -0.8em 0.5em -0.8em;
+	font-size: 1em;
+	font-weight: bold;
+	border-bottom: 2px solid #dfdfdf;
+}
+
+.card p {
+	color: #000;
+	line-height: 1.6;
+	font-size: 0.9em;
+	margin: 0.5em 0;
+}
+
+.card a {
+	color: #7a3e00;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.card a:hover {
+	color: #a14f00;
+}
+
+.meta {
+	color: #444;
+	font-size: 0.85em;
+	margin-top: 0.3em;
+}
+
+.hackerspace-section {
+	background: #c0c0c0;
+	border: 2px solid;
+	border-color: #dfdfdf #808080 #808080 #dfdfdf;
+	padding: 0.8em;
+	box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #1d1a16;
+	margin: 0.5em 0;
+}
+
+.hackerspace-section h2 {
+	background: #2f2a24;
+	color: #f3d36b;
+	padding: 0.3em 0.4em;
+	margin: -0.8em -0.8em 0.5em -0.8em;
+	font-size: 1em;
+	font-weight: bold;
+	border-bottom: 2px solid #dfdfdf;
+}
+
+.hackerspace-section p {
+	color: #000;
+	line-height: 1.6;
+	margin: 0.5em 0;
+	font-size: 0.9em;
+}
+
+.hackerspace-section strong {
+	color: #2f5d2f;
+	font-weight: bold;
+}
+
+.excerpt {
+	color: #333;
+	font-size: 0.9em;
+	line-height: 1.5;
+	margin-top: 0.5em;
+	font-style: italic;
+}
