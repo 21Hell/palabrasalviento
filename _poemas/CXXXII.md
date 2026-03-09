@@ -8,13 +8,13 @@ categoria: sin titulo 2026
 autor: Carlos Wolf
 ---
 
-Dormir verdaderamente es como morir en el tiempo
+Quantas Qualias Querria
+Querer, Quien Querria
+Que Quisiera Quererte
+Quiero Que Quede
+Queriendo Quiza Quererte
+Quiziera Quedarme, ¿Que
+Quiero, Quererte, Quiero
+Quiero
 
-Morir en un tiempo, es como verdaderamente dormir
-
-Verdades en el tiempo, es como dormir o morir
-
-
-Verdad que el tiempo,
-es morir,
-mas que dormir
+Te
