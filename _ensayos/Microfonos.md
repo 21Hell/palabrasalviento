@@ -1,5 +1,5 @@
 ---
-title: "Ensayo Dogmático Sobre la Cultura del Micrófono Abierto"
+title: "Ensayo dogmático sobre la cultura del micrófono abierto"
 date: 2025-03-09
 layout: critica
 excerpt: "Qué abrimos cuando abrimos un micrófono"
