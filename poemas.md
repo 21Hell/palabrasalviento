@@ -5,7 +5,7 @@ layout: default
 /* Poems index responsive styles */
 .poemas-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
 .poema-card { background:#fff; border-radius:10px; padding:0.9rem 1rem; box-shadow:0 2px 10px rgba(0,0,0,0.06); display:flex; flex-direction:column; gap:0.5rem; position:relative; }
-.poema-link { color:#0b5ed7; font-weight:700; font-size:1rem; text-decoration:none; }
+.poema-link { color:#7a3e00; font-weight:700; font-size:1rem; text-decoration:none; }
 .poema-year { color:#6c757d; font-size:0.85rem; }
 .poema-excerpt { color:#333; font-size:0.95rem; line-height:1.35; margin-top:0.4rem; }
 /* Off-screen searchable text: present in DOM but visually hidden */
@@ -28,12 +28,12 @@ layout: default
 </style>
 
 <div class="container" style="max-width:900px; margin:auto; padding:2em 1em;">
-  <h1 style="color:#0056b3; font-size:2em; text-align:center; margin-bottom:1em;">Poemas</h1>
+  <h1 style="color:#7a3e00; font-size:2em; text-align:center; margin-bottom:1em;">Poemas</h1>
   <div id="poemas-disclaimer-bar" style="background:#fffbe6; border:1px solid #ffe58f; color:#8c6d1f; padding:1.2em 2em; border-radius:18px; max-width:600px; margin:0 auto 2em auto; font-size:1.15em; text-align:justify; box-shadow:0 4px 24px rgba(0,0,0,0.12); position:relative; display:none;">
     <button id="poemas-disclaimer-close" style="position:absolute; top:10px; right:16px; background:none; border:none; font-size:1.3em; color:#8c6d1f; cursor:pointer;">&times;</button>
     <strong>Disclaimer</strong><br><br>
   Los poemas aquí presentados son obras originales de Carlos Wolf y forman parte de un archivo histórico personal. Este espacio tiene como objetivo la expresión libre y no está destinado a la venta de ningún producto. Se trata de un blog de poemas, es decir, un sitio a razon de diario o libreta informal. Si deseas contactar al autor para cualquier consulta o propuesta, puedes hacerlo a través de su cuenta de Instagram:<br>
-      <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#0056b3; text-decoration:none;">@cwolf_imc</a>.<br><br>
+      <a href="https://www.instagram.com/cwolf_imc/" target="_blank" rel="noopener" style="color:#7a3e00; text-decoration:none;">@cwolf_imc</a>.<br><br>
        <span style="font-size:0.95em; color:#6c5d2f;">Nota: Este disclaimer fue hecho a petición de Mesa para no herir suceptibilidades de poetas y poetisas</span><br>
 
     <button id="poemas-disclaimer-hide-btn" style="margin-top:1em; padding:0.6em 2em; background:#ffe58f; color:#8c6d1f; border:none; border-radius:8px; font-size:1em; cursor:pointer;">No mostrar de nuevo</button>
@@ -71,7 +71,7 @@ layout: default
   {% for key in ordered_keys %}
     {% assign parts = key | split: "|" %}
     {% assign cat = parts[1] %}
-    <h2 style="margin-top:2em; color:#0056b3; border-bottom:1px solid #eee;">{{ cat | capitalize }}</h2>
+    <h2 style="margin-top:2em; color:#7a3e00; border-bottom:1px solid #eee;">{{ cat | capitalize }}</h2>
     {% if cat == "panoramas" %}
       <div style="background:#f7f7f7; padding:1em 1.5em; margin-bottom:1em; font-style:italic; color:#444; border-radius:8px;">
         Enero primero 2021<br>

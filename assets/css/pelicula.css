@@ -10,7 +10,7 @@
 }
 .pelicula-title {
   font-family: 'Times New Roman', serif;
-  color: #0056b3;
+  color: #7a3e00;
   font-size: 2em;
   border-bottom: 1px solid #ccc;
   margin-bottom: 0.5em;
@@ -36,7 +36,7 @@
 }
 .pelicula-rating {
   font-weight: bold;
-  color: #0056b3;
+  color: #7a3e00;
 }
 .pelicula-watched {
   margin-left: 1em;

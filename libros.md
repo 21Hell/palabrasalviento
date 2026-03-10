@@ -5,7 +5,7 @@ title: "Libros"
 
 
 <div class="container" style="max-width:750px; margin:auto; padding:2.5em 1em 2em 1em;">
-  <h1 style="color:#222; font-size:2em; text-align:center; margin-bottom:1.5em; font-weight:normal; letter-spacing:0.01em;">Libros</h1>
+  <h1 style="color:#7a3e00; font-size:2em; text-align:center; margin-bottom:1.5em; font-weight:normal; letter-spacing:0.01em;">Libros</h1>
   <div class="libros-list">
     {% if site.libros and site.libros.size > 0 %}
       {% assign libros_con_date = site.libros | where_exp: "l", "l.date" %}
@@ -49,7 +49,7 @@ title: "Libros"
 .libro-title {
   font-size: 1.13em;
   font-weight: 500;
-  color: #222;
+  color: #7a3e00;
   text-decoration: none;
   margin-bottom: 0.2em;
   letter-spacing: 0.01em;

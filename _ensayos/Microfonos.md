@@ -1,6 +1,6 @@
 ---
 title: "Ensayo dogmático sobre la cultura del micrófono abierto"
-date: 2025-03-09
+date: 2026-03-09
 layout: critica
 excerpt: "Qué abrimos cuando abrimos un micrófono"
 ---

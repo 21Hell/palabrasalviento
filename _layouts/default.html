@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="{{ '/assets/css/ensayos-lista.css' | relative_url }}">
 	<link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}">
 	<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
+	<script defer src="https://cdn.jsdelivr.net/gh/asvd/microlight@master/microlight.js"></script>
 	
 </head>
 <body>
@@ -27,14 +28,27 @@
 <footer class="site-footer">
 	<div class="footer-content">
 		<div class="footer-license">
-			<h3>📜 CC BY 4.0</h3>
+			<h3>CC BY 4.0</h3>
 			<p>Todo bajo <strong><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Atribución 4.0</a></strong>. Autor: <strong>Carlos Wolf</strong> - <a href="https://github.com/21Hell/palabrasalviento" target="_blank" rel="noopener">GitHub</a></p>
 			<a href="https://creativecommons.org/licenses/by/4.0/deed.es" title="Creative Commons Atribución 4.0">
-				<img src="https://licensebuttons.net/l/by/4.0/80x15.png" alt="CC BY 4.0" style="margin-top: 0.3em;">
+				<img src="https://i.creativecommons.org/l/by/4.0/88x31.png" alt="CC BY 4.0" style="margin-top: 0.3em; width:88px; height:31px;">
 			</a>
 		</div>
 	</div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	var blocks = document.querySelectorAll('pre code');
+	blocks.forEach(function (el) {
+		el.classList.add('microlight');
+	});
+
+	if (window.microlight && typeof window.microlight.reset === 'function') {
+		window.microlight.reset();
+	}
+});
+</script>
 
 
 </body>

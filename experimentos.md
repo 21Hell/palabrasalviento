@@ -4,7 +4,7 @@ title: "Experimentos"
 ---
 
 <div class="container" style="max-width:900px; margin:auto; padding:2em 1em;">
-	<h1 style="color:#0056b3; font-size:2em; text-align:center; margin-bottom:1em;">Experimentos</h1>
+	<h1 style="color:#7a3e00; font-size:2em; text-align:center; margin-bottom:1em;">Experimentos</h1>
 	<div class="experimentos-list">
 		{% for experimento in site.experimentos %}
 			<div class="experimento-card">
@@ -43,7 +43,7 @@ title: "Experimentos"
 .experimento-title {
 	font-size:1.15em;
 	font-weight:bold;
-	color:#0056b3;
+	color:#7a3e00;
 	text-decoration:none;
 	margin-bottom:0.5em;
 	text-align:center;

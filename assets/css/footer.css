@@ -1,11 +1,11 @@
 .site-footer {
 	background: #c0c0c0;
 	border: 3px solid;
-	border-color: #dfdfdf #0a0e27 #0a0e27 #dfdfdf;
+	border-color: #dfdfdf #808080 #808080 #dfdfdf;
 	padding: 0.8em 1.5em;
 	margin: 0;
 	margin-top: auto;
-	box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #0a0e27;
+	box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #1d1a16;
 	font-family: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
 	font-size: 0.85em;
 }
@@ -21,14 +21,18 @@
 }
 
 .footer-license h3 {
-	background: #000080;
-	color: #ffff00;
+	background: #2f2a24;
+	color: #f3d36b;
 	padding: 0.2em 0.4em;
 	margin: 0 0 0.4em 0;
 	font-size: 0.9em;
 	font-weight: bold;
+	font-family: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
+	text-shadow: none;
+	letter-spacing: 0;
+	border-bottom: none;
 	border: 2px solid;
-	border-color: #dfdfdf #0a0e27 #0a0e27 #dfdfdf;
+	border-color: #dfdfdf #1d1a16 #1d1a16 #dfdfdf;
 	display: inline-block;
 }
 
@@ -41,23 +45,24 @@
 
 .footer-license strong {
 	font-weight: bold;
-	color: #000080;
+	color: #7a3e00;
 }
 
 .footer-license a {
-	color: #000080;
+	color: #7a3e00;
 	text-decoration: underline;
 	font-weight: bold;
 }
 
 .footer-license a:hover {
-	color: #0000ff;
+	color: #a14f00;
 }
 
 .footer-license img {
-	border: 1px solid #0a0e27;
-	background: #fff;
-	padding: 1px;
+	border: 0;
+	background: transparent;
+	padding: 0;
+	display: inline-block;
 }
 
 html, body {
@@ -75,5 +80,9 @@ body {
 	.site-footer {
 		padding: 0.6em 1em;
 		margin: 0;
+	}
+
+	.footer-license h3 {
+		font-size: 0.85em;
 	}
 }

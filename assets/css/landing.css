@@ -126,6 +126,9 @@
 	margin: -0.8em -0.8em 0.5em -0.8em;
 	font-size: 1em;
 	font-weight: bold;
+	font-family: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
+	text-shadow: none;
+	letter-spacing: 0;
 	border-bottom: 2px solid #dfdfdf;
 }
 
@@ -168,6 +171,9 @@
 	margin: -0.8em -0.8em 0.5em -0.8em;
 	font-size: 1em;
 	font-weight: bold;
+	font-family: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
+	text-shadow: none;
+	letter-spacing: 0;
 	border-bottom: 2px solid #dfdfdf;
 }
 

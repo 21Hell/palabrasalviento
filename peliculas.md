@@ -4,7 +4,7 @@ title: "Películas"
 ---
 
 <div class="container" style="max-width:900px; margin:auto; padding:2em 1em;">
-  <h1 style="color:#0056b3; font-size:2em; text-align:center; margin-bottom:1em;">Películas</h1>
+  <h1 style="color:#7a3e00; font-size:2em; text-align:center; margin-bottom:1em;">Películas</h1>
   <div class="peliculas-list">
   {% assign peliculas_con_date = site.peliculas | where_exp: "p", "p.date" %}
   {% assign peliculas_ordenadas = peliculas_con_date | sort: "date" | reverse %}
@@ -54,7 +54,7 @@ title: "Películas"
 .pelicula-title {
   font-size:1.15em;
   font-weight:bold;
-  color:#0056b3;
+  color:#7a3e00;
   text-decoration:none;
   margin-bottom:0.5em;
   text-align:center;

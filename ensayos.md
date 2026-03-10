@@ -4,7 +4,7 @@ layout: default
 ---
 
 <div class="container" style="max-width:900px; margin:auto; padding:2em 1em;">
-  <h1 style="color:#0056b3; font-size:2em; text-align:center; margin-bottom:1em;">Ensayos</h1>
+  <h1 style="color:#7a3e00; font-size:2em; text-align:center; margin-bottom:1em;">Ensayos</h1>
   <div class="ensayos-lista">
   {% assign ensayos = site.ensayos %}
   {% if ensayos.size == null %}
