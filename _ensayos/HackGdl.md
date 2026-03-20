@@ -1,8 +1,9 @@
 ---
-title: HackGdl
-date: 2026-03-13
+Title: Hack GDL
+Author: Carlos Wolf
+Date: 2026-03-19
+excerpt: "Un resumen del evento Hack GDL, sus charlas, talleres y experiencias destacadas."
 layout: critica
-excerpt: "HackGdl es un evento de tecnología y cultura digital que se celebra en Guadalajara
 ---
 
 
