@@ -1,0 +1,93 @@
+/* Windows XP-Inspired Master Theme for Palabras al Viento */
+
+/* Base Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 14px;
+  background-color: #008080; /* Classic Teal */
+  color: #000;
+  overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.xp-nav,
+.window-nav {
+  background: #000080;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.xp-nav a,
+.window-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.xp-nav a:hover,
+.window-nav a:hover {
+  text-decoration: underline;
+}
+
+/* XP Footer (opt-in only, does not override default site footer) */
+.xp-footer,
+.window-footer {
+  background: #000080;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.xp-footer a,
+.window-footer a {
+  color: #ffff00; /* Yellow */
+  text-decoration: none;
+}
+
+.xp-footer a:hover,
+.window-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Content Panel (Windows-Like Windows) */
+.window {
+  background: #fff;
+  border: 2px solid #000080; /* Navy border */
+  margin: 15px;
+  padding: 10px;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+  border-radius: 8px;
+}
+
+.window-header {
+  background: linear-gradient(to bottom, #000080, #0000cd);
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+}
+
+.window-content {
+  padding: 10px;
+  line-height: 1.6;
+}
+
+/* Sidebar XP Panels */
+.sidebar {
+  background: #c0c0c0; /* Silver */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: inset 1px 1px #ffffff, inset -1px -1px 0 rgba(25, 23);
+}
+
+.sidebar-content,
+.borders {
+  line-height: 1.6;
+}

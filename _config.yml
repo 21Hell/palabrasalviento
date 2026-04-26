@@ -32,6 +32,9 @@ github_username:  jekyll
 
 # Build settings
 theme: minima
+custom_css_files:
+  - assets/css/master.css
+  - assets/css/acerca.css
 plugins:
   - jekyll-feed
 
