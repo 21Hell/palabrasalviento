@@ -52,6 +52,22 @@ body_class: umami-page
 	text-decoration: underline;
 }
 
+.umami-warning {
+	background: #fff3cd;
+	border: 1px solid #d6b656;
+	padding: 0.75rem 0.85rem;
+	margin: 0 0 0.75rem;
+	font-family: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
+	font-size: 0.92rem;
+	line-height: 1.45;
+	color: #4b3f00;
+}
+
+.umami-warning strong {
+	display: block;
+	margin-bottom: 0.25rem;
+}
+
 @media (max-width: 720px) {
 	.umami-wrap {
 		padding: 0 0.5rem 1rem;
@@ -66,14 +82,23 @@ body_class: umami-page
 <div class="umami-wrap">
 	<section class="umami-panel">
 		<h1>Umami</h1>
-		<p>Dashboard embebido dentro del blog. Si no carga, la instancia de Umami no es accesible desde este navegador.</p>
+		<p>Este panel solo embebe Umami cuando hay una URL segura disponible. Así evitamos el bloqueo de contenido mixto en HTTPS.</p>
+		{% if site.umami_embed_url != empty %}
 		<iframe
 			class="umami-embed"
-			src="http://100.64.0.43:3000"
+			src="{{ site.umami_embed_url }}"
 			title="Umami dashboard"
 			loading="lazy"
 			rel="noopener"
 		></iframe>
-		<p class="umami-note">Si prefieres abrirlo aparte, usa <a href="http://100.64.0.43:3000" target="_blank" rel="noopener">esta URL directa</a>.</p>
+		<p class="umami-note">Si prefieres abrirlo aparte, usa <a href="{{ site.umami_direct_url }}" target="_blank" rel="noopener">esta URL directa</a>.</p>
+		{% else %}
+		<div class="umami-warning">
+			<strong>Embed desactivado</strong>
+			El dashboard todavía no tiene una URL HTTPS pública. El navegador bloquea iframes HTTP dentro del blog.
+			Usa la <a href="{{ site.umami_direct_url }}" target="_blank" rel="noopener">URL directa de Umami</a> o configura <code>umami_embed_url</code> con una dirección HTTPS.
+		</div>
+		<p class="umami-note">Cuando tengas una URL segura, el iframe se activará automáticamente.</p>
+		{% endif %}
 	</section>
 </div>
