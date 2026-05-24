@@ -21,6 +21,15 @@ Clone or copy this repository to a fixed path, for example:
 
 The compose file should stay in that directory.
 
+Create a `.env` file next to `docker-compose.umami.yml` based on `.env.example` and put real secrets there. Compose will read it automatically from the project directory.
+
+Recommended minimum values:
+
+```bash
+UMAMI_DB_PASSWORD=$(openssl rand -base64 24)
+UMAMI_APP_SECRET=$(openssl rand -base64 48)
+```
+
 ## 3. Create the systemd unit
 
 Create `/etc/systemd/system/umami.service` with this content:
@@ -58,6 +67,8 @@ sudo systemctl status umami
 
 If you want the dashboard reachable from the tailnet and from the new blog tab, make sure Docker publishes port 3000 on all interfaces instead of only on `127.0.0.1`.
 
+If you are placing Umami behind a reverse proxy or Tailscale Serve, keep the app private on localhost and expose only the proxy.
+
 ## 5. Verify the app
 
 Check the service logs and the web port:
@@ -66,6 +77,14 @@ Check the service logs and the web port:
 docker compose -f /opt/palabrasalviento/docker-compose.umami.yml ps
 curl -I http://127.0.0.1:3000
 ```
+
+For a healthier check, inspect the container health status too:
+
+```bash
+docker compose -f /opt/palabrasalviento/docker-compose.umami.yml ps --format json
+```
+
+If the database is still starting, wait for `healthy` before troubleshooting the Umami container.
 
 ## 6. Reach it from your tailnet
 
