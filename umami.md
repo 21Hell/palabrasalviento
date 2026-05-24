@@ -80,13 +80,18 @@ body_class: umami-page
 </style>
 
 <div class="umami-wrap">
+	{% assign umami_embed_url = site.umami_embed_url | strip %}
+	{% assign umami_embed_secure = false %}
+	{% if umami_embed_url contains 'https://' %}
+		{% assign umami_embed_secure = true %}
+	{% endif %}
 	<section class="umami-panel">
 		<h1>Umami</h1>
-		<p>Este panel solo embebe Umami cuando hay una URL segura disponible. Así evitamos el bloqueo de contenido mixto en HTTPS.</p>
-		{% if site.umami_embed_url != empty %}
+		<p>Este panel solo embebe Umami cuando hay una URL HTTPS disponible. Así evitamos el bloqueo de contenido mixto en navegadores modernos.</p>
+		{% if umami_embed_secure %}
 		<iframe
 			class="umami-embed"
-			src="{{ site.umami_embed_url }}"
+			src="{{ umami_embed_url }}"
 			title="Umami dashboard"
 			loading="lazy"
 			rel="noopener"
@@ -95,10 +100,10 @@ body_class: umami-page
 		{% else %}
 		<div class="umami-warning">
 			<strong>Embed desactivado</strong>
-			El dashboard todavía no tiene una URL HTTPS pública. El navegador bloquea iframes HTTP dentro del blog.
+			El dashboard todavía no tiene una URL HTTPS pública. El navegador bloquea iframes HTTP dentro del blog, así que mostrar uno rompería la vista.
 			Usa la <a href="{{ site.umami_direct_url }}" target="_blank" rel="noopener">URL directa de Umami</a> o configura <code>umami_embed_url</code> con una dirección HTTPS.
 		</div>
-		<p class="umami-note">Cuando tengas una URL segura, el iframe se activará automáticamente.</p>
+		<p class="umami-note">Cuando tengas una URL segura, el iframe se activará automáticamente sin tocar esta página.</p>
 		{% endif %}
 	</section>
 </div>
