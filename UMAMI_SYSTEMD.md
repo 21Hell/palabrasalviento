@@ -97,3 +97,24 @@ If you want the Umami tab in the blog navigation to open directly, the dashboard
 ## 7. Update the blog config
 
 Once Minerva has a reachable URL, change `umami_src` in `_config.yml` to that URL and keep the `umami_website_id` value created in Umami.
+
+## 8. Make the embed actually work
+
+If you want the Umami page in the blog to embed instead of falling back to a link, expose the dashboard over HTTPS with Tailscale Serve and then copy that HTTPS URL into `umami_embed_url` in `_config.yml`.
+
+Typical flow on Minerva:
+
+```bash
+tailscale serve --bg localhost:3000
+tailscale serve status
+```
+
+Use the HTTPS URL shown by `tailscale serve status` as `umami_embed_url`.
+
+If you later want to remove the proxy:
+
+```bash
+tailscale serve off
+```
+
+If the dashboard is only on plain HTTP, the browser will keep blocking the iframe from the HTTPS blog page.
