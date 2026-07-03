@@ -3,13 +3,15 @@ layout: default
 ---
 <style>
 .poema-nodos-container {
-  max-width: 1100px;
-  margin: 40px auto;
-  position: relative;
-  min-height: 80vh;
-  padding: 2em;
+  /* centered card with a maximum width */
+    width: min(1400px, 95vw);
+    max-width: 1400px;
+    margin: 24px auto;
+    position: relative;
+    min-height: 65vh;
+    padding: 3em 4%;
   background: #fff;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
 
@@ -29,6 +31,9 @@ layout: default
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   cursor: grab;
   user-select: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 240ms ease, transform 240ms ease;
 }
 
 .nodo.pos-1 { top: 3%; left: 4%; }
@@ -45,10 +50,12 @@ layout: default
 /* responsive: stack on small screens */
 @media (max-width: 700px) {
   .nodo { position: static; width: auto; margin: 0.6rem 0; }
-  .poema-nodos-container { padding: 1rem; }
+  .poema-nodos-container { position: static; width: 100%; margin: 0.6rem; padding: 1rem; border-radius: 8px; }
   /* hide connections and disable dragging on small screens */
   .nodo { cursor: default; }
   svg.poema-connections { display: none; }
+  /* ensure nodes are visible on small screens */
+  .nodo { opacity: 1; transform: none; }
 }
 </style>
 
@@ -62,9 +69,10 @@ layout: default
 
   {% assign i = 0 %}
   {% for p in page.parrafos %}
-    {% assign i = i | plus: 1 %}
-    <div class="nodo pos-{{ i }}" data-idx="{{ i }}" style="z-index:2;">
-      {{ p.texto }}
+    {% assign pos = forloop.index | modulo: 10 %}
+    {% if pos == 0 %}{% assign pos = 10 %}{% endif %}
+    <div class="nodo pos-{{ pos }}" data-idx="{{ forloop.index }}" style="z-index:2;">
+      {{ p.texto | markdownify }}
     </div>
   {% endfor %}
 
@@ -205,11 +213,14 @@ document.addEventListener('DOMContentLoaded', function(){
   setTimeout(function(){
     randomizePositions();
     drawLines(currentEdges);
+    // reveal nodes after positioning to avoid stacked flash
+    nodes.forEach(n => { n.style.opacity = 1; n.style.transform = ''; });
   }, 120);
 
   window.addEventListener('resize', function(){
     randomizePositions();
     drawLines(currentEdges);
+    nodes.forEach(n => { n.style.opacity = 1; n.style.transform = ''; });
   });
 
   document.addEventListener('keydown', function(e){

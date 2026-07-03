@@ -1,0 +1,113 @@
+/* Acerca de - Windows XP style */
+
+body.acerca-page {
+  --xp-desktop-1: #0a6ea8;
+  --xp-desktop-2: #129ab8;
+  --xp-taskbar: #245edb;
+  --xp-taskbar-dark: #11388e;
+  --xp-window-bg: #ece9d8;
+  --xp-window-border-light: #ffffff;
+  --xp-window-border-dark: #6b7480;
+  --xp-title-1: #1f5cc3;
+  --xp-title-2: #2a7bed;
+  --xp-text: #202124;
+
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: Tahoma, Verdana, sans-serif;
+  color: var(--xp-text);
+  line-height: 1.55;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.2) 0 10%, transparent 22%),
+    radial-gradient(circle at 82% 74%, rgba(255, 255, 255, 0.14) 0 12%, transparent 24%),
+    linear-gradient(160deg, var(--xp-desktop-1), var(--xp-desktop-2));
+}
+
+body.acerca-page h1:first-of-type {
+  width: min(760px, calc(100% - 1.2rem));
+  margin: 1.4rem auto 0;
+  padding: 8px 12px;
+  border: 1px solid #0e3f97;
+  border-bottom: 0;
+  border-radius: 7px 7px 0 0;
+  background: linear-gradient(180deg, var(--xp-title-2), var(--xp-title-1));
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.35);
+  font-size: clamp(1.15rem, 2.8vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+}
+
+.section,
+.acerca-content {
+  width: min(760px, calc(100% - 1.2rem));
+  margin: 0 auto 2rem;
+  padding: 1rem 1.1rem 1.2rem;
+  border-top: 1px solid var(--xp-window-border-light);
+  border-left: 1px solid var(--xp-window-border-light);
+  border-right: 1px solid var(--xp-window-border-dark);
+  border-bottom: 1px solid var(--xp-window-border-dark);
+  border-radius: 0 0 7px 7px;
+  background: var(--xp-window-bg);
+  box-shadow:
+    2px 3px 0 rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.section p,
+.acerca-content p {
+  margin: 0 0 0.95rem;
+  font-size: clamp(1rem, 2vw, 1.08rem);
+}
+
+.section p:last-child,
+.acerca-content p:last-child {
+  margin-bottom: 0;
+}
+
+.section a,
+.acerca-content a {
+  display: inline-block;
+  padding: 2px 8px;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #7f7f7f;
+  border-bottom: 1px solid #7f7f7f;
+  background: #efefef;
+  color: #003399;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.section a:hover,
+.acerca-content a:hover {
+  background: #e1ecff;
+}
+
+.section a:active,
+.acerca-content a:active {
+  border-top: 1px solid #7f7f7f;
+  border-left: 1px solid #7f7f7f;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+@media (max-width: 700px) {
+  body.acerca-page h1:first-of-type,
+  .section,
+  .acerca-content {
+    width: calc(100% - 0.9rem);
+  }
+
+  body.acerca-page h1:first-of-type {
+    margin-top: 0.95rem;
+    padding: 7px 9px;
+  }
+
+  .section,
+  .acerca-content {
+    padding: 0.9rem;
+  }
+}

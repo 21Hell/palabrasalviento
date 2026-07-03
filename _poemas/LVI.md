@@ -9,42 +9,42 @@ autor: Carlos Wolf
 parrafos:
   - texto: "Colach digital"
     alineamiento: izquierda
-  - texto: "Conceptual al pedo, tipo hazme un collage con palabras así cabronamente convencionales, estampa las letras para que te 'equivoques' me entiendes, tipo escribe 'mal', y se cuestionen si existe mensaje profundo (ya tu ves si le metes más diseño al pedo (topas?))"
+  - texto: "Conceptual al pedo: hazme un collage con palabras cabronamente convencionales; estampa las letras para que te 'equivoques', ¿me entiendes? Escribe 'mal' y que se cuestionen si existe un mensaje profundo —ya tú ves, si le metes más diseño, es nomás ruido—"
     alineamiento: izquierda
-  - texto: "¿si lo notaste todo?"
+  - texto: "¿Lo notaste todo?"
     alineamiento: izquierda
-  - texto: "Se me olvidaba quiero que sea en pocas palabras para que medio si se entienda medio que no, porque al chile ya nadie lee, ni quien esto fuera la revista Expansión o Proceso"
+  - texto: "Se me olvidaba: que sea en pocas palabras —que medio se entienda, medio que no— porque, al chile, ya nadie lee; ni quien esto fuera la revista Expansión o Proceso."
     alineamiento: izquierda
-  - texto: "Acompáñalo con un té de limón con jarabe para la toz"
+  - texto: "Acompáñalo con un té de limón y jarabe para la tos."
     alineamiento: izquierda
   - texto: "Ahora"
     alineamiento: izquierda
   - texto: "Siempre"
     alineamiento: izquierda
-  - texto: "Oilo nomas apoco no está cabrona la rola"
+  - texto: "Óyelo nomás: ¿no está cabrona la rola?"
     alineamiento: izquierda
   - texto: "Dónde los gatos cantan y los pájaros maullan"
     alineamiento: izquierda
-  - texto: "¿¿?¿El alegre llora el triste ríe?¿??"
+  - texto: "¿El alegre llora, el triste ríe?"
     alineamiento: izquierda
-  - texto: "Dígitos donde estás vos ente la Z y la Z"
+  - texto: "Dígitos: ¿dónde estás, vos, entre la Z y la Z?"
     alineamiento: izquierda
-  - texto: "Si si si si si si si si"
+  - texto: "Sí, sí, sí..."
     alineamiento: izquierda
-  - texto: "Lindoooooooooooooooooooooooooo"
+  - texto: "Lindo."
     alineamiento: izquierda
-  - texto: "no me encuentras"
+  - texto: "No me encuentras."
     alineamiento: izquierda
   - texto: "Nunca"
     alineamiento: izquierda
-  - texto: "Te encuentro entre las horas"
+  - texto: "Te encuentro entre las horas."
     alineamiento: izquierda
-  - texto: "dame dos órdenes de papas y unas hamburguesas al carbón porfas"
+  - texto: "Dame dos órdenes de papas y unas hamburguesas al carbón, porfa."
     alineamiento: izquierda
   - texto: "Garoouoous"
     alineamiento: izquierda
-  - texto: "Weeeey pon la rola del poema de la C33 de @lajimena_mejia quedará bien perrona (si es esa?)"
+  - texto: "Wey, pon la rola del poema de la C33 de @lajimena_mejia; quedará bien perrona (¿es esa?)."
     alineamiento: izquierda
-  - texto: "chanse si le atinè a la rola"
+  - texto: "Chanse: sí le atiné a la rola."
     alineamiento: izquierda
 ---
