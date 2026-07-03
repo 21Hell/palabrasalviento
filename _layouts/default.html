@@ -23,8 +23,8 @@
 	<link rel="stylesheet" href="{{ '/assets/css/acerca.css' | relative_url }}">
 	{% endif %}
 	<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
-	{% if site.umami_src and site.umami_website_id != empty %}
-	<script defer src="{{ site.umami_src }}" data-website-id="{{ site.umami_website_id }}"></script>
+	{% if site.plausible_src and site.plausible_domain != empty %}
+	<script defer data-domain="{{ site.plausible_domain }}" src="{{ site.plausible_src }}"></script>
 	{% endif %}
 	<script defer src="https://cdn.jsdelivr.net/gh/asvd/microlight@master/microlight.js"></script>
 	

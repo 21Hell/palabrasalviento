@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Umami
-body_class: umami-page
+title: Plausible
+body_class: plausible-page
 ---
 
 <style>
-.umami-wrap {
+.plausible-wrap {
 	max-width: 1200px;
 	margin: 1rem auto;
 	padding: 0 1rem 2rem;
 }
 
-.umami-panel {
+.plausible-panel {
 	background: #c0c0c0;
 	border: 2px solid;
 	border-color: #dfdfdf #808080 #808080 #dfdfdf;
@@ -19,7 +19,7 @@ body_class: umami-page
 	padding: 0.8rem;
 }
 
-.umami-panel h1 {
+.plausible-panel h1 {
 	margin: 0 0 0.75rem;
 	background: #2f2a24;
 	color: #f3d36b;
@@ -30,7 +30,7 @@ body_class: umami-page
 	border-bottom: 2px solid #dfdfdf;
 }
 
-.umami-panel p {
+.plausible-panel p {
 	margin: 0 0 0.75rem;
 	font-family: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
 	font-size: 0.95rem;
@@ -38,21 +38,21 @@ body_class: umami-page
 	color: #000;
 }
 
-.umami-embed {
+.plausible-embed {
 	width: 100%;
-	height: min(82vh, 980px);
+	height: 120px;
 	border: 1px solid #444;
 	background: #111;
 	box-sizing: border-box;
 }
 
-.umami-note a {
+.plausible-note a {
 	color: #7a3e00;
 	font-weight: bold;
 	text-decoration: underline;
 }
 
-.umami-warning {
+.plausible-warning {
 	background: #fff3cd;
 	border: 1px solid #d6b656;
 	padding: 0.75rem 0.85rem;
@@ -63,47 +63,30 @@ body_class: umami-page
 	color: #4b3f00;
 }
 
-.umami-warning strong {
+.plausible-warning strong {
 	display: block;
 	margin-bottom: 0.25rem;
 }
 
 @media (max-width: 720px) {
-	.umami-wrap {
+	.plausible-wrap {
 		padding: 0 0.5rem 1rem;
 	}
 
-	.umami-embed {
-		height: 74vh;
+	.plausible-embed {
+		height: 140px;
 	}
 }
 </style>
 
-<div class="umami-wrap">
-	{% assign umami_embed_url = site.umami_embed_url | strip %}
-	{% assign umami_embed_secure = false %}
-	{% if umami_embed_url contains 'https://' %}
-		{% assign umami_embed_secure = true %}
-	{% endif %}
-	<section class="umami-panel">
-		<h1>Umami</h1>
-		<p>Este panel solo embebe Umami cuando hay una URL HTTPS disponible. Así evitamos el bloqueo de contenido mixto en navegadores modernos.</p>
-		{% if umami_embed_secure %}
-		<iframe
-			class="umami-embed"
-			src="{{ umami_embed_url }}"
-			title="Umami dashboard"
-			loading="lazy"
-			rel="noopener"
-		></iframe>
-		<p class="umami-note">Si prefieres abrirlo aparte, usa <a href="{{ site.umami_direct_url }}" target="_blank" rel="noopener">esta URL directa</a>.</p>
-		{% else %}
-		<div class="umami-warning">
-			<strong>Embed desactivado</strong>
-			El dashboard todavía no tiene una URL HTTPS pública. El navegador bloquea iframes HTTP dentro del blog, así que mostrar uno rompería la vista.
-			Usa la <a href="{{ site.umami_direct_url }}" target="_blank" rel="noopener">URL directa de Umami</a> o configura <code>umami_embed_url</code> con una dirección HTTPS.
+<div class="plausible-wrap">
+	<section class="plausible-panel">
+		<h1>Plausible</h1>
+		<p>La analítica del blog ahora usa Plausible. Carga un script ligero, sin cookies, y no requiere un panel embebido dentro del sitio.</p>
+		<div class="plausible-warning">
+			<strong>Configuración</strong>
+			Asegúrate de que <code>plausible_domain</code> en <code>_config.yml</code> coincida con el dominio público del blog y que <code>plausible_src</code> apunte al script correcto.
 		</div>
-		<p class="umami-note">Cuando tengas una URL segura, el iframe se activará automáticamente sin tocar esta página.</p>
-		{% endif %}
+		<p class="plausible-note">Si usas el servicio alojado, el script suele ser <a href="https://plausible.io/js/script.js" target="_blank" rel="noopener">plausible.io/js/script.js</a>.</p>
 	</section>
 </div>

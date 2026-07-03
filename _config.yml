@@ -35,10 +35,8 @@ theme: minima
 custom_css_files:
   - assets/css/master.css
   - assets/css/acerca.css
-umami_src: "http://localhost:3000/script.js"
-umami_website_id: "7ad9e01f-d388-476b-b7c6-647790a0c142"
-umami_direct_url: "http://100.64.0.43:3000"
-umami_embed_url: ""
+plausible_src: "https://plausible.io/js/script.js"
+plausible_domain: "cwolf.kernelpanic.lol"
 plugins:
   - jekyll-feed
 
