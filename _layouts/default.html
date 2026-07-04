@@ -23,9 +23,6 @@
 	<link rel="stylesheet" href="{{ '/assets/css/acerca.css' | relative_url }}">
 	{% endif %}
 	<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
-	{% if site.plausible_src and site.plausible_domain != empty %}
-	<script defer data-domain="{{ site.plausible_domain }}" src="{{ site.plausible_src }}"></script>
-	{% endif %}
 	<script defer src="https://cdn.jsdelivr.net/gh/asvd/microlight@master/microlight.js"></script>
 	
 </head>

@@ -35,8 +35,6 @@ theme: minima
 custom_css_files:
   - assets/css/master.css
   - assets/css/acerca.css
-plausible_src: "https://plausible.io/js/script.js"
-plausible_domain: "cwolf.kernelpanic.lol"
 plugins:
   - jekyll-feed
 
