@@ -6,7 +6,8 @@ title: "Experimentos"
 <div class="container" style="max-width:900px; margin:auto; padding:2em 1em;">
 	<h1 style="color:#7a3e00; font-size:2em; text-align:center; margin-bottom:1em;">Experimentos</h1>
 	<div class="experimentos-list">
-		{% for experimento in site.experimentos %}
+		{% assign experimentos_ordenados = site.experimentos | sort: "date" | reverse %}
+		{% for experimento in experimentos_ordenados %}
 			<div class="experimento-card">
 				<a href="{{ site.baseurl }}{{ experimento.url }}" class="experimento-title">{{ experimento.title }}</a>
 				{% if experimento.date %}
