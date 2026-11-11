@@ -20,9 +20,7 @@ poster: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jrhXbIOFingzdLjkccj
 
 	<p><strong>"My Oxford Year"</strong> no es una película sobre la vida académica ni sobre el amor genuino, sino un producto prefabricado que expone la maquinaria de producción cultural de Hollywood:</p>
 	<ul style="font-size:1.08em; line-height:1.6;">
-		<li>Entretenimiento sin sustancia</li>
-		<li>Romance sin complejidad</li>
-		<li>Intelectualidad desprovista de significado genuino</li>
+		Entretenimiento sin sustancia,Romance sin complejidad,Intelectualidad desprovista de significado genuino
 	</ul>
 
 	<p style="margin-top:1.5em; color:#555; font-style:italic;">Una experiencia cinematográfica diseñada para el consumo distraído, que deja tras de sí poco más que la sensación de haber visitado Oxford solo a través de una postal.</p>
