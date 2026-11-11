@@ -158,26 +158,6 @@ Graeber sobredimensiona la imaginación como agente histórico y subestima las c
 
 El conflicto social no surge solo de contradicciones imaginativas, sino de **contradicciones materiales**: acceso a recursos, desigualdad en la producción, diferencial de trabajo y control sobre medios de subsistencia. Reducirlo al plano imaginativo desplaza lo económico al trasfondo.
 
-## Romanticismo político
-
-En conjunto, el argumento del anarquista es un ejemplo clásico de romanticismo político. Idealiza fenómenos reales y los reinterpreta como pruebas del anarquismo sin analizar:
-
-- Mondragón no es horizontal
-- Linux no es democrático
-- El consenso no escala a sociedades industriales
-- La cooperación técnica no equivale a democracia política
-- Se ignora la estructura material que sostiene toda sociedad compleja
-- Se pasa por alto la violencia simbólica que ordena toda comunidad técnica
-
-Se ignora:
-
-- La economía
-- La técnica
-- La escala
-- El poder
-- El lenguaje
-- La infraestructura
-- La división del trabajo
 
 ## La multiplicidad organizativa
 
